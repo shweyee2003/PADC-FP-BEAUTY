@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">PADC-FP-BEAUTY</string>
     <string name="action_settings">Settings</string>
+
+    <string name="beauty_tips">Tips</string>
+    <string name="dressing">Dressing</string>
+    <string name="personality">Personality Tips</string>
+    <string name="fitness">Fitness</string>
+    <string name="saloon_and_fashionshop">Beauty Saloon and Fashion Shop</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="bookmark">Bookmark</string>
 </resources>
