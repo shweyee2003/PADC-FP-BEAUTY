@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">PADC-FP-BEAUTY</string>
+    <string name="app_name">BEAUTY And HEALTH</string>
     <string name="action_settings">Settings</string>
+
+    <!--Tips -->
+    <string name="face_tips">Face</string>
+    <string name="skin_tips">Skin Type</string>
+    <string name="body_tips">Body Shape</string>
 </resources>
