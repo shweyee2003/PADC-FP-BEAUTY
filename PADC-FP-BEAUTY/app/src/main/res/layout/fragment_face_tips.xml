@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_gravity="right"></Spinner>
+        android:layout_gravity="right"/>
 
     <TextView
         android:layout_width="match_parent"
