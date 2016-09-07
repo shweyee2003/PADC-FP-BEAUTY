@@ -54,6 +54,7 @@
         app:headerLayout="@layout/left_menu_header"
         app:menu="@menu/left_menu">
 
+
         <com.padc.beauty.components.MMTextView
             android:id="@+id/tv_app_version"
             android:layout_width="wrap_content"
