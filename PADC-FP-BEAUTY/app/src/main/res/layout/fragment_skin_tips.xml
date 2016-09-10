@@ -69,4 +69,5 @@
         android:layout_marginRight="@dimen/margin_medium"
         android:textSize="@dimen/text_regular"
         android:textColor="@color/primary_text"/>
+
 </LinearLayout>

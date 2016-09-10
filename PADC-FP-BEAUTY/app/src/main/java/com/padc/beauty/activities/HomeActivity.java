@@ -27,6 +27,7 @@ import com.padc.beauty.utils.MMFontUtils;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
         MenuItemCompat.OnActionExpandListener{
+
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
@@ -54,10 +55,6 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Menu leftMenu = navigationView.getMenu();
         MMFontUtils.applyMMFontToMenu(leftMenu);
         navigationView.setNavigationItemSelectedListener(this);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, BodyshapeFragment.newInstance())
-                .commit();
 
     }
 
