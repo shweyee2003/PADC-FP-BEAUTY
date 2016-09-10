@@ -57,7 +57,6 @@ public class SpecialtipActivityFragment extends Fragment {
         spBodyshapeList.setAdapter(mBodyshapeListAdapter);
         lblTipsTitle.setText("Special Tips for you");
         return rootView;
-
     }
     @OnClick(R.id.btn_ok)
     public void onTapOk(Button btnOk) {
