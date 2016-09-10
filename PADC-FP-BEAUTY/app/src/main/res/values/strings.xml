@@ -9,4 +9,25 @@
     <string name="saloon_and_fashionshop">Beauty Saloon and Fashion Shop </string>
     <string name="tutorials">Tutorialsမ်ား </string>
     <string name="bookmark">Bookmark</string>
+
+    <string-array name="body_shape">
+        <item>Pear Body Type</item>
+        <item>Straight Body Type</item>
+        <item>Spoon Body Type</item>
+        <item>Hourglass Body Type</item>
+        <item>Top Hourglass Body Type</item>
+        <item>Inverted Triangle Body Type</item>
+        <item>Oval Body Type</item>
+        <item>Diamond Body Type</item>
+    </string-array>
+
+    <string name="title_body_shape">Pear body shape</string>
+    <string name="body_shape_desc">Pear body traits: Your lower body is wider than your upper body — in other words, your hips are wider than your shoulders. Your bottom is rounded and your waist is well-defined.
+Your best assets: Shoulders and torso
+Your fashion goals: Emphasize your waist and arms, add volume to your shoulders and upper body</string>
+    <string name="body_doanddont">Dos and Donts</string>
+    <string name="body_dos">DO try A-line skirts</string>
+    <string name="body_dos1">DO keep hems of pants, skirts and dresses wide to balance the hips.</string>
+    <string name="title_activity_special_tips">SpecialTipsActivity</string>
+    <string name="title_activity_specialtip">SpecialtipActivity</string>
 </resources>
