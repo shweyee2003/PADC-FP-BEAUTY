@@ -1,6 +1,35 @@
 <resources>
-    <string name="app_name">PADC-FP-BEAUTY</string>
+    <string name="app_name">BEAUTY And HEALTH</string>
     <string name="action_settings">Settings</string>
+
+
+    <!--Tips -->
+    <string name="face_tips">Face</string>
+    <string name="skin_tips">Skin Type</string>
+    <string name="body_tips">Body Shape</string>
+
+    <string-array name="face_tip_list">
+        <item>Long Face</item>
+        <item>Rounded Face</item>
+        <item>Double Chin Face</item>
+    </string-array>
+
+    <string-array name="Skin_Type_tip_list">
+        <item>Normal Skin</item>
+        <item>Oily Skin</item>
+        <item>Sencentive Skin</item>
+    </string-array>
+
+    <string-array name="Body_Shape_tip_list">
+        <item>Thin and Tall</item>
+        <item>Fat and Short</item>
+        <item>Thin and Short</item>
+    </string-array>
+
+    <string name="sample_facetips">You must have circular or full hair style.You must have circular or full hair style.You must have circular or full hair style.</string>
+
+    <string name="skin_title">Normal Skin</string>
+    <string name="face_title">Long Face</string>
 
     <string name="beauty_tips">Tips</string>
     <string name="dressing">Dressing</string>
@@ -30,4 +59,5 @@ Your fashion goals: Emphasize your waist and arms, add volume to your shoulders 
     <string name="body_dos1">DO keep hems of pants, skirts and dresses wide to balance the hips.</string>
     <string name="title_activity_special_tips">SpecialTipsActivity</string>
     <string name="title_activity_specialtip">SpecialtipActivity</string>
+
 </resources>

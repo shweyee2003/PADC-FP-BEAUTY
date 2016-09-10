@@ -1,29 +1,25 @@
 package com.padc.beauty.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.padc.beauty.R;
-import com.padc.beauty.fragments.BodyshapeFragment;
+import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.utils.MMFontUtils;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
         MenuItemCompat.OnActionExpandListener{
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +28,19 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                Intent intentDetail = new Intent(HomeActivity.this,SpecialtipActivity.class);
-                startActivity(intentDetail);
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//                Intent intentDetail = new Intent(HomeActivity.this,SpecialtipActivity.class);
+//                startActivity(intentDetail);
+//            }
+//        });
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, TipsPagerFragment.newInstance())
+                .commit();
         final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             //actionBar.setDisplayShowTitleEnabled(false);
@@ -53,10 +52,6 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Menu leftMenu = navigationView.getMenu();
         MMFontUtils.applyMMFontToMenu(leftMenu);
         navigationView.setNavigationItemSelectedListener(this);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, BodyshapeFragment.newInstance())
-                .commit();
 
     }
 
@@ -101,4 +96,5 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         drawerLayout.closeDrawer(GravityCompat.START);
         return false;
     }
+
 }
