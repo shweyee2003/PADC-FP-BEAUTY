@@ -13,17 +13,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_regular_3x"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/primary"
         android:text="Your Hair Style"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.3"
         android:text="Curls will only add to the round, symmetrical look of a circular or chubby face, so go for texture rather than curliness. Waves are a good option, as long as they are casual, random twists with some layers hanging over the outer edges of the face, to reduce the width."/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="16dp">
         <com.padc.beauty.components.DynamicHeightImageView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -44,17 +45,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_regular_3x"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/primary"
         android:text="Your Makeup"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.3"
         android:text="For the nuetral ladies like Selena Gomez, you've got an equal number of blue and green veins. You are also one of the lucky ones who can pull off any shade of lipstick and eyeshadow."/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="@dimen/margin_medium_2">
         <com.padc.beauty.components.DynamicHeightImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -75,18 +77,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_regular_3x"
-        android:textColor="@color/primary_text"
+        android:textColor="@color/primary"
         android:text="Your Dressing"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.3"
         android:text="Unlike other body shapes, the hourglass figure a significantly defined waist.
 Your curves are flattering in the right places. Fat is usually evenly stored throughout."/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="@dimen/margin_medium_2">
         <com.padc.beauty.components.DynamicHeightImageView
             android:layout_width="0dp"
             android:layout_height="wrap_content"

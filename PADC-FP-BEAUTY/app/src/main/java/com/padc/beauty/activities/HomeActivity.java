@@ -38,7 +38,6 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, TipsPagerFragment.newInstance())
                 .commit();
