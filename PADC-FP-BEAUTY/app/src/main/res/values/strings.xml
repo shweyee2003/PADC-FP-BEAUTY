@@ -60,7 +60,11 @@
     <string name="title_activity_specialtip">SpecialtipActivity</string>
 
     <string name="sample_skintips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
+
     <string name="body_shape_desc">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
+
+    <string name="sample_bodyshapetips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
+
 
     <string name="body_title">Thin and Tall</string>
 

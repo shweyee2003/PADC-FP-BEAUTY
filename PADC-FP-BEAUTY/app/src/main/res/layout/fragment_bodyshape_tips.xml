@@ -20,31 +20,14 @@
         android:layout_marginLeft="@dimen/margin_medium"
         android:text="@string/skin_title"/>
 
+
     <com.padc.beauty.components.DynamicHeightImageView
         android:id="@+id/iv_tipbodyimg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_small"
         />
-    <!--<com.padc.beauty.components.DynamicHeightImageView-->
-    <!--android:id="@+id/iv_tipskinimg2"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_weight="1"-->
-    <!--android:layout_margin="@dimen/margin_small"-->
-    <!--android:src="@drawable/bodyshape2"-->
-    <!--/>-->
-    <!--<com.padc.beauty.components.DynamicHeightImageView-->
-    <!--android:id="@+id/iv_tipskinimg3"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_weight="1"-->
-    <!--android:layout_margin="@dimen/margin_small"-->
-    <!--android:src="@drawable/bodyshape1"-->
-    <!--/>-->
 
-    <!--</LinearLayout>-->
-    <!--</HorizontalScrollView>-->
 
     <TextView
         android:id="@+id/tv_bodyshape_desc"

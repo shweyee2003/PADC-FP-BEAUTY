@@ -20,6 +20,7 @@ public class SpecialtipActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +29,7 @@ public class SpecialtipActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fl_container, SpecialtipActivityFragment.newInstance())
