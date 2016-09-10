@@ -1,6 +1,5 @@
 package com.padc.beauty.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
-import com.padc.beauty.activities.SpecialtipActivity;
 import com.padc.beauty.adapters.TipPagerAdapter;
 import com.padc.beauty.utils.BeautyAppConstant;
 
@@ -74,8 +72,6 @@ public class TipsPagerFragment extends Fragment  {
     @OnClick(R.id.fab_tips)
     public void onTapSpecificTips(View view) {
         Toast.makeText(getContext(),"specific tips",Toast.LENGTH_SHORT).show();
-        Intent intentDetail = new Intent(getActivity(),SpecialtipActivity.class);
-        startActivity(intentDetail);
     }
 
 

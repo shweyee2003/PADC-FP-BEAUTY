@@ -29,7 +29,7 @@
     <string name="sample_facetips">You must have circular or full hair style.You must have circular or full hair style.You must have circular or full hair style.</string>
 
     <string name="skin_title">Normal Skin</string>
-    <string name="face_title">Round Face</string>
+    <string name="face_title">Long Face</string>
 
     <string name="beauty_tips">Tips</string>
     <string name="dressing">Dressing</string>
@@ -38,29 +38,5 @@
     <string name="saloon_and_fashionshop">Beauty Saloon and Fashion Shop </string>
     <string name="tutorials">Tutorialsမ်ား </string>
     <string name="bookmark">Bookmark</string>
-
-    <string-array name="body_shape">
-        <item>Pear Body Type</item>
-        <item>Straight Body Type</item>
-        <item>Spoon Body Type</item>
-        <item>Hourglass Body Type</item>
-        <item>Top Hourglass Body Type</item>
-        <item>Inverted Triangle Body Type</item>
-        <item>Oval Body Type</item>
-        <item>Diamond Body Type</item>
-    </string-array>
-
-    <string name="title_body_shape">Fat and Short</string>
-    <string name="bd_description">While you are what are described above, it is not always true that you can wear everything you want. Clothing colors should also coordinate to your skin tone and hair.</string>
-    <string name="body_doanddont">Dos and Donts</string>
-    <string name="body_dos">DO try A-line skirts</string>
-    <string name="body_dos1">DO keep hems of pants, skirts and dresses wide to balance the hips.</string>
-    <string name="title_activity_special_tips">SpecialTipsActivity</string>
-    <string name="title_activity_specialtip">SpecialtipActivity</string>
-
-    <string name="sample_skintips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
-    <string name="sample_bodyshapetips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
-
-    <string name="body_title">Thin and Tall</string>
 
 </resources>
