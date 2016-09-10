@@ -6,4 +6,27 @@
     <string name="face_tips">Face</string>
     <string name="skin_tips">Skin Type</string>
     <string name="body_tips">Body Shape</string>
+
+    <string-array name="face_tip_list">
+        <item>Long Face</item>
+        <item>Rounded Face</item>
+        <item>Double Chin Face</item>
+    </string-array>
+
+    <string-array name="Skin_Type_tip_list">
+        <item>Normal Skin</item>
+        <item>Oily Skin</item>
+        <item>Sencentive Skin</item>
+    </string-array>
+
+    <string-array name="Body_Shape_tip_list">
+        <item>Thin and Tall</item>
+        <item>Fat and Short</item>
+        <item>Thin and Short</item>
+    </string-array>
+
+    <string name="sample_facetips">You must have circular or full hair style.You must have circular or full hair style.You must have circular or full hair style.</string>
+
+    <string name="skin_title">Normal Skin</string>
+    <string name="face_title">Long Face</string>
 </resources>

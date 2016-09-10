@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.TipPagerAdapter;
+import com.padc.beauty.utils.BeautyAppConstant;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -33,6 +35,7 @@ public class TipsPagerFragment extends Fragment  {
     FloatingActionButton fabtips;
 
     private TipPagerAdapter mTipsPagerAdapter;
+
 
     public static TipsPagerFragment newInstance() {
         TipsPagerFragment fragment = new TipsPagerFragment();
@@ -56,17 +59,15 @@ public class TipsPagerFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_pager_tips, container, false);
 
-
-
         ButterKnife.bind(this, rootView);
 
         pagerTips.setAdapter(mTipsPagerAdapter);
         pagerTips.setOffscreenPageLimit(mTipsPagerAdapter.getCount());
-
         tltips.setupWithViewPager(pagerTips);
 
         return rootView;
     }
+
 
     @OnClick(R.id.fab_tips)
     public void onTapSpecificTips(View view) {

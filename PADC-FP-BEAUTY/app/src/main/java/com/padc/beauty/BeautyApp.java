@@ -9,6 +9,7 @@ import android.content.Context;
 public class BeautyApp extends Application {
     private static Context context;
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -18,4 +19,6 @@ public class BeautyApp extends Application {
     public static Context getContext() {
         return context;
     }
+
+
 }

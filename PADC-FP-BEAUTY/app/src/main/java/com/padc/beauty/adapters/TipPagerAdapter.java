@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.padc.beauty.utils.BeautyAppConstant;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class TipPagerAdapter extends FragmentStatePagerAdapter {
 
     private List<Fragment> mFragments = new ArrayList<>();
     private List<String> mFragmentsTitles=new ArrayList<>();
+    private BeautyAppConstant beautyAppConstant;
 
     public TipPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -21,6 +24,7 @@ public class TipPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+
         return mFragments.get(position);
     }
 
@@ -31,6 +35,7 @@ public class TipPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
+
         return mFragmentsTitles.get(position);
     }
 

@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Spinner
+        android:id="@+id/sp_tip_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="right"/>
+
+    <TextView
+        android:id="@+id/tv_skintip_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_heading_1x"
+        android:textColor="@color/primary_text"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:text="@string/skin_title"/>
+
+    <!--<HorizontalScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="@dimen/margin_medium"-->
+        <!--android:layout_marginRight="@dimen/margin_medium"-->
+        <!--&gt;-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            android:orientation="horizontal">
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_tipskinimg1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_small"
+                />
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_tipskinimg2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_small"
+                />
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_tipskinimg3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_small"
+                />
+
+        </LinearLayout>
+    <!--</HorizontalScrollView>-->
+
+    <TextView
+        android:id="@+id/tv_skintip_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mandalay was the last Royal Capital of Myanmar and is located nearly 700 km north of Yangon between the mighty Ayeyarwaddy River and the Shan plateau. Mandalay is considered the centre ... Read More"
+        android:fontFamily="sans-serif-light"
+        android:lineSpacingMultiplier="1.2"
+        android:maxLines="4"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular"
+        android:textColor="@color/primary_text"/>
 </LinearLayout>
