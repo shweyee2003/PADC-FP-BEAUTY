@@ -61,9 +61,9 @@ public class SpecialtipActivityFragment extends Fragment {
     }
     @OnClick(R.id.btn_ok)
     public void onTapOk(Button btnOk) {
-        FragmentManager fragmentManager2 = getFragmentManager();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         ShowResultFragment showResultFragment=ShowResultFragment.newInstance();
-        fragmentManager2.beginTransaction()
+        fragmentManager.beginTransaction()
                 .replace(R.id.fl_container, showResultFragment)
                 .commit();
     }

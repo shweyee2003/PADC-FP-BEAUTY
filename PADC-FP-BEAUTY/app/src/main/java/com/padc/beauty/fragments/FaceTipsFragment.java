@@ -6,8 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.TipAdapter;
 import com.padc.beauty.utils.BeautyAppConstant;
@@ -26,6 +29,15 @@ public class FaceTipsFragment extends Fragment {
 
     @BindView(R.id.sp_tip_list)
     Spinner sptiplist;
+
+    @BindView(R.id.tv_facetip_title)
+    TextView tvfacetiptitle;
+
+    @BindView(R.id.tv_facetip_desc1)
+    TextView tvfacetipdesc;
+
+    @BindView(R.id.iv_tipfaceimg)
+    ImageView ivfacetip;
 
     private TipAdapter mTipListAdapter;
 
@@ -52,7 +64,18 @@ public class FaceTipsFragment extends Fragment {
         ButterKnife.bind(this, rootView);
 
         sptiplist.setAdapter(mTipListAdapter);
-
+        showdata();
         return rootView;
+    }
+
+    private void showdata()
+    {
+        tvfacetiptitle.setText(R.string.face_title);
+        tvfacetipdesc.setText(R.string.sample_facetips);
+        // String imageUrl = MyanmarAttractionsConstants.IMAGE_ROOT_DIR + attraction.getImages()[0];
+        Glide.with(ivfacetip.getContext())
+                .load(R.drawable.hair1)
+                .centerCrop()
+                .into(ivfacetip);
     }
 }

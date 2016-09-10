@@ -28,16 +28,6 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//                Intent intentDetail = new Intent(HomeActivity.this,SpecialtipActivity.class);
-//                startActivity(intentDetail);
-//            }
-//        });
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, TipsPagerFragment.newInstance())
                 .commit();

@@ -29,7 +29,7 @@
     <string name="sample_facetips">You must have circular or full hair style.You must have circular or full hair style.You must have circular or full hair style.</string>
 
     <string name="skin_title">Normal Skin</string>
-    <string name="face_title">Long Face</string>
+    <string name="face_title">Round Face</string>
 
     <string name="beauty_tips">Tips</string>
     <string name="dressing">Dressing</string>
@@ -50,14 +50,17 @@
         <item>Diamond Body Type</item>
     </string-array>
 
-    <string name="title_body_shape">Pear body shape</string>
-    <string name="body_shape_desc">Pear body traits: Your lower body is wider than your upper body — in other words, your hips are wider than your shoulders. Your bottom is rounded and your waist is well-defined.
-Your best assets: Shoulders and torso
-Your fashion goals: Emphasize your waist and arms, add volume to your shoulders and upper body</string>
+    <string name="title_body_shape">Fat and Short</string>
+    <string name="bd_description">While you are what are described above, it is not always true that you can wear everything you want. Clothing colors should also coordinate to your skin tone and hair.</string>
     <string name="body_doanddont">Dos and Donts</string>
     <string name="body_dos">DO try A-line skirts</string>
     <string name="body_dos1">DO keep hems of pants, skirts and dresses wide to balance the hips.</string>
     <string name="title_activity_special_tips">SpecialTipsActivity</string>
     <string name="title_activity_specialtip">SpecialtipActivity</string>
+
+    <string name="sample_skintips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
+    <string name="sample_bodyshapetips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
+
+    <string name="body_title">Thin and Tall</string>
 
 </resources>
