@@ -2,22 +2,28 @@ package com.padc.beauty.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.widget.Toast;
 import com.padc.beauty.R;
 import com.padc.beauty.fragments.TipsPagerFragment;
+import com.padc.beauty.utils.MMFontUtils;
 
-
-
-public class HomeActivity extends AppCompatActivity  {
-
+public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
+        MenuItemCompat.OnActionExpandListener{
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
 
 
     @Override
@@ -27,12 +33,21 @@ public class HomeActivity extends AppCompatActivity  {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, TipsPagerFragment.newInstance())
                 .commit();
 
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            //actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        Menu leftMenu = navigationView.getMenu();
+        MMFontUtils.applyMMFontToMenu(leftMenu);
+        navigationView.setNavigationItemSelectedListener(this);
 
     }
 
@@ -51,15 +66,31 @@ public class HomeActivity extends AppCompatActivity  {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch(id) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+            case R.id.action_settings:
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onMenuItemActionExpand(MenuItem item) {
+        return false;
+    }
 
+    @Override
+    public boolean onMenuItemActionCollapse(MenuItem item) {
+        return false;
+    }
 
-
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return false;
+    }
 
 }
