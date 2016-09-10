@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 
+import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.BodyshapeListAdapter;
 
@@ -36,8 +37,8 @@ public class BodyshapeFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String[] bodyshapeListArray = getResources().getStringArray(R.array.body_shape);
-        List<String> bodyshapeList = new ArrayList<>(Arrays.asList(bodyshapeListArray));
+        String[] tipListArray = getResources().getStringArray(R.array.Body_Shape_tip_list);
+        List<String> bodyshapeList = new ArrayList<>(Arrays.asList(tipListArray));
 
         mBodyshapeListAdapter = new BodyshapeListAdapter(bodyshapeList);
     }
@@ -48,6 +49,9 @@ public class BodyshapeFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_bodyshape, container, false);
         ButterKnife.bind(this, rootView);
         spBodyshapeList.setAdapter(mBodyshapeListAdapter);
+
         return rootView;
     }
+
+    
 }
