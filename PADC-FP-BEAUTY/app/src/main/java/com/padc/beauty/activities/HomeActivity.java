@@ -1,5 +1,6 @@
 package com.padc.beauty.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -17,7 +18,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import com.padc.beauty.R;
+
 import com.padc.beauty.fragments.TipsPagerFragment;
+
+import com.padc.beauty.fragments.BodyshapeFragment;
+
 import com.padc.beauty.utils.MMFontUtils;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
@@ -33,9 +38,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, TipsPagerFragment.newInstance())
                 .commit();
+
 
         final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -48,6 +55,10 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Menu leftMenu = navigationView.getMenu();
         MMFontUtils.applyMMFontToMenu(leftMenu);
         navigationView.setNavigationItemSelectedListener(this);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, BodyshapeFragment.newInstance())
+                .commit();
 
     }
 
