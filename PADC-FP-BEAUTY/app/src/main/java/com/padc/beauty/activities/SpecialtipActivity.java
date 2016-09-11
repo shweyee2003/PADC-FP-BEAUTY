@@ -33,7 +33,7 @@ public class SpecialtipActivity extends AppCompatActivity implements SpecialtipA
 
     @Override
     public void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();;
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fl_container, fragment, fragment.toString());
         fragmentTransaction.addToBackStack(fragment.toString());

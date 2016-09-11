@@ -25,13 +25,16 @@
         <item>Fat and Short</item>
         <item>Thin and Short</item>
     </string-array>
-
     <string name="skin_title">MakeUp For Oily Skin</string>
     <string name="face_title">Hair Style For Round Face</string>
     <string name="face_title1">Accessories for Round face</string>
     <string name="skin_title1">Foundation For Oily Skin</string>
     <string name="body_title">Fashion for Pear Body</string>
     <string name="body_title1">Not Match Fashion for Pear Body</string>
+    <string name="sample_facetips"><![CDATA[<p> <b>Adding volume on the top of your head will help elongate your face.</b> To achieve this look take some voluminizing gel and gently apply it to the roots of your hair</p>
+    <p><b>A hairdo that sits close to the sides of your face</b> will visually slim down your cheekbones and chin by keep drawing the eye down and up, instead of to the sides</p>
+    <p><b>Below the chin haircuts</b> help draw the eye up and down and make your face look more angular.</p>]]></string>
+
 
     <string name="beauty_tips">Tips</string>
     <string name="dressing">Dressing</string>
@@ -60,7 +63,7 @@
     <string name="title_activity_special_tips">SpecialTipsActivity</string>
     <string name="title_activity_specialtip">SpecialtipActivity</string>
 
-    <string name="sample_facetips">If you have a round face like these lovely ladies, try their cuts for a style that will dazzle your features.Round faces can look beautiful with either short or long hair.Wearing your hair straight will only emphasis the roundness of your face.Loose waves work better than tight curls.If you have big curls, then it will make your face look wide and round, which it already is.</string>
+
     <string name="sample_facetips1">V-necks are not good, but bows and soft cowls are fine</string>
     <string name="sample_skintips">
 Conceal your blemishes. Oily skin is prone to breakouts and blemishes. Applying light layers of liquid matte concealer will help to minimize these imperfections without causing new breakouts. Use the wand or a concealer brush to cover your dark circles, red marks, and imperfections.

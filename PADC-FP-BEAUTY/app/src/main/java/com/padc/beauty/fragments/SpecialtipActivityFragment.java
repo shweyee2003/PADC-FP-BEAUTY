@@ -64,14 +64,9 @@ public class SpecialtipActivityFragment extends Fragment {
         lblTipsTitle.setText("Special Tips for you");
         return rootView;
     }
+
     @OnClick(R.id.btn_ok)
     public void onTapOk(Button btnOk) {
-//        FragmentManager fragmentManager = getChildFragmentManager();
-//        ShowResultFragment showResultFragment=ShowResultFragment.newInstance();
-//        fragmentManager.beginTransaction()
-//                .replace(R.id.fl_container, showResultFragment)
-//                .commit();
-        Toast.makeText(getContext(),"Test",Toast.LENGTH_SHORT).show();
         Fragment fr=new ShowResultFragment();
         FragmentChangeListener fc=(FragmentChangeListener)getActivity();
         fc.replaceFragment(fr);

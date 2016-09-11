@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,7 +95,7 @@ public class FaceTipsFragment extends Fragment {
         int randomInt = random.nextInt(3);
 
         Toast.makeText(getContext(),"ImageRandom"+mThumbIds.length,Toast.LENGTH_SHORT).show();
-
+        tvfacetipdesc.setText(Html.fromHtml(getString(R.string.sample_facetips)));
         // String imageUrl = MyanmarAttractionsConstants.IMAGE_ROOT_DIR + attraction.getImages()[0];
         Glide.with(ivfacetip.getContext())
                 .load(mThumbIds[randomInt])
