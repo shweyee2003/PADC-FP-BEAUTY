@@ -32,49 +32,16 @@
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:text="Hair Style for round face"/>
 
-
-
-
-            <!--<HorizontalScrollView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginLeft="@dimen/margin_medium"-->
-            <!--android:layout_marginRight="@dimen/margin_medium"-->
-            <!--&gt;-->
-            <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="@dimen/margin_medium"-->
-            <!--android:orientation="horizontal">-->
             <com.padc.beauty.components.DynamicHeightImageView
                 android:id="@+id/iv_tipfaceimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="@dimen/margin_small" />
-            <!--<com.padc.beauty.components.DynamicHeightImageView-->
-            <!--android:id="@+id/iv_tipfaceimg2"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="@dimen/margin_small"-->
-            <!--android:layout_weight="1"-->
-            <!--android:src="@drawable/hair2"-->
-            <!--/>-->
-            <!--<com.padc.beauty.components.DynamicHeightImageView-->
-            <!--android:id="@+id/iv_tipfaceimg3"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_margin="@dimen/margin_small"-->
-            <!--android:layout_weight="1"-->
-            <!--android:src="@drawable/hair1"-->
-            <!--/>-->
-
-            <!--</LinearLayout>-->
-            <!--</HorizontalScrollView>-->
 
 
             <TextView
-                android:id="@+id/tv_facetip_desc1"
+                android:id="@+id/tv_facetip_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
@@ -88,7 +55,7 @@
                 android:textColor="@color/primary_text" />
 
             <TextView
-                android:id="@+id/tv_facetip_title2"
+                android:id="@+id/tv_facetip_title1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/text_regular_3x"
@@ -97,7 +64,7 @@
                 android:text="Accessories for round face"/>
 
             <com.padc.beauty.components.DynamicHeightImageView
-                android:id="@+id/iv_tipfaceimg2"
+                android:id="@+id/iv_tipfaceimg1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -105,7 +72,7 @@
                 android:src="@drawable/accessories_for_roundface"/>
 
             <TextView
-                android:id="@+id/tv_facetip_desc2"
+                android:id="@+id/tv_facetip_desc1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"

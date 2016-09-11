@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnItemSelected;
 
 /**
  * Created by windows on 9/6/2016.
@@ -50,6 +52,15 @@ public class SkinTipsFragment extends Fragment {
 
     @BindView(R.id.iv_tipskinimg)
     ImageView ivskintip;
+
+    @BindView(R.id.tv_skintip_title1)
+    TextView tvskintiptitle1;
+
+    @BindView(R.id.tv_skintip_desc1)
+    TextView tvskintipdesc1;
+
+    @BindView(R.id.iv_tipskinimg1)
+    ImageView ivskintip1;
 
     private TipAdapter mTipListAdapter;
 
@@ -83,10 +94,25 @@ public class SkinTipsFragment extends Fragment {
     {
         tvskintiptitle.setText(R.string.skin_title);
         tvskintipdesc.setText(R.string.sample_skintips);
+        tvskintiptitle1.setText(R.string.skin_title1);
+        tvskintipdesc1.setText(R.string.sample_skintips1);
+
         Glide.with(ivskintip.getContext())
-                .load(R.drawable.hair1)
-                .centerCrop()
+                .load(R.drawable.makeupbaseforoilyskin)
+             //   .centerCrop()
                 .into(ivskintip);
+
+        Glide.with(ivskintip1.getContext())
+                .load(R.drawable.liquidfoundationforoilyskin)
+             //   .centerCrop()
+                .into(ivskintip1);
+    }
+
+    @OnItemSelected(R.id.sp_tip_list)
+    public void OnSelectedSpinner(){
+        String spinnertext=sptiplist.getSelectedItem().toString();
+   //     tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+//        Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
     }
 
 }
