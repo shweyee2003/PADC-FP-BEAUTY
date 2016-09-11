@@ -1,5 +1,6 @@
 package com.padc.beauty.fragments;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -32,12 +33,17 @@ public class SpecialtipActivityFragment extends Fragment {
     @BindView(R.id.lbl_tips_title)
     TextView lblTipsTitle;
     private BodyshapeListAdapter mBodyshapeListAdapter;
-
+    private FragmentChangeListener mChangeFragment;
     public static SpecialtipActivityFragment newInstance() {
         SpecialtipActivityFragment fragment = new SpecialtipActivityFragment();
         return fragment;
     }
     public SpecialtipActivityFragment() {
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mChangeFragment = (FragmentChangeListener) context;
     }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,10 +66,18 @@ public class SpecialtipActivityFragment extends Fragment {
     }
     @OnClick(R.id.btn_ok)
     public void onTapOk(Button btnOk) {
-        FragmentManager fragmentManager = getChildFragmentManager();
-        ShowResultFragment showResultFragment=ShowResultFragment.newInstance();
-        fragmentManager.beginTransaction()
-                .replace(R.id.fl_container, showResultFragment)
-                .commit();
+//        FragmentManager fragmentManager = getChildFragmentManager();
+//        ShowResultFragment showResultFragment=ShowResultFragment.newInstance();
+//        fragmentManager.beginTransaction()
+//                .replace(R.id.fl_container, showResultFragment)
+//                .commit();
+        Toast.makeText(getContext(),"Test",Toast.LENGTH_SHORT).show();
+        Fragment fr=new ShowResultFragment();
+        FragmentChangeListener fc=(FragmentChangeListener)getActivity();
+        fc.replaceFragment(fr);
+    }
+
+    public interface FragmentChangeListener {
+        public void replaceFragment(Fragment fragment);
     }
 }
