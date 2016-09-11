@@ -1,5 +1,6 @@
 package com.padc.beauty.fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -53,6 +54,9 @@ public class FaceTipsFragment extends Fragment {
 
     private TipAdapter mTipListAdapter;
 
+
+    private Integer[] mThumbIds = {R.drawable.special_hair_style1,R.drawable.special_hair_style2,R.drawable.special_hair_style3};
+
     public static FaceTipsFragment newInstance(){
         FaceTipsFragment faceTipsFragment=new FaceTipsFragment();
 
@@ -89,11 +93,11 @@ public class FaceTipsFragment extends Fragment {
         Random random = new Random();
         int randomInt = random.nextInt(3);
 
-        Toast.makeText(getContext(),"ImageRandom"+randomInt,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(),"ImageRandom"+mThumbIds.length,Toast.LENGTH_SHORT).show();
 
         // String imageUrl = MyanmarAttractionsConstants.IMAGE_ROOT_DIR + attraction.getImages()[0];
         Glide.with(ivfacetip.getContext())
-                .load(R.drawable.special_hair_style1)
+                .load(mThumbIds[randomInt])
              //   .centerCrop()
                 .into(ivfacetip);
 
@@ -108,6 +112,6 @@ public class FaceTipsFragment extends Fragment {
     public void OnSelectedSpinner(){
         String spinnertext=sptiplist.getSelectedItem().toString();
       //  tvfacetiptitle.setText(sptiplist.getSelectedItem().toString());
-       // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+       Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
     }
 }
