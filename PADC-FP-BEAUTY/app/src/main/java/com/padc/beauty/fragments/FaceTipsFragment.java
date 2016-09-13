@@ -1,6 +1,5 @@
 package com.padc.beauty.fragments;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.TipAdapter;
-import com.padc.beauty.utils.BeautyAppConstant;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,19 +42,29 @@ public class FaceTipsFragment extends Fragment {
     @BindView(R.id.iv_tipfaceimg)
     ImageView ivfacetip;
 
-    @BindView(R.id.tv_facetip_title1)
-    TextView tvfacetiptitle1;
+    @BindView(R.id.tv_sunglasstip_title)
+    TextView tvsunglasstiptitle;
 
-    @BindView(R.id.tv_facetip_desc1)
-    TextView tvfacetipdesc1;
+    @BindView(R.id.tv_sunglasstip_desc)
+    TextView tvsunglasstipdesc;
 
-    @BindView(R.id.iv_tipfaceimg1)
-    ImageView ivfacetip1;
+    @BindView(R.id.iv_sunglasstip)
+    ImageView ivsunglasstip;
+
+    @BindView(R.id.tv_jewelrytip_title)
+    TextView tvjewlrytiptitle;
+
+    @BindView(R.id.tv_jewelrytip_desc)
+    TextView tvjewlrytipdesc;
+
+    @BindView(R.id.iv_jewelrytip)
+    ImageView ivjewelrytip;
 
     private TipAdapter mTipListAdapter;
 
 
-    private Integer[] mThumbIds = {R.drawable.special_hair_style1,R.drawable.special_hair_style2,R.drawable.special_hair_style3};
+    private Integer[] mhairstyleids = {R.drawable.special_hair_style1,R.drawable.special_hair_style2,R.drawable.special_hair_style3};
+
 
     public static FaceTipsFragment newInstance(){
         FaceTipsFragment faceTipsFragment=new FaceTipsFragment();
@@ -87,26 +95,33 @@ public class FaceTipsFragment extends Fragment {
 
     private void showdata()
     {
-        tvfacetiptitle.setText(R.string.face_title);
-        tvfacetipdesc.setText(R.string.sample_facetips);
-        tvfacetiptitle1.setText(R.string.face_title1);
-        tvfacetipdesc1.setText(R.string.sample_facetips1);
+        tvfacetiptitle.setText(R.string.hairstyle_facetip_title);
+        tvsunglasstiptitle.setText(R.string.sunglass_facetip_title);
+        tvjewlrytiptitle.setText(R.string.jewlery_facetip_title);
+
         Random random = new Random();
         int randomInt = random.nextInt(3);
 
-        Toast.makeText(getContext(),"ImageRandom"+mThumbIds.length,Toast.LENGTH_SHORT).show();
-        tvfacetipdesc.setText(Html.fromHtml(getString(R.string.sample_facetips)));
-        // String imageUrl = MyanmarAttractionsConstants.IMAGE_ROOT_DIR + attraction.getImages()[0];
+      //  Toast.makeText(getContext(),"ImageRandom"+ mhairstyleids.length,Toast.LENGTH_SHORT).show();
+        tvfacetipdesc.setText(Html.fromHtml(getString(R.string.hairstyle_facetips)));
+        tvsunglasstipdesc.setText(Html.fromHtml(getString(R.string.sunglasses_facetips)));
+        tvjewlrytipdesc.setText(Html.fromHtml(getString(R.string.jewellery_facetips)));
+
         Glide.with(ivfacetip.getContext())
-                .load(mThumbIds[randomInt])
+                .load(mhairstyleids[randomInt])
              //   .centerCrop()
                 .into(ivfacetip);
 
-        // String imageUrl = MyanmarAttractionsConstants.IMAGE_ROOT_DIR + attraction.getImages()[0];
-        Glide.with(ivfacetip1.getContext())
-                .load(R.drawable.jewelleryforroundface)
+
+        Glide.with(ivsunglasstip.getContext())
+                .load(R.drawable.sunglassforroundface)
               //  .centerCrop()
-                .into(ivfacetip1);
+                .into(ivsunglasstip);
+
+        Glide.with(ivjewelrytip.getContext())
+                .load(R.drawable.accessories_for_roundface)
+                //  .centerCrop()
+                .into(ivjewelrytip);
     }
 
     @OnItemSelected(R.id.sp_tip_list)

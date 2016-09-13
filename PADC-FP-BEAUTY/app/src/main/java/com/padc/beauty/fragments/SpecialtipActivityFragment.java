@@ -4,17 +4,19 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.BodyshapeListAdapter;
+import com.padc.beauty.adapters.SkinTipAdapter;
+import com.padc.beauty.adapters.TipAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,12 +30,24 @@ import butterknife.OnClick;
  * A placeholder fragment containing a simple view.
  */
 public class SpecialtipActivityFragment extends Fragment {
-    @BindView(R.id.sp_bodyshape)
-    Spinner spBodyshapeList;
+    @BindView(R.id.rdgrp_face)
+    RadioGroup rdface;
+
+    @BindView(R.id.rdo_skin)
+    RadioGroup rdskin;
+
+    @BindView(R.id.sp_bodyshapequest)
+    Spinner spBodyShapeList;
+
     @BindView(R.id.lbl_tips_title)
     TextView lblTipsTitle;
+
     private BodyshapeListAdapter mBodyshapeListAdapter;
+    private SkinTipAdapter mSkinTipListAdapter;
+    private TipAdapter mFaceTipAdapter;
+
     private FragmentChangeListener mChangeFragment;
+
     public static SpecialtipActivityFragment newInstance() {
         SpecialtipActivityFragment fragment = new SpecialtipActivityFragment();
         return fragment;
@@ -48,10 +62,18 @@ public class SpecialtipActivityFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         String[] bodyshapeListArray = getResources().getStringArray(R.array.body_shape);
         List<String> bodyshapeList = new ArrayList<>(Arrays.asList(bodyshapeListArray));
-
         mBodyshapeListAdapter = new BodyshapeListAdapter(bodyshapeList);
+
+//        String[]faceshapeListArray = getResources().getStringArray(R.array.face_tip_list);
+//        List<String> faceshapeList = new ArrayList<>(Arrays.asList(faceshapeListArray));
+//        mFaceTipAdapter = new TipAdapter(faceshapeList);
+//
+//        String[]skintipListArray = getResources().getStringArray(R.array.Skin_Type_tip_list);
+//        List<String> skintipList = new ArrayList<>(Arrays.asList(skintipListArray));
+//        mSkinTipListAdapter = new SkinTipAdapter(skintipList);
     }
 
 
@@ -60,7 +82,9 @@ public class SpecialtipActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_specialtip, container, false);
         ButterKnife.bind(this, rootView);
-        spBodyshapeList.setAdapter(mBodyshapeListAdapter);
+        spBodyShapeList.setAdapter(mBodyshapeListAdapter);
+//        spFaceList.setAdapter(mFaceTipAdapter);
+//        spSkinList.setAdapter(mSkinTipListAdapter);
         lblTipsTitle.setText("Special Tips for you");
         return rootView;
     }
@@ -71,6 +95,7 @@ public class SpecialtipActivityFragment extends Fragment {
         FragmentChangeListener fc=(FragmentChangeListener)getActivity();
         fc.replaceFragment(fr);
     }
+
 
     public interface FragmentChangeListener {
         public void replaceFragment(Fragment fragment);

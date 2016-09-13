@@ -5,49 +5,140 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".fragments.SpecialtipActivityFragment"
     tools:showIn="@layout/activity_specialtip">
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#ffffff">
-        <TextView
+        android:layout_gravity="fill_vertical"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:layout_marginLeft="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:background="@color/text_white_ish">
+        <com.padc.beauty.components.MMTextView
             android:id="@+id/lbl_tips_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
             android:textColor="@color/text_white_ish"
-            android:padding="@dimen/margin_medium_2"
+            android:textSize="@dimen/text_regular_3x"
+            android:padding="@dimen/margin_medium"
             android:background="?attr/colorPrimary"
             android:drawableRight="@drawable/ic_clear_24dp"
-            android:drawablePadding="@dimen/margin_medium"
-            />
-        <TextView
-            android:id="@+id/tv_quest1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Choose your Face Type"
-            android:padding="5dp"
-            android:layout_below="@id/lbl_tips_title"/>
-        <Spinner
-            android:id="@+id/sp_bodyshape"
-            android:layout_width="@dimen/input_box_width"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_quest1"
-            android:layout_marginLeft="@dimen/margin_medium"
-            android:layout_marginRight="@dimen/margin_medium"
-            />
-
-        <Button
-            android:id="@+id/btn_ok"
-            style="@style/AccentButton"
+            android:drawablePadding="@dimen/margin_medium" />
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sp_bodyshape"
-            android:layout_margin="@dimen/margin_medium_2"
-            android:text="OK" />
-    </RelativeLayout>
+            android:layout_marginBottom="@dimen/margin_medium">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.padc.beauty.components.MMTextView
+                    android:id="@+id/tv_facequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/facetypeques"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium" />
+                <RadioGroup
+                    android:id="@+id/rdgrp_face"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_facequest">
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/longface"
+                        android:layout_marginTop="@dimen/margin_small"/>
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/roundface"
+                        android:layout_marginTop="@dimen/margin_small"/>
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ovalface"
+                        android:layout_marginTop="@dimen/margin_small"/>
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/squareface"
+                        android:layout_marginTop="@dimen/margin_small"/>
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/heartface"
+                        android:layout_marginTop="@dimen/margin_small"/>
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/diamondface"
+                        android:layout_marginTop="@dimen/margin_small"/>
+                </RadioGroup>
+                <com.padc.beauty.components.MMTextView
+                    android:id="@+id/tv_skinquest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skinques"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:layout_below="@id/rdgrp_face"/>
+                <RadioGroup
+                    android:id="@+id/rdo_skin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_skinquest">
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/coolskin"
+                        android:layout_marginTop="@dimen/margin_small"/>
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/warmskin"
+                        android:layout_marginTop="@dimen/margin_small"/>
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/meduimskin"
+                        android:layout_marginTop="@dimen/margin_small"/>
+                </RadioGroup>
+                <com.padc.beauty.components.MMTextView
+                    android:id="@+id/tv_bodyshapequest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bodyshapeques"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:layout_below="@id/rdo_skin"/>
+                <Spinner
+                    android:id="@+id/sp_bodyshapequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_bodyshapequest"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginRight="@dimen/margin_medium" />
+                <Button
+                    android:id="@+id/btn_ok"
+                    style="@style/AccentButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_medium_2"
+                    android:layout_below="@id/sp_bodyshapequest"
+                    android:textColor="@color/primary"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="@dimen/text_regular"
+                    android:text="Best Style For You" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+     </LinearLayout>
+
 </FrameLayout>
