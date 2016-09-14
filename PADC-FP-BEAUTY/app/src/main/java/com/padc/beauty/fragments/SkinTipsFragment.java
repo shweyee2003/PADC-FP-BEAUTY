@@ -3,13 +3,13 @@ package com.padc.beauty.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
@@ -44,23 +44,50 @@ public class SkinTipsFragment extends Fragment {
     @BindView(R.id.sp_tip_list)
     Spinner sptiplist;
 
-    @BindView(R.id.tv_skintip_title)
-    TextView tvskintiptitle;
+    @BindView(R.id.tv_foundation_title)
+    TextView tvfoundationtitle;
 
-    @BindView(R.id.tv_skintip_desc)
-    TextView tvskintipdesc;
+    @BindView(R.id.tv_foundation_desc)
+    TextView tvfoundationdesc;
 
-    @BindView(R.id.iv_tipskinimg)
-    ImageView ivskintip;
+    @BindView(R.id.iv_foundation)
+    ImageView ivfoundation;
 
-    @BindView(R.id.tv_skintip_title1)
-    TextView tvskintiptitle1;
+    @BindView(R.id.tv_powder_title)
+    TextView tvpowdertitle;
 
-    @BindView(R.id.tv_skintip_desc1)
-    TextView tvskintipdesc1;
+    @BindView(R.id.tv_powder_desc)
+    TextView tvpowderdesc;
 
-    @BindView(R.id.iv_tipskinimg1)
-    ImageView ivskintip1;
+    @BindView(R.id.iv_powder)
+    ImageView ivpowder;
+
+    @BindView(R.id.tv_lipstick_title)
+    TextView tvlipsticktitle;
+
+    @BindView(R.id.tv_lipstick_desc)
+    TextView tvlipstickdesc;
+
+    @BindView(R.id.iv_lipstick)
+    ImageView ivlipstick;
+
+    @BindView(R.id.tv_eyeshadow_title)
+    TextView tveyeshadowtitle;
+
+    @BindView(R.id.tv_eyeshadow_desc)
+    TextView tveyeshadowdesc;
+
+    @BindView(R.id.iv_eyeshadow)
+    ImageView iveyeshadow;
+
+    @BindView(R.id.tv_blush_title)
+    TextView tvblushtitle;
+
+    @BindView(R.id.tv_blush_desc)
+    TextView tvblushdesc;
+
+    @BindView(R.id.iv_blush)
+    ImageView ivblush;
 
     private TipAdapter mTipListAdapter;
 
@@ -73,7 +100,7 @@ public class SkinTipsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String[] tipListArray = getResources().getStringArray(R.array.Skin_Type_tip_list);
+        String[] tipListArray = getResources().getStringArray(R.array.Skin_Tone_tip_list);
         List<String> tipList = new ArrayList<>(Arrays.asList(tipListArray));
 
         mTipListAdapter = new TipAdapter(tipList);
@@ -92,20 +119,42 @@ public class SkinTipsFragment extends Fragment {
 
     private void showdata()
     {
-        tvskintiptitle.setText(R.string.skin_title);
-        tvskintipdesc.setText(R.string.sample_skintips);
-        tvskintiptitle1.setText(R.string.skin_title1);
-        tvskintipdesc1.setText(R.string.sample_skintips1);
+        tvfoundationtitle.setText(R.string.foundation_skintone_title);
+        tvpowdertitle.setText(R.string.powder_skintone_title);
+        tvlipsticktitle.setText(R.string.lipstick_skintone_title);
+        tveyeshadowtitle.setText(R.string.eyeshadow_skintone_title);
+        tvblushtitle.setText(R.string.blush_skintone_title);
 
-        Glide.with(ivskintip.getContext())
-                .load(R.drawable.makeupbaseforoilyskin)
-             //   .centerCrop()
-                .into(ivskintip);
+        tvfoundationdesc.setText(R.string.foundation_skintone_desc);
+        tvpowderdesc.setText(R.string.powder_skintone_desc);
+        tvlipstickdesc.setText(R.string.lipstick_skintone_desc);
+        tveyeshadowdesc.setText(R.string.eyeshadow_skintone_desc);
+        tvblushdesc.setText(Html.fromHtml(getString(R.string.blush_skintone_desc)));
 
-        Glide.with(ivskintip1.getContext())
-                .load(R.drawable.liquidfoundationforoilyskin)
+        Glide.with(ivfoundation.getContext())
+                .load(R.drawable.yellowbasedmakeup)
              //   .centerCrop()
-                .into(ivskintip1);
+                .into(ivfoundation);
+
+        Glide.with(ivpowder.getContext())
+                .load(R.drawable.yellowbasedpowder)
+             //   .centerCrop()
+                .into(ivpowder);
+
+        Glide.with(ivlipstick.getContext())
+                .load(R.drawable.lipstickforwarmskintone)
+                //   .centerCrop()
+                .into(ivlipstick);
+
+        Glide.with(iveyeshadow.getContext())
+                .load(R.drawable.colorforwarmskintone)
+                //   .centerCrop()
+                .into(iveyeshadow);
+
+        Glide.with(ivblush.getContext())
+                .load(R.drawable.blushcolorforwarmskintone)
+                //   .centerCrop()
+                .into(ivblush);
     }
 
     @OnItemSelected(R.id.sp_tip_list)

@@ -9,81 +9,86 @@
         android:id="@+id/sp_tip_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_margin="8dp"
         android:layout_gravity="right"/>
-
-
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_medium_2">
 
 
-            <TextView
+            <com.padc.beauty.components.MMTextView
                 android:id="@+id/tv_facetip_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_regular_3x"
-                android:textColor="@color/primary_text"
                 android:layout_marginLeft="@dimen/margin_medium"
-                android:text="Hair Style for round face"/>
+                style="@style/TitleTextStyle" />
 
             <com.padc.beauty.components.DynamicHeightImageView
                 android:id="@+id/iv_tipfaceimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/margin_small" />
 
 
-            <TextView
+            <com.padc.beauty.components.MMTextView
                 android:id="@+id/tv_facetip_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:lineSpacingMultiplier="1.2"
-                android:ellipsize="end"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginRight="@dimen/margin_medium"
-                android:textSize="@dimen/text_regular"
-                android:textColor="@color/primary_text" />
+                style="@style/DescTextStyle"/>
 
-            <TextView
-                android:id="@+id/tv_facetip_title1"
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_sunglasstip_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_regular_3x"
-                android:textColor="@color/primary_text"
                 android:layout_marginLeft="@dimen/margin_medium"
-                android:text="Accessories for round face"/>
+                style="@style/TitleTextStyle"/>
 
             <com.padc.beauty.components.DynamicHeightImageView
-                android:id="@+id/iv_tipfaceimg1"
+                android:id="@+id/iv_sunglasstip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/margin_small"
                 android:src="@drawable/accessories_for_roundface"/>
 
-            <TextView
-                android:id="@+id/tv_facetip_desc1"
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_sunglasstip_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:lineSpacingMultiplier="1.2"
-                android:maxLines="4"
-                android:ellipsize="end"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginRight="@dimen/margin_medium"
-                android:textSize="@dimen/text_regular"
-                android:textColor="@color/primary_text"
-                android:text="V-necks are not good, but bows and soft cowls are fine"/>
+                style="@style/DescTextStyle"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_jewelrytip_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                style="@style/TitleTextStyle"/>
+
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_jewelrytip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_jewelrytip_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                style="@style/DescTextStyle"/>
         </LinearLayout>
     </ScrollView>
 

@@ -9,70 +9,130 @@
         android:id="@+id/sp_tip_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_margin="8dp"
         android:layout_gravity="right"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/tv_skintip_title"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/margin_medium_2">
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_foundation_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_heading_1x"
-                android:textColor="@color/primary_text"
-                android:layout_marginLeft="@dimen/margin_medium" />
+                android:layout_marginLeft="@dimen/margin_medium"
+                style="@style/TitleTextStyle"/>
 
             <com.padc.beauty.components.DynamicHeightImageView
-                android:id="@+id/iv_tipskinimg"
+                android:id="@+id/iv_foundation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_small"/>
 
-            <TextView
-                android:id="@+id/tv_skintip_desc"
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_foundation_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:lineSpacingMultiplier="1.2"
-                android:maxLines="4"
-                android:ellipsize="end"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginRight="@dimen/margin_medium"
-                android:textSize="@dimen/text_regular"
-                android:textColor="@color/primary_text"/>
+                android:layout_marginBottom="@dimen/margin_small"
+                style="@style/DescTextStyle"/>
 
-            <TextView
-                android:id="@+id/tv_skintip_title1"
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_powder_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/text_heading_1x"
-                android:textColor="@color/primary_text"
-                android:layout_marginLeft="@dimen/margin_medium" />
+                android:layout_marginLeft="@dimen/margin_medium"
+                style="@style/TitleTextStyle"/>
 
             <com.padc.beauty.components.DynamicHeightImageView
-                android:id="@+id/iv_tipskinimg1"
+                android:id="@+id/iv_powder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_small"/>
 
-            <TextView
-                android:id="@+id/tv_skintip_desc1"
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_powder_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:lineSpacingMultiplier="1.2"
-                android:maxLines="4"
-                android:ellipsize="end"
                 android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginLeft="@dimen/margin_medium"
                 android:layout_marginRight="@dimen/margin_medium"
-                android:textSize="@dimen/text_regular"
-                android:textColor="@color/primary_text"/>
+                android:layout_marginBottom="@dimen/margin_small"
+                style="@style/DescTextStyle"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_lipstick_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                style="@style/TitleTextStyle"/>
+
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_lipstick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_lipstick_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_small"
+                style="@style/DescTextStyle"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_eyeshadow_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                style="@style/TitleTextStyle"/>
+
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_eyeshadow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_eyeshadow_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_small"
+                style="@style/DescTextStyle"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_blush_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                style="@style/TitleTextStyle"/>
+
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_blush"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"/>
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_blush_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                style="@style/DescTextStyle"/>
 
         </LinearLayout>
     </ScrollView>

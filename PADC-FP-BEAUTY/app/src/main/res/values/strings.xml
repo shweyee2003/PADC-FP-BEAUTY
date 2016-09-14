@@ -5,37 +5,87 @@
 
     <!--Tips -->
     <string name="face_tips">Face</string>
+    <string name="skin_tones">Skin Tones</string>
     <string name="skin_tips">Skin Type</string>
     <string name="body_tips">Body Shape</string>
+
+    <!--Face List-->
+    <string name="longface">Long Face</string>
+    <string name="roundface">Rounded Face</string>
+    <string name="ovalface">Oval Face</string>
+    <string name="squareface">Square Face</string>
+    <string name="heartface">Heart Face</string>
+    <string name="diamondface">Diamond Face</string>
 
     <string-array name="face_tip_list">
         <item>Long Face</item>
         <item>Rounded Face</item>
-        <item>Double Chin Face</item>
+        <item>Oval Face</item>
+        <item>Square Face</item>
+        <item>Heart Face</item>
+        <item>Diamond Face</item>
     </string-array>
 
-    <string-array name="Skin_Type_tip_list">
-        <item>Normal Skin</item>
-        <item>Oily Skin</item>
-        <item>Sencentive Skin</item>
+    <!--Face Tip  Title-->
+    <string name="hairstyle_facetip_title">Hair Style For Round Face</string>
+    <string name="sunglass_facetip_title">Sunglasses for Round face</string>
+    <string name="jewlery_facetip_title">Jewlery for Round face</string>
+
+    <!--Face Tip Desc-->
+     <string name="hairstyle_facetips"><![CDATA[<p> <b>Adding volume on the top of your head will help elongate your face.</b> To achieve this look take some voluminizing gel and gently apply it to the roots of your hair<br />
+    <b>A hairdo that sits close to the sides of your face</b> will visually slim down your cheekbones and chin by keep drawing the eye down and up, instead of to the sides
+    <br /><b>Below the chin haircuts</b> help draw the eye up and down and make your face look more angular.</p>]]></string>
+     <string name="sunglasses_facetips"><![CDATA[<p> Since your goal is to make the face look longer and thinner, your most flattering choice would be frames with <b>straight lines </b> but with slightly rounded corners and that are <b>slightly wider than the broadest part of the face</b>to make your face look trimmer and smaller in comparison.<br />Also, sunglasses should reflect the scale of your face - so if you have a wide/big face, look for oversized glasses. And vice versa for petite round faces. Also, de-emphasize the roundness by adding definition with angular but soft frame styles (eg. Rectangular with rounded corners). High temple glasses will also help elongate your face.</p>
+    ]]></string>
+    <string name="jewellery_facetips"><![CDATA[<p> <b>Long, slimming and somewhat angular jewelry are your best investments. </b> That includes oval and pointy earrings and pendants - so avoid the super chunky and horizontal ones.<br />Earrings should extend past your chin to draw attention to the neck and elongate it - anything above that will emphasize the roundness. However, simple studs like pearl and crystal stud earrings that are average in size (does not extend past the bottom of your ear flip) are universally flattering on all face shapes.<br />Also, large earrings (eg. Large hoops) will give an impression that your wide face is smaller and thinner. Just make sure they extend past your jawline.</p>
+    ]]></string>
+
+    <!--Skin Tone List-->
+    <string name="coolskin">Cool Skin Tone</string>
+    <string name="warmskin">Warm Skin Tone</string>
+    <string name="meduimskin">Meduim Skin Tone</string>
+
+    <string-array name="Skin_Tone_tip_list">
+        <item>Cool Skin Tone</item>
+        <item>Warm Skin Tone</item>
+        <item>Meduim Skin Tone</item>
     </string-array>
 
-    <string-array name="Body_Shape_tip_list">
-        <item>Thin and Tall</item>
-        <item>Fat and Short</item>
-        <item>Thin and Short</item>
+
+    <!--Warn Skin Tone Tip  Title-->
+    <string name="foundation_skintone_title">Foundation For Warm Skin Tone</string>
+    <string name="powder_skintone_title">Powder For Warm Skin Tone</string>
+    <string name="lipstick_skintone_title">Lipstick For Warm Skin Tone</string>
+    <string name="eyeshadow_skintone_title">Eyeshadow For Warm Skin Tone</string>
+    <string name="blush_skintone_title">Blush For Warm Skin Tone</string>
+
+    <!--Warn SkinTone Tip Desc-->
+    <string name="foundation_skintone_desc">The choice of the foundation is most important for women sporting the warm skin tone. Since this forms the base of the entire make-up, the color of the foundation must match with the undertones of the skin. The right choice is to pick the foundation which has yellow base. A variation in the subtle golden hues in the foundation will make your skin more appealing and attractive.</string>
+    <string name="powder_skintone_desc">A yellow based powder will go perfect with your skin tone. It is ideal to look for a loose powder which can be evenly patted or applied all over the face. Make sure to apply it on the T-zones of your face so as to control excessive oil.</string>
+    <string name="lipstick_skintone_desc">Shades of rose, purple and magenta must be your picks if you have a warm skin tone. Strictly refrain yourself from wearing stark shades of red and cherry as they would rather turn your natural look into an unflattering dramatic appeal. It is ideal examine the basic color of the lipstick on a sheet of white paper and then purchase the right shade.</string>
+    <string name="eyeshadow_skintone_desc">For your skin tone, hues of bronze, light brown, soft green are ideal. These shades will easily blend with the shade of your skin and render you a natural appeal. Choice of stark red, navy blue and cherry could be disastrous for your look.</string>
+    <string name="blush_skintone_desc"><![CDATA[<p>Bolder colors like rich bronzes, intense browns look the best on your skin tone and give a natural glow.<br />Refrain yourself from wearing shades that are absolute contrast to the natural shade of your skin. Colors like white, cream and beige will be appalling for your skin and call for unwanted attention. Further, extreme dark shades like intense reds, golds, and greens must also be avoided.</p>]]></string>
+
+
+    <!-- Body Shape-->
+    <string-array name="body_shape">
+        <item>Pear Body Type</item>
+        <item>Apple Body Type</item>
+        <item>Straight or Rectangle Body Type</item>
+        <item>Spoon Body Type</item>
+        <item>Hourglass Body Type</item>
     </string-array>
-    <string name="skin_title">MakeUp For Oily Skin</string>
-    <string name="face_title">Hair Style For Round Face</string>
-    <string name="face_title1">Accessories for Round face</string>
-    <string name="skin_title1">Foundation For Oily Skin</string>
-    <string name="body_title">Fashion for Pear Body</string>
-    <string name="body_title1">Not Match Fashion for Pear Body</string>
-    <string name="sample_facetips"><![CDATA[<p> <b>Adding volume on the top of your head will help elongate your face.</b> To achieve this look take some voluminizing gel and gently apply it to the roots of your hair</p>
-    <p><b>A hairdo that sits close to the sides of your face</b> will visually slim down your cheekbones and chin by keep drawing the eye down and up, instead of to the sides</p>
-    <p><b>Below the chin haircuts</b> help draw the eye up and down and make your face look more angular.</p>]]></string>
+
+    <!--bodyshape Title For Pear Body-->
+    <string name="bodyshape_dress_title">Dress for Pear Body</string>
+    <string name="bdshape_do_and_dont_title">Dos and Donts</string>
+
+    <string name="bdshape_desc_dress">The trick to dressing this body type is to wear anything that adds to your shoulder and bust area. Keep attention to your upper body, by minimizing the lower half.</string>
+
+     <string name="bdshape_desc_do_and_dont"><![CDATA[\n\u2022If you’re a pear body-type, there are things you can do to make your hips and butt look slimmer, if you want to make their butts bigger.<br />\n\u2022Balance your top with your bottom. Try to wear tops that accentuate your shoulders a bit more.<br />\n\u2022Avoid pants or tights that narrow your legs.<br />\n\u2022Wear straight-leg or slightly flared pants with heels. Skinny pants that hug your ankles can make your lower body take on the appearance of an upside-down triangle. Flared pants can make your legs look very thick, perhaps bowl-legged, in comparison to your upper body.]]></string>
 
 
+    <!--Menu-->
     <string name="beauty_tips">Tips</string>
     <string name="dressing">Dressing</string>
     <string name="personality">Personality Tips</string>
@@ -44,24 +94,25 @@
     <string name="tutorials">Tutorialsမ်ား </string>
     <string name="bookmark">Bookmark</string>
 
-    <string-array name="body_shape">
-        <item>Pear Body Type</item>
-        <item>Straight Body Type</item>
-        <item>Spoon Body Type</item>
-        <item>Hourglass Body Type</item>
-        <item>Top Hourglass Body Type</item>
-        <item>Inverted Triangle Body Type</item>
-        <item>Oval Body Type</item>
-        <item>Diamond Body Type</item>
+    <string-array name="Skin_Type_tip_list">
+        <item>Normal Skin</item>
+        <item>Oily Skin</item>
+        <item>Sencentive Skin</item>
     </string-array>
 
-    <string name="title_body_shape">Fat and Short</string>
-    <string name="bd_description">While you are what are described above, it is not always true that you can wear everything you want. Clothing colors should also coordinate to your skin tone and hair.</string>
+
+    <string name="skin_title">MakeUp For Oily Skin</string>
+    <string name="skin_title1">Foundation For Oily Skin</string>
+
+    <string name="sample_facetips"><![CDATA[<p> <b>Adding volume on the top of your head will help elongate your face.</b> To achieve this look take some voluminizing gel and gently apply it to the roots of your hair</p>
+    <p><b>A hairdo that sits close to the sides of your face</b> will visually slim down your cheekbones and chin by keep drawing the eye down and up, instead of to the sides</p>
+    <p><b>Below the chin haircuts</b> help draw the eye up and down and make your face look more angular.</p>]]></string>
+
+
     <string name="body_doanddont">Dos and Donts</string>
     <string name="body_dos">DO try A-line skirts</string>
-    <string name="body_dos1">DO keep hems of pants, skirts and dresses wide to balance the hips.</string>
-    <string name="title_activity_special_tips">SpecialTipsActivity</string>
-    <string name="title_activity_specialtip">SpecialtipActivity</string>
+
+
 
 
     <string name="sample_facetips1">V-necks are not good, but bows and soft cowls are fine</string>
@@ -72,9 +123,14 @@ Avoid cream concealers—they will clog your pores.</string>
     <string name="sample_skintips1">Long-lasting powder foundations create an even complexion while combatting excess oil. Before you purchase foundation, read the label carefully—make sure the product is oil-free, mattifying, and noncomedogenic (will not clog your pores). Apply a thin, even layer of powder with a large powder brush. Move the brush in a circular and dabbing motion.
 If you need additional coverage, apply a second layer of powder with a clean, damp sponge. Move the sponge in a circular and dabbing motion.[9]
 If you do not like powder foundation, select a mousse foundation or a water-based liquid foundation.</string>
-    <string name="sample_bodyshapetips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
-    <string name="sample_bodyshapetips1">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
 
+    <string name="title_activity_special_tips">SpecialTipsActivity</string>
+    <string name="title_activity_specialtip">SpecialtipActivity</string>
+
+    <!--specific tips question-->
+    <string name="facetypeques">Choose your Face Type</string>
+    <string name="skinques">Choose Your Skin Tones</string>
+    <string name="bodyshapeques">Choose Your Body Shape</string>
 
 
 </resources>
