@@ -46,7 +46,7 @@ public class SpecialtipActivityFragment extends Fragment {
     private SkinTipAdapter mSkinTipListAdapter;
     private TipAdapter mFaceTipAdapter;
 
-    private FragmentChangeListener mChangeFragment;
+    //private FragmentChangeListener mChangeFragment;
 
     public static SpecialtipActivityFragment newInstance() {
         SpecialtipActivityFragment fragment = new SpecialtipActivityFragment();
@@ -54,11 +54,7 @@ public class SpecialtipActivityFragment extends Fragment {
     }
     public SpecialtipActivityFragment() {
     }
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mChangeFragment = (FragmentChangeListener) context;
-    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +92,4 @@ public class SpecialtipActivityFragment extends Fragment {
         fc.replaceFragment(fr);
     }
 
-    public interface FragmentChangeListener {
-        public void replaceFragment(Fragment fragment);
-    }
 }
