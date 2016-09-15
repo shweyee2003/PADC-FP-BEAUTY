@@ -51,7 +51,7 @@ public class TipsPagerFragment extends Fragment  {
 
         mTipsPagerAdapter = new TipPagerAdapter(getActivity().getSupportFragmentManager());
         mTipsPagerAdapter.addTab(FaceTipsFragment.newInstance(),getString(R.string.face_tips));
-        mTipsPagerAdapter.addTab(SkinTipsFragment.newInstance(),getString(R.string.skin_tips));
+        mTipsPagerAdapter.addTab(SkinTipsFragment.newInstance(),getString(R.string.skin_tones));
         mTipsPagerAdapter.addTab(BodyShapeTipsFragment.newInstance(),getString(R.string.body_tips));
 
     }
