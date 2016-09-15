@@ -72,7 +72,5 @@ public class SpecialtipActivityFragment extends Fragment {
         fc.replaceFragment(fr);
     }
 
-    public interface FragmentChangeListener {
-        public void replaceFragment(Fragment fragment);
-    }
+
 }
