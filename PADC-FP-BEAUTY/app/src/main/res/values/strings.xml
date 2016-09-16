@@ -89,7 +89,7 @@
     <string name="beauty_tips">Tips</string>
     <string name="dressing">Dressing</string>
     <string name="personality">Personality Tips</string>
-    <string name="fitness">Fitness</string>
+    <string name="fitness">Fitness and Health</string>
     <string name="saloon_and_fashionshop">Beauty Saloon and Fashion Shop </string>
     <string name="tutorials">Tutorialsမ်ား </string>
     <string name="bookmark">Bookmark</string>
@@ -111,8 +111,9 @@
 
     <string name="body_doanddont">Dos and Donts</string>
     <string name="body_dos">DO try A-line skirts</string>
-
-
+    <string name="body_dos1">DO keep hems of pants, skirts and dresses wide to balance the hips.</string>
+    <string name="title_activity_special_tips">SpecialTipsActivity</string>
+    <string name="title_activity_workout">Workout</string>
 
 
     <string name="sample_facetips1">V-necks are not good, but bows and soft cowls are fine</string>
@@ -123,8 +124,8 @@ Avoid cream concealers—they will clog your pores.</string>
     <string name="sample_skintips1">Long-lasting powder foundations create an even complexion while combatting excess oil. Before you purchase foundation, read the label carefully—make sure the product is oil-free, mattifying, and noncomedogenic (will not clog your pores). Apply a thin, even layer of powder with a large powder brush. Move the brush in a circular and dabbing motion.
 If you need additional coverage, apply a second layer of powder with a clean, damp sponge. Move the sponge in a circular and dabbing motion.[9]
 If you do not like powder foundation, select a mousse foundation or a water-based liquid foundation.</string>
-
-    <string name="title_activity_special_tips">SpecialTipsActivity</string>
+    <string name="workout">Workout</string>
+    <string name="diet">Diet</string>
     <string name="title_activity_specialtip">SpecialtipActivity</string>
 
     <!--specific tips question-->
@@ -132,5 +133,24 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="skinques">Choose Your Skin Tones</string>
     <string name="bodyshapeques">Choose Your Body Shape</string>
 
+    <string name="workout_main_title"><![CDATA[ Best workout <b><font color=#E91E63>FOR YOUR BODY TYPE</b> ]]></string>
+    <string name="workout_desc_for_pearbdtype"><![CDATA[<b> Workout for Pear Body Type</b><br>Pears populate the roster of bombshell beauties, from Alicia Keys to Jennifer Love Hewitt. As the name of this body type implies, pears are proportionally smaller on top, easily pack weight onto their lower bodies, and have a hard time toning their arms and shoulders.]]></string>
+    <string name="workout_desc_for_straightbdtype"><![CDATA[<b> Workout for Straight Body Type</b><br>Women with ruler-straight body types, like Cameron Diaz, can wear nearly anything—but they don’t generally have the girl curves to really kick it up in a bikini. Any weight they do carry usually forms a little potbelly, just like the boys get. Straight/boyish builds are similar to athletic types in that they also carve a fairly square silhouette; but unlike their athletic counterparts, boyish builds tend to have a tough time getting muscle tone.]]></string>
+    <string name="workout_desc_for_athleticbdtype"><![CDATA[<b> Workout for Athletic Body Type</b><br>Think Hayden Panettiere or Jessica Biel—broad across the back and shoulders, narrower through the hips. Athletic builds are often short-waisted (and maybe a little thick-waisted), tend to have square silhouettes, and will have a lower ratio of fat to muscle than curvy or pear-shaped body types. Swimsuits can be tough to find for athletic builds, because what fits the bottom half will often be too small to stretch over the top.]]></string>
+    <string name="workout_desc_for_curvybdtype"><![CDATA[<b> Workout for Curvy Body Type</b><br>Curvaceous like Beyoncé or Scarlett Johannson, woman with curvy body types are balanced beauties who fill out a bikini top and bottom. When they gain weight, it tends to be all over. Like pears with larger chests, they have the curves, but what they usually lack is all-over muscle tone.]]></string>
 
+    <string name="saloon">Beauty Saloon</string>
+    <string name="fashionshop">Fashion Shop</string>
+
+    <string name="makeup">Makeup</string>
+    <string name="hair">Hair</string>
+    <string name="nail_art">Nail Art</string>
+
+    <string name="cardio_exercise"><![CDATA[<p><b>A.</b>Grab a pair of dumbbells and stand with feet wide, toes turned out about 45 degrees. Raise arms overhead in a wide V palms facing in.
+    </p><p><b>B.</b>Lower into a plié position (bending knees over toes) as elbows bend in by sides until palms line up with shoulders. Reverse motion to return to starting position; repeat.
+    <br><b>Sets:</b>3<br><b>Reps:</b>20]]></string>
+
+    <string name="capoeria_exercise"><![CDATA[<p><b>A.</b>Begin in a curtsy lunge position with left leg crossed behind right and upper body rotated to the right, elbows bent at chest level and open to sides, palms facing down.
+    </p><p><b>B.</b>Kick back foot out to leap to the left, extending both legs out to the sides in mid-air, swinging arms in front of body. Land on left leg and immediately lower into curtsey lunge and rotate torso and arms to the left to complete one rep. Do the prescribed number of reps, moving as quickly as you can with good form.
+    <br><b>Sets:</b>3<br><b>Reps:</b>20]]></string>
 </resources>
