@@ -75,6 +75,10 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="sample_bodyshapetips">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
     <string name="sample_bodyshapetips1">Although being the least problematic type, still requires cleaning, nourishing, and moisturizing.</string>
 
+    <!--Tips -->
+    <string name="wedding_dressing">Wedding</string>
+    <string name="dinner_dressing">Dinner</string>
+    <string name="shopping_dressing">Shopping</string>
 
 
 </resources>

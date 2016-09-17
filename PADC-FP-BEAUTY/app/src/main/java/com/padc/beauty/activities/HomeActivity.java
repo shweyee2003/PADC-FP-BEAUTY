@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.padc.beauty.R;
+import com.padc.beauty.fragments.DressingPagerFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.utils.MMFontUtils;
 
@@ -85,6 +86,12 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     public boolean onNavigationItemSelected(MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
         return false;
+    }
+
+    private void navigatetoDressing() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, DressingPagerFragment.newInstance())
+                .commit();
     }
 
 }
