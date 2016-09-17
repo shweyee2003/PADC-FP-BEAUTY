@@ -23,21 +23,21 @@
 
 
             <com.padc.beauty.components.MMTextView
-                android:id="@+id/tv_facetip_title"
+                android:id="@+id/tv_hairtip_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_medium"
                 style="@style/TitleTextStyle" />
 
             <com.padc.beauty.components.DynamicHeightImageView
-                android:id="@+id/iv_tipfaceimg"
+                android:id="@+id/iv_hairtipimg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_small" />
 
 
             <com.padc.beauty.components.MMTextView
-                android:id="@+id/tv_facetip_desc"
+                android:id="@+id/tv_hairtip_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
