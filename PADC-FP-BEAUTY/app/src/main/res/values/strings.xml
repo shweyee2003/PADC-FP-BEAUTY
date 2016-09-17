@@ -139,7 +139,7 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="workout_desc_for_athleticbdtype"><![CDATA[<b> Workout for Athletic Body Type</b><br>Think Hayden Panettiere or Jessica Biel—broad across the back and shoulders, narrower through the hips. Athletic builds are often short-waisted (and maybe a little thick-waisted), tend to have square silhouettes, and will have a lower ratio of fat to muscle than curvy or pear-shaped body types. Swimsuits can be tough to find for athletic builds, because what fits the bottom half will often be too small to stretch over the top.]]></string>
     <string name="workout_desc_for_curvybdtype"><![CDATA[<b> Workout for Curvy Body Type</b><br>Curvaceous like Beyoncé or Scarlett Johannson, woman with curvy body types are balanced beauties who fill out a bikini top and bottom. When they gain weight, it tends to be all over. Like pears with larger chests, they have the curves, but what they usually lack is all-over muscle tone.]]></string>
 
-    <string name="saloon">Beauty Saloon</string>
+    <string name="saloon">Beauty Salon</string>
     <string name="fashionshop">Fashion Shop</string>
 
 
@@ -161,7 +161,22 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     </p><p><b>B.</b>Kick back foot out to leap to the left, extending both legs out to the sides in mid-air, swinging arms in front of body. Land on left leg and immediately lower into curtsey lunge and rotate torso and arms to the left to complete one rep. Do the prescribed number of reps, moving as quickly as you can with good form.
     <br><b>Sets:</b>3<br><b>Reps:</b>20]]></string>
 
+
     <string name="weddingdressbride">Yellow Princess Myanmar Tradional Dress</string>
     <string name="weddingdressnormaldress">Akasashs Dress</string>
     <string name="weddingdresssilk">Pink Dress</string>
+
+    <string name="lili_beautysalon"><![CDATA[<font color=#E91E63>Li Li Beauty Salon</font><br>No.518, Phone Gyee Rd, Cor of Kanner St , Yangon, Myanmar]]></string>
+    <string name="koko_beautysalon"><![CDATA[<font color=#E91E63>Ko Ko Beauty Salon</font><br>Level 3,, Taw Win Centre, Yangon, Myanmar]]></string>
+    <string name="seri_beautysalon"><![CDATA[<font color=#E91E63>Seri Beauty Salon</font><br>144, Dhamazedi Road, Yangon, Myanmar]]></string>
+    <string name="spamyway_beautysalon"><![CDATA[<font color=#E91E63>Seri Beauty Salon</font><br>9/111, Moemakha Street, Yangon, Myanmar]]></string>
+    <string name="tonytuntun_beautysalon"><![CDATA[<font color=#E91E63>Tony Tun TUn Beauty Salon</font><br>No. 279-281, Anawrahta Road , Yangon, Myanmar]]></string>
+    <string name="inyaday_spa"><![CDATA[<font color=#E91E63>Inya Day Spa</font><br>16/2, Inya Road, Yangon, Myanmar]]></string>
+    <string name="fahsiondream"><![CDATA[<font color=#E91E63>Fashion Dream</font><br>Hledan Market , Yangon, Myanmar]]></string>
+    <string name="sulecenterpoint"><![CDATA[<font color=#E91E63>Sule Center Point</font><br>Sule Pagoda Road, Yangon, Myanmar]]></string>
+    <string name="mk"><![CDATA[<font color=#E91E63>MK Fashion Shop</font><br>333, Pyay Road, Yangon, Myanmar]]></string>
+    <string name="silverstar"><![CDATA[<font color=#E91E63>Silver Star Fashion Shop</font><br>No. 177 , Banyardala Road, Yangon, Myanmar]]></string>
+    <string name="papillon"><![CDATA[<font color=#E91E63>Papillon</font><br>2nd Floo, Taw Win Centre , Yangon, Myanmar]]></string>
+    <string name="baza"><![CDATA[<font color=#E91E63>BAZA</font><br>Second Floor, Taw Win Center, Rm.3047, Yangon, Myanmar]]></string>
+
 </resources>
