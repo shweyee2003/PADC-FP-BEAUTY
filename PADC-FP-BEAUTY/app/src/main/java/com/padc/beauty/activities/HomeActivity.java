@@ -2,6 +2,9 @@ package com.padc.beauty.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,10 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.padc.beauty.R;
+
 import com.padc.beauty.fragments.DressingPagerFragment;
+
+import com.padc.beauty.fragments.FitnessAndHealthFragments;
+import com.padc.beauty.fragments.FragmentChangeListener;
+import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
+import com.padc.beauty.fragments.TutorialsFragment;
 import com.padc.beauty.utils.MMFontUtils;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
@@ -28,10 +38,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, TipsPagerFragment.newInstance())
-                .commit();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             //actionBar.setDisplayShowTitleEnabled(false);
@@ -43,7 +50,9 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Menu leftMenu = navigationView.getMenu();
         MMFontUtils.applyMMFontToMenu(leftMenu);
         navigationView.setNavigationItemSelectedListener(this);
-
+        if (savedInstanceState == null) {
+            navigateToBeautyTips();
+        }
     }
 
     @Override
@@ -85,8 +94,46 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
+        switch (item.getItemId()) {
+            case R.id.beauty_tips:
+                navigateToBeautyTips();
+                return true;
+            case R.id.fitness:
+                navigateToFitness();
+                return true;
+            case R.id.saloon_and_fashionshop:
+                navigateToSaloonandFashionshop();
+                return true;
+            case R.id.beauty_tutorial:
+                navigateToBeautyTutorial();
+                return true;
+            case R.id.beauty_dressing:
+                navigatetoDressing();
+                return true;
+        }
         return false;
     }
+    public void navigateToBeautyTips(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, TipsPagerFragment.newInstance())
+                .commit();
+    }
+    public void navigateToFitness(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, FitnessAndHealthFragments.newInstance())
+                .commit();
+    }
+    public void navigateToSaloonandFashionshop(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, SaloonandFashionshopFragment.newInstance())
+                .commit();
+    }
+    public void navigateToBeautyTutorial(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, TutorialsFragment.newInstance())
+                .commit();
+    }
+
 
     private void navigatetoDressing() {
         getSupportFragmentManager().beginTransaction()

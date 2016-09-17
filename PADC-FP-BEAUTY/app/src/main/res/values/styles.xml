@@ -30,6 +30,19 @@
     </style>
 
     <style name="AccentButton" parent="AttractionButton">
-        <item name="android:backgroundTint">@color/accent_dark</item>
+        <item name="android:backgroundTint">@color/divider</item>
+    </style>
+
+    <style name="TitleTextStyle">
+        <item name="android:textSize">@dimen/text_regular_3x</item>
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="DescTextStyle">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
 </resources>

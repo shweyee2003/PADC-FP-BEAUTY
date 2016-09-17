@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-</LinearLayout>
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_weddingdressbride"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:src="@drawable/myanmar_traditional_fashion_13"
+                android:scaleType="centerCrop"
+                android:layout_margin="@dimen/margin_small"
+                />
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_weddingdressbride"
+                style="@style/TitleTextStyle"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/weddingdressbride"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_weddingdressnormaldress"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:src="@drawable/akashadesign_1"
+                android:scaleType="centerCrop"
+                android:layout_margin="@dimen/margin_small"
+                />
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_weddingdressnormaldress"
+                style="@style/TitleTextStyle"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/weddingdressnormaldress"/>
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_weddingdresssilk"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:src="@drawable/akasashadesign_2"
+                android:scaleType="centerCrop"
+                android:layout_margin="@dimen/margin_small"
+                />
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_weddingdresssilk"
+                style="@style/TitleTextStyle"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:gravity="center_horizontal"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_small"
+                android:text="@string/weddingdresssilk"/>
+        </FrameLayout>
+    </LinearLayout>
+</ScrollView>

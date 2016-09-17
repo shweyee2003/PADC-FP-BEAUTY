@@ -11,9 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.padc.beauty.R;
+import com.padc.beauty.fragments.FragmentChangeListener;
 import com.padc.beauty.fragments.SpecialtipActivityFragment;
 
-public class SpecialtipActivity extends AppCompatActivity implements SpecialtipActivityFragment.FragmentChangeListener {
+public class SpecialtipActivity extends AppCompatActivity implements FragmentChangeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
