@@ -45,4 +45,12 @@
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
+
+    <style name="PersonalityTextStyle">
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="buildingconfidence">Building Confidence in Your Personality</style>
 </resources>
