@@ -16,6 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.padc.beauty.R;
+
+import com.padc.beauty.fragments.DressingPagerFragment;
+
 import com.padc.beauty.fragments.FitnessAndHealthFragments;
 import com.padc.beauty.fragments.FragmentChangeListener;
 import com.padc.beauty.fragments.SaloonandFashionshopFragment;
@@ -104,6 +107,9 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
             case R.id.beauty_tutorial:
                 navigateToBeautyTutorial();
                 return true;
+            case R.id.beauty_dressing:
+                navigatetoDressing();
+                return true;
         }
         return false;
     }
@@ -128,5 +134,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
                 .commit();
     }
 
+
+    private void navigatetoDressing() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, DressingPagerFragment.newInstance())
+                .commit();
+    }
 
 }

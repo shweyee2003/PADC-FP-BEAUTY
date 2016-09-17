@@ -142,9 +142,16 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="saloon">Beauty Salon</string>
     <string name="fashionshop">Fashion Shop</string>
 
+
+    <!--Tips -->
+    <string name="wedding_dressing">Wedding</string>
+    <string name="dinner_dressing">Dinner</string>
+    <string name="shopping_dressing">Shopping</string>
+
     <string name="makeup">Makeup</string>
     <string name="hair">Hair</string>
     <string name="nail_art">Nail Art</string>
+
 
     <string name="cardio_exercise"><![CDATA[<p><b>A.</b>Grab a pair of dumbbells and stand with feet wide, toes turned out about 45 degrees. Raise arms overhead in a wide V palms facing in.
     </p><p><b>B.</b>Lower into a plié position (bending knees over toes) as elbows bend in by sides until palms line up with shoulders. Reverse motion to return to starting position; repeat.
@@ -153,6 +160,12 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="capoeria_exercise"><![CDATA[<p><b>A.</b>Begin in a curtsy lunge position with left leg crossed behind right and upper body rotated to the right, elbows bent at chest level and open to sides, palms facing down.
     </p><p><b>B.</b>Kick back foot out to leap to the left, extending both legs out to the sides in mid-air, swinging arms in front of body. Land on left leg and immediately lower into curtsey lunge and rotate torso and arms to the left to complete one rep. Do the prescribed number of reps, moving as quickly as you can with good form.
     <br><b>Sets:</b>3<br><b>Reps:</b>20]]></string>
+
+
+    <string name="weddingdressbride">Yellow Princess Myanmar Tradional Dress</string>
+    <string name="weddingdressnormaldress">Akasashs Dress</string>
+    <string name="weddingdresssilk">Pink Dress</string>
+
     <string name="lili_beautysalon"><![CDATA[<font color=#E91E63>Li Li Beauty Salon</font><br>No.518, Phone Gyee Rd, Cor of Kanner St , Yangon, Myanmar]]></string>
     <string name="koko_beautysalon"><![CDATA[<font color=#E91E63>Ko Ko Beauty Salon</font><br>Level 3,, Taw Win Centre, Yangon, Myanmar]]></string>
     <string name="seri_beautysalon"><![CDATA[<font color=#E91E63>Seri Beauty Salon</font><br>144, Dhamazedi Road, Yangon, Myanmar]]></string>
@@ -165,4 +178,5 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="silverstar"><![CDATA[<font color=#E91E63>Silver Star Fashion Shop</font><br>No. 177 , Banyardala Road, Yangon, Myanmar]]></string>
     <string name="papillon"><![CDATA[<font color=#E91E63>Papillon</font><br>2nd Floo, Taw Win Centre , Yangon, Myanmar]]></string>
     <string name="baza"><![CDATA[<font color=#E91E63>BAZA</font><br>Second Floor, Taw Win Center, Rm.3047, Yangon, Myanmar]]></string>
+
 </resources>
