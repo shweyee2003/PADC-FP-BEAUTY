@@ -139,14 +139,14 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="workout_desc_for_athleticbdtype"><![CDATA[<b> Workout for Athletic Body Type</b><br>Think Hayden Panettiere or Jessica Biel—broad across the back and shoulders, narrower through the hips. Athletic builds are often short-waisted (and maybe a little thick-waisted), tend to have square silhouettes, and will have a lower ratio of fat to muscle than curvy or pear-shaped body types. Swimsuits can be tough to find for athletic builds, because what fits the bottom half will often be too small to stretch over the top.]]></string>
     <string name="workout_desc_for_curvybdtype"><![CDATA[<b> Workout for Curvy Body Type</b><br>Curvaceous like Beyoncé or Scarlett Johannson, woman with curvy body types are balanced beauties who fill out a bikini top and bottom. When they gain weight, it tends to be all over. Like pears with larger chests, they have the curves, but what they usually lack is all-over muscle tone.]]></string>
 
-    <string name="saloon">Beauty Saloon</string>
+    <string name="saloon">Beauty Salon</string>
     <string name="fashionshop">Fashion Shop</string>
 
 
     <!--Tips -->
-    <string name="wedding_dressing">Wedding</string>
-    <string name="dinner_dressing">Dinner</string>
-    <string name="shopping_dressing">Shopping</string>
+    <string name="wedding_dressing">Occasional</string>
+    <string name="dinner_dressing">Free</string>
+
 
     <string name="makeup">Makeup</string>
     <string name="hair">Hair</string>
@@ -161,10 +161,40 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     </p><p><b>B.</b>Kick back foot out to leap to the left, extending both legs out to the sides in mid-air, swinging arms in front of body. Land on left leg and immediately lower into curtsey lunge and rotate torso and arms to the left to complete one rep. Do the prescribed number of reps, moving as quickly as you can with good form.
     <br><b>Sets:</b>3<br><b>Reps:</b>20]]></string>
 
+
     <string name="weddingdressbride">Yellow Princess Myanmar Tradional Dress</string>
     <string name="weddingdressnormaldress">Akasashs Dress</string>
     <string name="weddingdresssilk">Pink Dress</string>
-    <string name="personality_interview">How to Answer Personality Questions for Job Interviews</string>
+    <string name="personality_interview">10 tips to improve interview performance</string>
     <string name="good_personality">Developing Good Personality Characteristics</string>
     <string name="caring_for_other">Caring For Others</string>
+
+
+    <string name="lili_beautysalon"><![CDATA[<font color=#E91E63>Li Li Beauty Salon</font><br>No.518, Phone Gyee Rd, Cor of Kanner St , Yangon, Myanmar]]></string>
+    <string name="koko_beautysalon"><![CDATA[<font color=#E91E63>Ko Ko Beauty Salon</font><br>Level 3,, Taw Win Centre, Yangon, Myanmar]]></string>
+    <string name="seri_beautysalon"><![CDATA[<font color=#E91E63>Seri Beauty Salon</font><br>144, Dhamazedi Road, Yangon, Myanmar]]></string>
+    <string name="spamyway_beautysalon"><![CDATA[<font color=#E91E63>Seri Beauty Salon</font><br>9/111, Moemakha Street, Yangon, Myanmar]]></string>
+    <string name="tonytuntun_beautysalon"><![CDATA[<font color=#E91E63>Tony Tun TUn Beauty Salon</font><br>No. 279-281, Anawrahta Road , Yangon, Myanmar]]></string>
+    <string name="inyaday_spa"><![CDATA[<font color=#E91E63>Inya Day Spa</font><br>16/2, Inya Road, Yangon, Myanmar]]></string>
+    <string name="fahsiondream"><![CDATA[<font color=#E91E63>Fashion Dream</font><br>Hledan Market , Yangon, Myanmar]]></string>
+    <string name="sulecenterpoint"><![CDATA[<font color=#E91E63>Sule Center Point</font><br>Sule Pagoda Road, Yangon, Myanmar]]></string>
+    <string name="mk"><![CDATA[<font color=#E91E63>MK Fashion Shop</font><br>333, Pyay Road, Yangon, Myanmar]]></string>
+    <string name="silverstar"><![CDATA[<font color=#E91E63>Silver Star Fashion Shop</font><br>No. 177 , Banyardala Road, Yangon, Myanmar]]></string>
+    <string name="papillon"><![CDATA[<font color=#E91E63>Papillon</font><br>2nd Floo, Taw Win Centre , Yangon, Myanmar]]></string>
+    <string name="baza"><![CDATA[<font color=#E91E63>BAZA</font><br>Second Floor, Taw Win Center, Rm.3047, Yangon, Myanmar]]></string>
+    <string name="lbl_next">Next</string>
+    <string name="lbl_previous">Previous</string>
+    <string name="shopname">Taw Win</string>
+    <string name="shopaddr">3 rd Floor</string>
+
+    <style name="buildingconfidence">Building Confidence in Your Personality</style>
+
+    <string name="personality_one_title">Remain happy and lighthearted</string>
+    <string name="personality_two_title">Try to stay calm in tense situations</string>
+    <string name="personality_three_title">Keep an open mind</string>
+
+    <string name="personality_one_content">Try to see the joy in the world. Laugh with others, but not at them. Everyone appreciates someone who is jolly and jovial. Smiling and laughing a lot is a huge part of having a good personality.</string>
+    <string name="personality_two_content">A lot of people seem like they have a good personality until you see them in an emergency or tense situation. Then they lose their cool. Don’t be this person! If you are in a tense situation, try to remain relaxed and see what you can do to resolve the situation.</string>
+    <string name="personality_three_content">One part about having a good personality is being willing to change your worldview. Listen to others and always be willing to change your mind. Don’t pass judgment on other people just because they act in a different way than you do. Keeping an open mind will allow you to make many new friends and probably live a much more interesting life. There’s no need to shut off parts of the world.</string>
+
 </resources>

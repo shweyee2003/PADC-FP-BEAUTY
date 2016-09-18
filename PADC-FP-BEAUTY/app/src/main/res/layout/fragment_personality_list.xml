@@ -11,27 +11,7 @@
         android:padding="@dimen/margin_medium"
         android:layout_margin="@dimen/margin_medium">
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_medium">
-            <com.padc.beauty.components.DynamicHeightImageView
-                android:id="@+id/iv_personalityinterview"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/personality_interview" />
-            <com.padc.beauty.components.MMTextView
-                android:id="@+id/tv_personalityinterview"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:paddingLeft="@dimen/margin_small"
-                android:layout_alignParentRight="true"
-                android:text="@string/personality_interview"
-                style="@style/PersonalityTextStyle" />
-        </LinearLayout>
-        <LinearLayout
+            android:id="@+id/ll_good_personality"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,6 +30,28 @@
                 android:paddingLeft="@dimen/margin_small"
                 android:layout_alignParentRight="true"
                 android:text="@string/good_personality"
+                style="@style/PersonalityTextStyle" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/personality_interview"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium">
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_personalityinterview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/personality_interview" />
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_personalityinterview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:paddingLeft="@dimen/margin_small"
+                android:layout_alignParentRight="true"
+                android:text="@string/personality_interview"
                 style="@style/PersonalityTextStyle" />
         </LinearLayout>
         <LinearLayout

@@ -29,5 +29,6 @@
 
 
     <dimen name="status_bar_height">25dp</dimen>
+    <dimen name="icon_in_detail">48dp</dimen>
 
 </resources>
