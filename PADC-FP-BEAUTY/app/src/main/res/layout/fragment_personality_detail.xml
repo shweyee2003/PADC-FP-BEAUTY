@@ -28,7 +28,5 @@
             android:layout_marginLeft="@dimen/margin_medium"
             style="@style/DescTextStyle"/>
 
-
-
     </LinearLayout>
     </ScrollView>
