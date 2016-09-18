@@ -38,7 +38,7 @@
                         android:layout_weight="1"
                         android:textColor="@color/text_white_ish"
                         android:fontFamily="sans-serif-light"
-                        android:text="Estimate"/>
+                        android:text="@string/estimate"/>
                     <com.padc.beauty.components.MMTextView
                         android:id="@+id/tv_price"
                         android:layout_width="0dp"
@@ -77,6 +77,12 @@
                         />
                 </LinearLayout>
             </FrameLayout>
+            <com.padc.beauty.components.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TitleTextStyle"
+                android:text="@string/suitable_style"
+                android:layout_marginLeft="@dimen/margin_medium_2"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,7 +96,7 @@
                         android:id="@+id/iv_hairstyle"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_face_black_5dp"
                         android:clickable="true"
                         android:padding="@dimen/margin_small" />
@@ -108,7 +114,7 @@
                         android:id="@+id/ic_bodyshape"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_wc_black_5dp"
                         android:clickable="true"
                         android:layout_below="@id/iv_hairstyle"
@@ -134,7 +140,7 @@
                         android:id="@+id/iv_skincolor"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_account_circle_black_5dp"
                         android:clickable="true"
                         android:padding="@dimen/margin_small" />
@@ -147,12 +153,12 @@
                         android:layout_marginTop="@dimen/margin_small"
                         android:padding="@dimen/margin_small"
                         android:fontFamily="sans-serif-light"
-                        android:text="White Skin,Normal Skin"/>
+                        android:text="Cool Skin Tone ,Normal Skin Tone"/>
                     <com.padc.beauty.components.DynamicHeightImageView
                         android:id="@+id/iv_skintype"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_person_black_5dp"
                         android:clickable="true"
                         android:layout_below="@id/iv_skincolor"
@@ -213,7 +219,7 @@
                         android:textColor="@color/white_full"
                         android:background="#99dedbdb"
                         android:fontFamily="sans-serif-light"
-                        android:text="Estimate"/>
+                        android:text="@string/estimate"/>
                     <com.padc.beauty.components.MMTextView
                         android:id="@+id/tv_pricenormal"
                         android:layout_width="0dp"
@@ -252,7 +258,12 @@
                         />
                 </LinearLayout>
             </FrameLayout>
-
+            <com.padc.beauty.components.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TitleTextStyle"
+                android:text="@string/suitable_style"
+                android:layout_marginLeft="@dimen/margin_medium_2"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -266,7 +277,7 @@
                         android:id="@+id/iv_hairstylenormal"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_face_black_5dp"
                         android:clickable="true"
                         android:padding="@dimen/margin_small" />
@@ -284,7 +295,7 @@
                         android:id="@+id/ic_bodyshapenormal"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_wc_black_5dp"
                         android:clickable="true"
                         android:layout_below="@id/iv_hairstylenormal"
@@ -310,7 +321,7 @@
                         android:id="@+id/iv_skincolornormal"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_account_circle_black_5dp"
                         android:clickable="true"
                         android:padding="@dimen/margin_small" />
@@ -328,7 +339,7 @@
                         android:id="@+id/iv_skintypenormal"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_person_black_5dp"
                         android:clickable="true"
                         android:layout_below="@id/iv_skincolornormal"
@@ -379,7 +390,7 @@
                         android:layout_weight="1"
                         android:textColor="@color/text_white_ish"
                         android:fontFamily="sans-serif-light"
-                        android:text="Estimate"/>
+                        android:text="@string/estimate"/>
                     <com.padc.beauty.components.MMTextView
                         android:id="@+id/tv_pricesilk"
                         android:layout_width="0dp"
@@ -434,6 +445,12 @@
                 <!--</RelativeLayout>-->
 
             </FrameLayout>
+            <com.padc.beauty.components.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TitleTextStyle"
+                android:text="@string/suitable_style"
+                android:layout_marginLeft="@dimen/margin_medium_2"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -447,7 +464,7 @@
                         android:id="@+id/iv_hairstylesilk"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_face_black_5dp"
                         android:clickable="true"
                         android:padding="@dimen/margin_small" />
@@ -465,7 +482,7 @@
                         android:id="@+id/ic_bodyshapesilk"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_wc_black_5dp"
                         android:clickable="true"
                         android:layout_below="@id/iv_hairstylesilk"
@@ -491,7 +508,7 @@
                         android:id="@+id/iv_skincolorsilk"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_account_circle_black_5dp"
                         android:clickable="true"
                         android:padding="@dimen/margin_small" />
@@ -509,7 +526,7 @@
                         android:id="@+id/iv_skintypesilk"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
-                        android:tint="@color/accent"
+                        android:tint="@color/primary_light"
                         android:src="@drawable/ic_person_black_5dp"
                         android:clickable="true"
                         android:layout_below="@id/iv_skincolorsilk"
