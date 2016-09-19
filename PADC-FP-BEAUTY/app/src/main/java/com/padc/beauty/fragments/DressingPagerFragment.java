@@ -41,7 +41,7 @@ public class DressingPagerFragment extends Fragment {
         mDressingPagerAdapter = new DressingPagerAdapter(getActivity().getSupportFragmentManager());
         mDressingPagerAdapter.addTab(WeddingDressFragment.newInstance(),getString(R.string.wedding_dressing));
         mDressingPagerAdapter.addTab(DinnerDressFragment.newInstance(),getString(R.string.dinner_dressing));
-        mDressingPagerAdapter.addTab(ShoppingDressFragment.newInstance(),getString(R.string.shopping_dressing));
+
     }
 
     @Nullable

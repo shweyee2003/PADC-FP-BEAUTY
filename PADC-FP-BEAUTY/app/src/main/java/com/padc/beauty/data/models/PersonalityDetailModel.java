@@ -1,0 +1,46 @@
+package com.padc.beauty.data.models;
+
+import android.content.Context;
+
+import com.padc.beauty.BeautyApp;
+import com.padc.beauty.R;
+import com.padc.beauty.data.vos.PersonalityDetailVO;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by aung on 6/24/16.
+ */
+public class PersonalityDetailModel {
+
+    private static PersonalityDetailModel objInstance;
+
+    private List<PersonalityDetailVO> personalityList;
+
+    private PersonalityDetailModel() {
+        personalityList = setUpInitialPersonalities();
+    }
+
+    public static PersonalityDetailModel getInstance() {
+        if (objInstance == null) {
+            objInstance = new PersonalityDetailModel();
+        }
+
+        return objInstance;
+    }
+
+    private List<PersonalityDetailVO> setUpInitialPersonalities() {
+        Context context = BeautyApp.getContext();
+
+        List<PersonalityDetailVO> personalitiesList = new ArrayList<>();
+        personalitiesList.add(new PersonalityDetailVO(context.getString(R.string.personality_one_title), context.getString(R.string.personality_one_content), R.drawable.develop_a_good_personality_step1));
+        personalitiesList.add(new PersonalityDetailVO(context.getString(R.string.personality_two_title), context.getString(R.string.personality_two_content), R.drawable.develop_a_good_personality_step5));
+        personalitiesList.add(new PersonalityDetailVO(context.getString(R.string.personality_three_title), context.getString(R.string.personality_three_content), R.drawable.develop_a_good_personality_step9));
+        return personalitiesList;
+    }
+
+    public PersonalityDetailVO getPersonalityDetail(int index) {
+        return personalityList.get(index);
+    }
+}

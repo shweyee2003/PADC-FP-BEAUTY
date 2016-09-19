@@ -10,156 +10,111 @@
         android:orientation="horizontal"
         android:paddingTop="@dimen/margin_small"
         android:paddingBottom="@dimen/margin_medium"
-        android:background="@drawable/border_bottom">
-        <ImageView
+        android:layout_marginLeft="@dimen/margin_medium_2">
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/lilibeautysalon"
-            android:layout_weight="1"/>
-
+            android:layout_weight="1"
+            android:orientation="vertical">
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="2"
-                android:paddingLeft="@dimen/margin_medium">
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_medium">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/lilibeautysalon"/>
                 <TextView
                     android:id="@+id/tv_lili"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-
             </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/margin_small"
-        android:paddingBottom="@dimen/margin_medium"
-        android:background="@drawable/border_bottom">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/kokobeautysalon"
-            android:layout_weight="1"/>
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_medium">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tonytuntun"/>
+                <TextView
+                    android:id="@+id/tv_tonytuntun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_medium"
+               >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/seribeautysalon"/>
+                <TextView
+                    android:id="@+id/tv_seri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_weight="2"
-            android:paddingLeft="@dimen/margin_medium">
-            <TextView
-                android:id="@+id/tv_koko"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/margin_small"
-        android:paddingBottom="@dimen/margin_medium"
-        android:background="@drawable/border_bottom">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/seribeautysalon"
-            android:layout_weight="1"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="2"
-            android:paddingLeft="@dimen/margin_medium">
-            <TextView
-                android:id="@+id/tv_seri"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-        </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/margin_small"
-        android:paddingBottom="@dimen/margin_medium"
-        android:background="@drawable/border_bottom">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/spamyway"
-            android:layout_weight="1"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="2"
-            android:paddingLeft="@dimen/margin_medium">
-            <TextView
-                android:id="@+id/tv_spamyway"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
+            android:layout_margin="@dimen/margin_medium">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/margin_small"
+                android:paddingBottom="@dimen/margin_medium">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/kokobeautysalon"/>
+                <TextView
+                    android:id="@+id/tv_koko"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_medium">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/spamyway"/>
+                    <TextView
+                        android:id="@+id/tv_spamyway"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/margin_small"
+                    android:paddingBottom="@dimen/margin_medium">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/inyadayspa"/>
+                    <TextView
+                        android:id="@+id/tv_inyadayspa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/margin_small"
-        android:paddingBottom="@dimen/margin_medium"
-        android:background="@drawable/border_bottom">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/inyadayspa"
-            android:layout_weight="1"/>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="2"
-            android:paddingLeft="@dimen/margin_medium">
-            <TextView
-                android:id="@+id/tv_inyadayspa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/margin_small"
-        android:paddingBottom="@dimen/margin_medium"
-        android:background="@drawable/border_bottom">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/tonytuntun"
-            android:layout_weight="1"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="2"
-            android:paddingLeft="@dimen/margin_medium">
-            <TextView
-                android:id="@+id/tv_tonytuntun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-    </LinearLayout>
 </LinearLayout>

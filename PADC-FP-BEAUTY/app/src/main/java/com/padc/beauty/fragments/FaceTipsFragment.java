@@ -33,20 +33,20 @@ public class FaceTipsFragment extends Fragment {
     @BindView(R.id.sp_tip_list)
     Spinner sptiplist;
 
-    @BindView(R.id.tv_facetip_title)
+    @BindView(R.id.tv_hairtip_title)
     TextView tvfacetiptitle;
 
-    @BindView(R.id.tv_facetip_desc)
+    @BindView(R.id.tv_hairtip_desc)
     TextView tvfacetipdesc;
 
-    @BindView(R.id.iv_tipfaceimg)
+    @BindView(R.id.iv_hairtipimg)
     ImageView ivfacetip;
 
     @BindView(R.id.tv_sunglasstip_title)
-    TextView tvsunglasstiptitle;
+    TextView tvSunglassTipTitle;
 
     @BindView(R.id.tv_sunglasstip_desc)
-    TextView tvsunglasstipdesc;
+    TextView tvSunglassTipDesc;
 
     @BindView(R.id.iv_sunglasstip)
     ImageView ivsunglasstip;
@@ -96,7 +96,7 @@ public class FaceTipsFragment extends Fragment {
     private void showdata()
     {
         tvfacetiptitle.setText(R.string.hairstyle_facetip_title);
-        tvsunglasstiptitle.setText(R.string.sunglass_facetip_title);
+        tvSunglassTipTitle.setText(R.string.sunglass_facetip_title);
         tvjewlrytiptitle.setText(R.string.jewlery_facetip_title);
 
         Random random = new Random();
@@ -104,7 +104,7 @@ public class FaceTipsFragment extends Fragment {
 
       //  Toast.makeText(getContext(),"ImageRandom"+ mhairstyleids.length,Toast.LENGTH_SHORT).show();
         tvfacetipdesc.setText(Html.fromHtml(getString(R.string.hairstyle_facetips)));
-        tvsunglasstipdesc.setText(Html.fromHtml(getString(R.string.sunglasses_facetips)));
+        tvSunglassTipDesc.setText(Html.fromHtml(getString(R.string.sunglasses_facetips)));
         tvjewlrytipdesc.setText(Html.fromHtml(getString(R.string.jewellery_facetips)));
 
         Glide.with(ivfacetip.getContext())

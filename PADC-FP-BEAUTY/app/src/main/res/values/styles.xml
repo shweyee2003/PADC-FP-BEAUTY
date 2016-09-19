@@ -45,4 +45,29 @@
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
+
+    <style name="SubTitleTextStyle">
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+        <item name="android:textColor">@color/primary_light</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+    <style name="PersonalityTextDescStyle">
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textColor">@color/text_black_ish</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="PersonalityTextStyle">
+        <item name="android:textSize">@dimen/text_regular_2x</item>
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="ShopTextStyle">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+
 </resources>

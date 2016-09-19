@@ -21,6 +21,7 @@ import com.padc.beauty.fragments.DressingPagerFragment;
 
 import com.padc.beauty.fragments.FitnessAndHealthFragments;
 import com.padc.beauty.fragments.FragmentChangeListener;
+import com.padc.beauty.fragments.PersonalityListFragment;
 import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.fragments.TutorialsFragment;
@@ -110,6 +111,9 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
             case R.id.beauty_dressing:
                 navigatetoDressing();
                 return true;
+            case R.id.personality:
+                navigatetoPersonality();
+                return true;
         }
         return false;
     }
@@ -138,6 +142,12 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     private void navigatetoDressing() {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, DressingPagerFragment.newInstance())
+                .commit();
+    }
+
+    private void navigatetoPersonality(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, PersonalityListFragment.newInstance())
                 .commit();
     }
 
