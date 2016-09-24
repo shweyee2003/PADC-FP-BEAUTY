@@ -1,5 +1,6 @@
 package com.padc.beauty.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,11 +13,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.padc.beauty.R;
+
 import com.padc.beauty.fragments.TipsPagerFragment;
+
+import com.padc.beauty.fragments.BodyshapeFragment;
+
 import com.padc.beauty.utils.MMFontUtils;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
         MenuItemCompat.OnActionExpandListener{
+
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
@@ -31,6 +37,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, TipsPagerFragment.newInstance())
                 .commit();
+
         final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             //actionBar.setDisplayShowTitleEnabled(false);

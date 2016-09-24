@@ -39,6 +39,15 @@ public class BodyShapeTipsFragment extends Fragment {
     @BindView(R.id.iv_tipbodyimg)
     ImageView ivbodytip;
 
+    @BindView(R.id.tv_bodytip_title1)
+    TextView tvbodytiptitle1;
+
+    @BindView(R.id.tv_bodyshape_desc1)
+    TextView tvbodytipdesc1;
+
+    @BindView(R.id.iv_tipbodyimg1)
+    ImageView ivbodytip1;
+
     private TipAdapter mTipListAdapter;
     public static BodyShapeTipsFragment newInstance(){
         BodyShapeTipsFragment bodyshapeTipsFragment=new BodyShapeTipsFragment();
