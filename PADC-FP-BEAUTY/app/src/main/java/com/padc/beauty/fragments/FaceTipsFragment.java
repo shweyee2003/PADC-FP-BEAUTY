@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
-import com.padc.beauty.adapters.TipAdapter;
+import com.padc.beauty.adapters.FaceTipAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,7 +60,7 @@ public class FaceTipsFragment extends Fragment {
     @BindView(R.id.iv_jewelrytip)
     ImageView ivjewelrytip;
 
-    private TipAdapter mTipListAdapter;
+    private FaceTipAdapter mTipListAdapter;
 
 
     private Integer[] mhairstyleids = {R.drawable.special_hair_style1,R.drawable.special_hair_style2,R.drawable.special_hair_style3};
@@ -78,7 +78,7 @@ public class FaceTipsFragment extends Fragment {
         String[] tipListArray = getResources().getStringArray(R.array.face_tip_list);
         List<String> tipList = new ArrayList<>(Arrays.asList(tipListArray));
 
-        mTipListAdapter = new TipAdapter(tipList);
+        mTipListAdapter = new FaceTipAdapter(tipList);
 
     }
 

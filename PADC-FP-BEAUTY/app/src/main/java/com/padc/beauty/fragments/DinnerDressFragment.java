@@ -4,24 +4,36 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.padc.beauty.R;
+import com.padc.beauty.adapters.OccassionalDressAdapter;
+import com.padc.beauty.data.models.DressingModel;
+import com.padc.beauty.data.vos.DressingVO;
+import com.padc.beauty.events.DataEvent;
 
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by windows on 9/16/2016.
  */
 public class DinnerDressFragment extends Fragment {
 
+    @BindView(R.id.rv_freedress)
+    RecyclerView rvdress;
 
+    private int gridColumnSpanCount=1;
+
+    private OccassionalDressAdapter mDressAdapter;
 
     public static DinnerDressFragment newInstance() {
         return new DinnerDressFragment();
@@ -36,9 +48,37 @@ public class DinnerDressFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_dinner_dress, container, false);
+        View view = inflater.inflate(R.layout.fragment_free_dress, container, false);
         ButterKnife.bind(this, view);
-
+        rvdress.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
+        List<DressingVO> dressingList = DressingModel.getInstance().getmDressingList();
+        mDressAdapter = new OccassionalDressAdapter(dressingList);
+        rvdress.setAdapter(mDressAdapter);
         return view;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus eventBus = EventBus.getDefault();
+        if (!eventBus.isRegistered(this)) {
+            eventBus.register(this);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus eventBus = EventBus.getDefault();
+        eventBus.unregister(this);
+    }
+
+    public void onEventMainThread(DataEvent.DressingDataLoadedEvent event) {
+        String extra = event.getExtraMessage();
+        Toast.makeText(getContext(), "Extra : " + extra, Toast.LENGTH_SHORT).show();
+
+        List<DressingVO> newDressingList = event.getDressingList();
+        mDressAdapter.setNewData(newDressingList);
+    }
+
 }

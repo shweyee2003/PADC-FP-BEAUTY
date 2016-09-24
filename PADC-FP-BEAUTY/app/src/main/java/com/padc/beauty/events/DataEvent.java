@@ -1,52 +1,86 @@
 package com.padc.beauty.events;
 
-import com.padc.beauty.data.vos.FashionshopVO;
+import com.padc.beauty.data.vos.BeautySaloonVO;
+import com.padc.beauty.data.vos.DressingVO;
+import com.padc.beauty.data.vos.FashionShopVO;
+import com.padc.beauty.data.vos.ServiceVO;
+import com.padc.beauty.data.vos.TipVO;
 
 import java.util.List;
 
 /**
- * Created by aung on 7/9/16.
+ * Created by windows on 9/22/2016.
  */
 public class DataEvent {
-    public static class AttractionDataLoadedEvent {
-
+    public static  class DressingDataLoadedEvent{
         private String extraMessage;
-        private List<FashionshopVO> fashionshopsList;
+        private List<DressingVO> DressingList;
 
-        public AttractionDataLoadedEvent(String extraMessage, List<FashionshopVO> fashionshopsList) {
+
+        public DressingDataLoadedEvent(String extraMessage, List<DressingVO> dressingList) {
             this.extraMessage = extraMessage;
-            this.fashionshopsList = fashionshopsList;
+            this.DressingList = dressingList;
         }
 
         public String getExtraMessage() {
             return extraMessage;
         }
 
-        public List<FashionshopVO> getFashionshopsList() {
-            return fashionshopsList;
+        public List<DressingVO> getDressingList() {
+            return DressingList;
         }
     }
 
-
-    public static class RefreshUserLoginStatusEvent {
-
-    }
-    public static class FashionshopsLoadedEvent {
+    public static class FahionShopandBeautySaloonDataLoadedEvent{
 
         private String extraMessage;
-        private List<FashionshopVO> fashionshopsList;
+        private List<BeautySaloonVO> BeautySaloonList;
+        private List<FashionShopVO> FashionShopList;
+        private List<ServiceVO> ServiceList;
 
-        public FashionshopsLoadedEvent(String extraMessage, List<FashionshopVO> fashionshopsList) {
+
+        //public FahionShopandBeautySaloonDataLoadedEvent(String extraMessage, List<FashionShopVO> fashionshopList, List<BeautySaloonVO> beautysaloonList, List<ServiceVO> serviceList) {
+        public FahionShopandBeautySaloonDataLoadedEvent(String extraMessage, List<FashionShopVO> fashionshopList, List<BeautySaloonVO> beautysaloonList) {
             this.extraMessage = extraMessage;
-            this.fashionshopsList = fashionshopsList;
+            this.FashionShopList = fashionshopList;
+            this.BeautySaloonList=beautysaloonList;
+           // this.ServiceList=serviceList;
         }
 
         public String getExtraMessage() {
             return extraMessage;
         }
 
-        public List<FashionshopVO> getFashionshopsList() {
-            return fashionshopsList;
+        public List<BeautySaloonVO> getBeautySaloonList() {
+            return BeautySaloonList;
+        }
+
+        public List<ServiceVO> getServiceList() {
+            return ServiceList;
+        }
+
+        public List<FashionShopVO> getFashionShopList() {
+            return FashionShopList;
         }
     }
+
+    public static  class TipDataLoadedEvent{
+        private String extraMessage;
+        private List<TipVO> TipList;
+
+
+        public TipDataLoadedEvent(String extraMessage, List<TipVO> tipList) {
+            this.extraMessage = extraMessage;
+            this.TipList = tipList;
+        }
+
+        public String getExtraMessage() {
+            return extraMessage;
+        }
+
+        public List<TipVO> getTipList() {
+            return TipList;
+        }
+    }
+
 }

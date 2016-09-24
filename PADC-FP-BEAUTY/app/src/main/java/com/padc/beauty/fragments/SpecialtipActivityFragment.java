@@ -1,6 +1,5 @@
 package com.padc.beauty.fragments;
 
-import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,7 +14,7 @@ import android.widget.TextView;
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.BodyshapeListAdapter;
 import com.padc.beauty.adapters.SkinTipAdapter;
-import com.padc.beauty.adapters.TipAdapter;
+import com.padc.beauty.adapters.FaceTipAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +42,7 @@ public class SpecialtipActivityFragment extends Fragment {
 
     private BodyshapeListAdapter mBodyshapeListAdapter;
     private SkinTipAdapter mSkinTipListAdapter;
-    private TipAdapter mFaceTipAdapter;
+    private FaceTipAdapter mFaceTipAdapter;
 
     //private FragmentChangeListener mChangeFragment;
 
@@ -65,7 +63,7 @@ public class SpecialtipActivityFragment extends Fragment {
 
 //        String[]faceshapeListArray = getResources().getStringArray(R.array.face_tip_list);
 //        List<String> faceshapeList = new ArrayList<>(Arrays.asList(faceshapeListArray));
-//        mFaceTipAdapter = new TipAdapter(faceshapeList);
+//        mFaceTipAdapter = new FaceTipAdapter(faceshapeList);
 //
 //        String[]skintipListArray = getResources().getStringArray(R.array.Skin_Type_tip_list);
 //        List<String> skintipList = new ArrayList<>(Arrays.asList(skintipListArray));

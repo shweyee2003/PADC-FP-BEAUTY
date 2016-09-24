@@ -3,6 +3,8 @@
     package="com.padc.beauty">
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".BeautyApp"
         android:allowBackup="true"

@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.DressingPagerAdapter;
-import com.padc.beauty.adapters.TipPagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
