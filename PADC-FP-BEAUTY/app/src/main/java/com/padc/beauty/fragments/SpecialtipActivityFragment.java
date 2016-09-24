@@ -39,8 +39,8 @@ public class SpecialtipActivityFragment extends Fragment {
     @BindView(R.id.sp_bodyshapequest)
     Spinner spBodyShapeList;
 
-    @BindView(R.id.lbl_tips_title)
-    TextView lblTipsTitle;
+//    @BindView(R.id.lbl_tips_title)
+//    TextView lblTipsTitle;
 
     private BodyshapeListAdapter mBodyshapeListAdapter;
     private SkinTipAdapter mSkinTipListAdapter;
@@ -81,7 +81,7 @@ public class SpecialtipActivityFragment extends Fragment {
         spBodyShapeList.setAdapter(mBodyshapeListAdapter);
 //        spFaceList.setAdapter(mFaceTipAdapter);
 //        spSkinList.setAdapter(mSkinTipListAdapter);
-        lblTipsTitle.setText("Special Tips for you");
+        //lblTipsTitle.setText("Special Tips for you");
         return rootView;
     }
 

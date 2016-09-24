@@ -8,7 +8,7 @@ import android.content.Context;
  */
 public class BeautyApp extends Application {
     private static Context context;
-
+    public static final String TAG = "BeautyApp";
 
     @Override
     public void onCreate() {

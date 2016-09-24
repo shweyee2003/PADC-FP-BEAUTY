@@ -1,51 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context=".fragments.SpecialtipActivityFragment"
-    tools:showIn="@layout/activity_specialtip">
-    <LinearLayout
-        android:layout_width="300dp"
+ <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="fill_vertical"
-        android:orientation="vertical"
-        android:layout_marginBottom="@dimen/margin_medium_2"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginTop="@dimen/margin_medium_2"
-        android:background="@color/text_white_ish">
+        android:orientation="vertical">
+
         <com.padc.beauty.components.MMTextView
-            android:id="@+id/lbl_tips_title"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_facequest"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/text_white_ish"
-            android:textSize="@dimen/text_regular_3x"
-            android:padding="@dimen/margin_medium"
-            android:background="?attr/colorPrimary"
-            android:drawableRight="@drawable/ic_clear_24dp"
-            android:drawablePadding="@dimen/margin_medium" />
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_medium">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <com.padc.beauty.components.MMTextView
-                    android:id="@+id/tv_facequest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/facetypeques"
-                    android:paddingLeft="@dimen/margin_medium"
-                    android:paddingTop="@dimen/margin_medium" />
+            android:text="@string/facetypeques"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_medium" />
                 <RadioGroup
                     android:id="@+id/rdgrp_face"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_facequest">
+                    android:layout_height="wrap_content">
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -54,31 +30,26 @@
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/roundface"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/roundface"/>
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/ovalface"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/ovalface"/>
 
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/squareface"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/squareface"/>
 
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/heartface"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/heartface"/>
 
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/diamondface"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/diamondface"/>
                 </RadioGroup>
                 <com.padc.beauty.components.MMTextView
                     android:id="@+id/tv_skinquest"
@@ -96,18 +67,15 @@
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/coolskin"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/coolskin"/>
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/warmskin"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/warmskin"/>
                     <RadioButton
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/meduimskin"
-                        android:layout_marginTop="@dimen/margin_small"/>
+                        android:text="@string/meduimskin"/>
                 </RadioGroup>
                 <com.padc.beauty.components.MMTextView
                     android:id="@+id/tv_bodyshapequest"
@@ -136,9 +104,6 @@
                     android:textSize="@dimen/text_regular"
                     android:text="Best Style For You" />
 
-            </RelativeLayout>
 
-        </ScrollView>
      </LinearLayout>
-
-</FrameLayout>
+    </ScrollView>
