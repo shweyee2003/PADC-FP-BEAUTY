@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
-import com.padc.beauty.adapters.TipAdapter;
+import com.padc.beauty.adapters.FaceTipAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +50,7 @@ public class BodyShapeTipsFragment extends Fragment {
     ImageView ivbodyshapedoanddont;
 
 
-    private TipAdapter mTipListAdapter;
+    private FaceTipAdapter mTipListAdapter;
     public static BodyShapeTipsFragment newInstance(){
         BodyShapeTipsFragment bodyshapeTipsFragment=new BodyShapeTipsFragment();
 
@@ -64,7 +64,7 @@ public class BodyShapeTipsFragment extends Fragment {
         String[] tipListArray = getResources().getStringArray(R.array.body_shape);
         List<String> tipList = new ArrayList<>(Arrays.asList(tipListArray));
 
-        mTipListAdapter = new TipAdapter(tipList);
+        mTipListAdapter = new FaceTipAdapter(tipList);
     }
 
     @Nullable

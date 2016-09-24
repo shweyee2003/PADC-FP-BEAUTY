@@ -3,33 +3,40 @@ package com.padc.beauty.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.padc.beauty.R;
+import com.padc.beauty.adapters.BeautySaloonAdapter;
+import com.padc.beauty.adapters.OccassionalDressAdapter;
+import com.padc.beauty.data.models.DressingModel;
+import com.padc.beauty.data.models.FashionShopandBeautySaloonModel;
+import com.padc.beauty.data.vos.BeautySaloonVO;
+import com.padc.beauty.data.vos.DressingVO;
+import com.padc.beauty.events.DataEvent;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by Asus on 9/13/2016.
  */
 public class BeautysaloonFragment extends Fragment {
-    @BindView(R.id.tv_lili)
-    TextView tvLiLi;
-    @BindView(R.id.tv_koko)
-    TextView tvKoKo;
-    @BindView(R.id.tv_seri)
-    TextView tvSeri;
-    @BindView(R.id.tv_spamyway)
-    TextView tvSpaMyway;
-    @BindView(R.id.tv_inyadayspa)
-    TextView tvInyaDaySpa;
-    @BindView(R.id.tv_tonytuntun)
-    TextView tvTonyTunTun;
+    @BindView(R.id.rv_beautysaloon)
+    RecyclerView rvbeautysaloon;
+
+    private int gridColumnSpanCount=2;
+
+    private BeautySaloonAdapter mBeautySaloonAdapter;
 
     public static BeautysaloonFragment newInstance(){
         BeautysaloonFragment beautysaloonFragment = new BeautysaloonFragment();
@@ -46,16 +53,35 @@ public class BeautysaloonFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_beautysaloon, container, false);
         ButterKnife.bind(this, rootView);
-        showdata();
+        rvbeautysaloon.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
+        List<BeautySaloonVO> beautysaloonList = FashionShopandBeautySaloonModel.getInstance().getBeautySaloonList();
+        //showdata();
+        mBeautySaloonAdapter = new BeautySaloonAdapter(beautysaloonList);
+        rvbeautysaloon.setAdapter(mBeautySaloonAdapter);
         return rootView;
     }
-    private void showdata()
-    {
-        tvLiLi.setText(Html.fromHtml(getString(R.string.lili_beautysalon)));
-        tvKoKo.setText(Html.fromHtml(getString(R.string.koko_beautysalon)));
-        tvSeri.setText(Html.fromHtml(getString(R.string.seri_beautysalon)));
-        tvSpaMyway.setText(Html.fromHtml(getString(R.string.spamyway_beautysalon)));
-        tvInyaDaySpa.setText(Html.fromHtml(getString(R.string.inyaday_spa)));
-        tvTonyTunTun.setText(Html.fromHtml(getString(R.string.tonytuntun_beautysalon)));
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus eventBus = EventBus.getDefault();
+        if (!eventBus.isRegistered(this)) {
+            eventBus.register(this);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus eventBus = EventBus.getDefault();
+        eventBus.unregister(this);
+    }
+
+    public void onEventMainThread(DataEvent.FahionShopandBeautySaloonDataLoadedEvent event) {
+        String extra = event.getExtraMessage();
+        Toast.makeText(getContext(), "Extra : " + extra, Toast.LENGTH_SHORT).show();
+
+        List<BeautySaloonVO> newBeautySaloonList = event.getBeautySaloonList();
+        mBeautySaloonAdapter.setNewData(newBeautySaloonList);
     }
 }

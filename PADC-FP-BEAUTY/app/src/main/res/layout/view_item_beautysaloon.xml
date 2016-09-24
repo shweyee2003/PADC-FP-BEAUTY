@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <com.padc.beauty.components.DynamicHeightImageView
+            android:id="@+id/iv_beautysaloon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/lilibeautysalon"
+            android:scaleType="centerCrop"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:background="#bbffffff"
+            android:focusable="false"
+            android:focusableInTouchMode="false" >
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_beautysaloonname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/primary"
+                android:textSize="10sp"
+                android:paddingBottom="0dp"
+                android:paddingLeft="5dp"
+                android:minHeight="20dp"
+                />
+
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_beautysaloonaddr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="#000000"
+                android:textSize="10sp"
+                android:paddingBottom="0dp"
+                android:paddingLeft="5dp"
+                android:minHeight="20dp"
+                />
+
+        </LinearLayout>
+  </FrameLayout>

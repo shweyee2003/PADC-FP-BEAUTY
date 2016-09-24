@@ -16,12 +16,12 @@ import java.util.List;
 /**
  * Created by windows on 9/9/2016.
  */
-public class TipAdapter extends BaseAdapter {
+public class FaceTipAdapter extends BaseAdapter {
 
     private List<String> mTipList;
     private LayoutInflater mInflater;
 
-    public TipAdapter(List<String> tipList) {
+    public FaceTipAdapter(List<String> tipList) {
         if (tipList != null) {
             this.mTipList = tipList;
         } else {
