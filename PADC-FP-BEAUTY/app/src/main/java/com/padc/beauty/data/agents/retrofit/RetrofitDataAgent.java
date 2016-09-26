@@ -86,7 +86,7 @@ public class RetrofitDataAgent implements BeautyDataAgent {
                 FashionShopandBeautySaloonListResponse beautysaloonandfashionListResponse=response.body();
                 if(beautysaloonandfashionListResponse==null)
                 {
-                    FashionShopandBeautySaloonModel.getInstance().notifyErrorInLoadingFoodItems(response.message());
+                    FashionShopandBeautySaloonModel.getInstance().notifyErrorInLoadingFashionshopItems(response.message());
                 }
                 else
                 {
@@ -97,7 +97,7 @@ public class RetrofitDataAgent implements BeautyDataAgent {
 
             public void onFailure(Call<FashionShopandBeautySaloonListResponse> call, Throwable throwable) {
 
-                FashionShopandBeautySaloonModel.getInstance().notifyErrorInLoadingFoodItems(throwable.getMessage());
+                FashionShopandBeautySaloonModel.getInstance().notifyErrorInLoadingFashionshopItems(throwable.getMessage());
             }
         });
     }

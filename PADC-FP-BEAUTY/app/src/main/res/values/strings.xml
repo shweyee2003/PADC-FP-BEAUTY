@@ -2,7 +2,7 @@
     <string name="app_name">BEAUTY And HEALTH</string>
     <string name="action_settings">Settings</string>
 
-
+    <string name="content_authority">com.padc.beauty</string>
     <!--Tips -->
     <string name="face_tips">Face</string>
     <string name="skin_tones">Skin Tones</string>
