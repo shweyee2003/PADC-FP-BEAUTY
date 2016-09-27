@@ -65,7 +65,7 @@ public class RetrofitDataAgent implements BeautyDataAgent {
                 }
                 else
                 {
-                    DressingModel.getInstance().notifyAttractionsLoaded(dressingListResponse.getDressingList());
+                    DressingModel.getInstance().notifyDressingsLoaded(dressingListResponse.getDressingList());
                 }
             }
 

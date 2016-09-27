@@ -5,20 +5,15 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.BeautySaloonAdapter;
-import com.padc.beauty.adapters.OccassionalDressAdapter;
-import com.padc.beauty.data.models.DressingModel;
 import com.padc.beauty.data.models.FashionShopandBeautySaloonModel;
 import com.padc.beauty.data.vos.BeautySaloonVO;
-import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.events.DataEvent;
 
 import java.util.List;
