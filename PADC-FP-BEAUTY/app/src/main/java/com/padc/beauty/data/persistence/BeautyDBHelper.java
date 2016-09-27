@@ -132,6 +132,36 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
             BeautyContract.DressingSkinTypeEntry.COLUMN_SKINTYPE+") ON CONFLICT IGNORE" +
             " );";
 
+    private static final String SQL_CREATE_BEAUTY_SALON_TABLE ="CREATE TABLE " + BeautyContract.BeautySalonEntry.TABLE_NAME + " (" +
+        BeautyContract.BeautySalonEntry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        BeautyContract.BeautySalonEntry.COLUMN_SALON_NAME + " TEXT NOT NULL, "+
+        BeautyContract.BeautySalonEntry.COLUMN_DIRECTION_TO_SALON + " TEXT NOT NULL, "+
+        BeautyContract.BeautySalonEntry.COLUMN_FULL_ADDRESS + " TEXT NOT NULL, " +
+        BeautyContract.BeautySalonEntry.COLUMN_PHOTO + " TEXT NOT NULL, "+
+        BeautyContract.BeautySalonEntry.COLUMN_OPEN + " TEXT NOT NULL, "+
+
+        " UNIQUE (" + BeautyContract.BeautySalonEntry.COLUMN_ID + ") ON CONFLICT IGNORE" +
+            " );";
+
+    private static final String SQL_CREATE_SALON_SERVICES_TABLE ="CREATE TABLE " + BeautyContract.SalonServicesEntry.TABLE_NAME + " (" +
+            BeautyContract.SalonServicesEntry.COLUMN_SERVICE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            BeautyContract.SalonServicesEntry.COLUMN_SALON_ID + " INT NOT NULL, "+
+            BeautyContract.SalonServicesEntry.COLUMN_SERVICE_TITLE + " TEXT NOT NULL, "+
+            BeautyContract.SalonServicesEntry.COLUMN_IMAGE + " TEXT NOT NULL, " +
+            BeautyContract.SalonServicesEntry.COLUMN_DESCRIPTION + " TEXT NOT NULL, "+
+
+            " UNIQUE (" + BeautyContract.SalonServicesEntry.COLUMN_SERVICE_ID + ") ON CONFLICT IGNORE" +
+            " );";
+
+    private static final String SQL_CREATE_FASHION_SHOP_TABLE ="CREATE TABLE " + BeautyContract.FashionshopEntry.TABLE_NAME + " (" +
+            BeautyContract.FashionshopEntry.COLUMN_SHOP_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            BeautyContract.FashionshopEntry.COLUMN_SHOP_NAME + " INT NOT NULL, "+
+            BeautyContract.FashionshopEntry.COLUMN_DIRECTION_TO_SHOP + " TEXT NOT NULL, "+
+            BeautyContract.FashionshopEntry.COLUMN_ADDRESS + " TEXT NOT NULL, " +
+            BeautyContract.FashionshopEntry.COLUMN_PHOTO + " TEXT NOT NULL, "+
+
+            " UNIQUE (" + BeautyContract.FashionshopEntry.COLUMN_SHOP_ID  + ") ON CONFLICT IGNORE" +
+            " );";
 
     public BeautyDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -139,6 +169,7 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+
         try {
             sqLiteDatabase.execSQL(SQL_CREATE_TIP_TABLE);
             sqLiteDatabase.execSQL(SQL_CREATE_TIP_SKIN_COLOR_TABLE);
@@ -152,6 +183,10 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
             sqLiteDatabase.execSQL(SQL_CREATE_DRESSING_SKIN_TYPE_TABLE);
             sqLiteDatabase.execSQL(SQL_CREATE_DRESSING_BODY_SHAPE_TABLE);
             sqLiteDatabase.execSQL(SQL_CREATE_DRESSING_HAIR_STYLE_TABLE);
+
+            sqLiteDatabase.execSQL(SQL_CREATE_BEAUTY_SALON_TABLE);
+            sqLiteDatabase.execSQL(SQL_CREATE_SALON_SERVICES_TABLE);
+            sqLiteDatabase.execSQL(SQL_CREATE_FASHION_SHOP_TABLE);
         }
         catch (Exception e) {
             //This happens on every launch that isn't the first one.
@@ -162,6 +197,7 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.TipEntry.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.TipBodyShapeEntry.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.TipFaceTypeEntry.TABLE_NAME);
@@ -175,6 +211,9 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.DressingHairStyleEntry.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.DressingBodyShapeEntry.TABLE_NAME);
 
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.BeautySalonEntry.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.SalonServicesEntry.TABLE_NAME);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.FashionshopEntry.TABLE_NAME);
 
         onCreate(sqLiteDatabase);
     }

@@ -2,7 +2,7 @@
     <string name="app_name">BEAUTY And HEALTH</string>
     <string name="action_settings">Settings</string>
 
-
+    <string name="content_authority">com.padc.beauty</string>
     <!--Tips -->
     <string name="face_tips">Face</string>
     <string name="skin_tones">Skin Tones</string>
@@ -199,8 +199,6 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="estimate">Estimate</string>
     <string name="suitable_style">Suitable Person</string>
 
-    <!--SyncAdapter-->
-    <string name="sync_account_type">myanmarattractions.padc.aungpyaephyo.xyz</string>
-    <string name="content_authority">xyz.aungpyaephyo.padc.myanmarattractions</string>
+
 
 </resources>

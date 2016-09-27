@@ -10,7 +10,7 @@ import com.padc.beauty.R;
 import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.data.vos.FashionShopVO;
 import com.padc.beauty.data.vos.TipVO;
-import com.padc.beauty.views.holders.FashionShopViewHolder;
+
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 
 import java.util.List;

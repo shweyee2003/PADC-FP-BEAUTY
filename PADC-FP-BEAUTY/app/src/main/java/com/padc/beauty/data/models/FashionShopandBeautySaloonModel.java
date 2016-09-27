@@ -79,16 +79,25 @@ public class FashionShopandBeautySaloonModel extends BaseModel {
         mBeautySaloonList = beautysaloonList;
         mServiceList=mBeautySaloonList.get(0).getAvailable_services();
 
-        broadcastMealLoadedWithEventBus();
+        FashionShopVO.saveFashionshops(mFashionShopList);
+        BeautySaloonVO.saveBeautysalons(mBeautySaloonList);
+        //broadcastMealLoadedWithEventBus();
         //broadcastAttractionLoadedWithLocalBroadcastManager();
     }
 
-    public void notifyErrorInLoadingFoodItems(String message) {
+    public void notifyErrorInLoadingFashionshopItems(String message) {
 
     }
 
     private void broadcastMealLoadedWithEventBus() {
         //EventBus.getDefault().post(new DataEvent.FahionShopandBeautySaloonDataLoadedEvent("extra-in-broadcast", mFashionShopList,mBeautySaloonList,mServiceList));
         EventBus.getDefault().post(new DataEvent.FahionShopandBeautySaloonDataLoadedEvent("extra-in-broadcast", mFashionShopList,mBeautySaloonList));
+    }
+
+    public void setStoredData(List<FashionShopVO> fashionshopsList) {
+        mFashionShopList = fashionshopsList;
+    }
+    public void setStoredBeautysalonData(List<BeautySaloonVO> beautysalonList) {
+        mBeautySaloonList = beautysalonList;
     }
 }

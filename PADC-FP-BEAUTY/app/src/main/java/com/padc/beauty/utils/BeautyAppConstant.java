@@ -19,6 +19,7 @@ public class BeautyAppConstant {
     public static final String ACCESS_TOKEN = "b002c7e1a528b7cb460933fc2875e916";
 
     //Loader ID
+
     public static final int SKINTIPS_LIST_LOADER = 1;
     public static final int FACETIPS_LIST_LOADER = 2;
     public static final int BODYSHAPETIPS_LIST_LOADER = 3;
@@ -26,4 +27,8 @@ public class BeautyAppConstant {
     public static final int DRESSINGS_FREELIST_LOADER=5;
     public static final int PERSONALITY_LIST_LOADER=6;
     public static final int FitnessandHealthTIPS_LIST_LOADER=7;
+    public static final int FASHION_SHOP_LIST_LOADER = 8;
+    public static final int BEAUTY_SALON_LIST_LOADER = 9;
+
+
 }

@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 /**
+
  * Created by windows on 9/24/2016.
  */
 public class BeautyProvider extends ContentProvider {
@@ -29,11 +30,17 @@ public class BeautyProvider extends ContentProvider {
     public static final int DRESSING_HAIRSTYLE = 1000;
     public static final int DRESSING_SKINTYPE = 1100;
 
+    public static final int BEAUTY = 1200;
+    public static final int SALON_SERVICES = 1300;
+    public static final int FASHIONSHOP = 1400;
+
 
     private static final String sHairStyleSelectionWithDressingid = BeautyContract.DressingHairStyleEntry.COLUMN_DRESSINGID + " = ?";
     private static final String sBodyShapeSelectionWithDressingid = BeautyContract.DressingBodyShapeEntry.COLUMN_DRESSINGID + " = ?";
     private static final String sSkinTypeSelectionWithDressingid = BeautyContract.DressingSkinTypeEntry.COLUMN_DRESSINGID + " = ?";
     private static final String sSkinColorSelectionWithDressingid = BeautyContract.DressingSkinColorEntry.COLUMN_DRESSINGID + " = ?";
+    private static final String sBeautyIdSelection = BeautyContract.BeautySalonEntry.COLUMN_ID + " = ?";
+    private static final String sAttractionSelectionWithTitle = BeautyContract.BeautySalonEntry.COLUMN_ID + " = ?";
 
     private static final UriMatcher sUriMatcher = buildUriMatcher();
     private BeautyDBHelper mBeautyDBHelper;
@@ -54,10 +61,12 @@ public class BeautyProvider extends ContentProvider {
         uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_DRESSING_HAIRSTYLE, DRESSING_HAIRSTYLE);
         uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_DRESSING_SKINTYPE, DRESSING_SKINTYPE);
 
+        uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_BEAUTY_SALON, BEAUTY);
+        uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_SALON_SERVICES, SALON_SERVICES);
+        uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_FASHION_SHOP, FASHIONSHOP);
+
         return uriMatcher;
     }
-
-
 
     @Override
     public boolean onCreate() {
@@ -72,6 +81,7 @@ public class BeautyProvider extends ContentProvider {
 
         int matchUri = sUriMatcher.match(uri);
         switch (matchUri) {
+
             case TIP:
                 queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.TipEntry.TABLE_NAME,
                         projection,
@@ -147,6 +157,34 @@ public class BeautyProvider extends ContentProvider {
                         sortOrder);
                 break;
 
+            case BEAUTY:
+               queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.BeautySalonEntry.TABLE_NAME,
+                        null,
+                        null,
+                        null,
+                        null, //group_by
+                        null, //having
+                        sortOrder);
+                break;
+            case SALON_SERVICES:
+                 queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.SalonServicesEntry.TABLE_NAME,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        sortOrder);
+                break;
+            case FASHIONSHOP:
+                queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.FashionshopEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null,
+                        null,
+                        sortOrder);
+                break;
+
             default:
                 throw new UnsupportedOperationException("Unknown uri : " + uri);
         }
@@ -173,6 +211,7 @@ public class BeautyProvider extends ContentProvider {
         Uri insertedUri;
 
         switch (matchUri) {
+
             case TIP: {
                 long _id = db.insert(BeautyContract.TipEntry.TABLE_NAME, null, contentValues);
                 if (_id > 0) {
@@ -186,15 +225,6 @@ public class BeautyProvider extends ContentProvider {
                 long _id = db.insert(BeautyContract.TipBodyShapeEntry.TABLE_NAME, null, contentValues);
                 if (_id > 0) {
                     insertedUri = BeautyContract.TipBodyShapeEntry.buildBodyShapeUri(_id);
-                } else {
-                    throw new SQLException("Failed to insert row into " + uri);
-                }
-                break;
-            }
-            case TIP_FACETYPE: {
-                long _id = db.insert(BeautyContract.TipFaceTypeEntry.TABLE_NAME, null, contentValues);
-                if (_id > 0) {
-                    insertedUri = BeautyContract.TipFaceTypeEntry.buildFaceTypeUri(_id);
                 } else {
                     throw new SQLException("Failed to insert row into " + uri);
                 }
@@ -227,6 +257,45 @@ public class BeautyProvider extends ContentProvider {
                 }
                 break;
             }
+            case TIP_FACETYPE: {
+                long _id = db.insert(BeautyContract.TipFaceTypeEntry.TABLE_NAME, null, contentValues);
+                if (_id > 0) {
+                    insertedUri = BeautyContract.TipFaceTypeEntry.buildFaceTypeUri(_id);
+                } else {
+                    throw new SQLException("Failed to insert row into " + uri);
+                }
+                break;
+            }
+            case BEAUTY: {
+                long _id = db.insert(BeautyContract.BeautySalonEntry.TABLE_NAME, null, contentValues);
+                if (_id > 0) {
+                    insertedUri = BeautyContract.BeautySalonEntry.buildBeautySalonUri(_id);
+
+                } else {
+                    throw new SQLException("Failed to insert row into " + uri);
+                }
+                break;
+            }
+            case SALON_SERVICES: {
+                long _id = db.insert(BeautyContract.SalonServicesEntry.TABLE_NAME, null, contentValues);
+                if (_id > 0) {
+                    insertedUri = BeautyContract.SalonServicesEntry.buildBeautySalonUri(_id);
+
+                } else {
+                    throw new SQLException("Failed to insert row into " + uri);
+                }
+                break;
+            }
+            case FASHIONSHOP: {
+                long _id = db.insert(BeautyContract.FashionshopEntry.TABLE_NAME, null, contentValues);
+                if (_id > 0) {
+                    insertedUri = BeautyContract.FashionshopEntry.buildFashionshopUri(_id);
+
+                } else {
+                    throw new SQLException("Failed to insert row into " + uri);
+                }
+                break;
+            }
             case DRESSING: {
                 long _id = db.insert(BeautyContract.DressingEntry.TABLE_NAME, null, contentValues);
                 if (_id > 0) {
@@ -238,15 +307,44 @@ public class BeautyProvider extends ContentProvider {
             }
             default:
                 throw new UnsupportedOperationException("Unknown uri : " + uri);
+
         }
 
         Context context = getContext();
-        if (context != null) {
+         if (context != null) {
+           context.getContentResolver().notifyChange(uri, null);
+         }
+
+         return insertedUri;
+     }
+
+    @Override
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+        final SQLiteDatabase db = mBeautyDBHelper.getWritableDatabase();
+        int rowDeleted;
+        String tableName = getTableName(uri);
+
+        rowDeleted = db.delete(tableName, selection, selectionArgs);
+        Context context = getContext();
+        if (context != null && rowDeleted > 0) {
             context.getContentResolver().notifyChange(uri, null);
         }
-
-        return insertedUri;
+        return rowDeleted;
     }
+    @Override
+    public int update(Uri uri, ContentValues contentValues,String selection, String[] selectionArgs) {
+        final SQLiteDatabase db = mBeautyDBHelper.getWritableDatabase();
+        int rowUpdated;
+        String tableName = getTableName(uri);
+
+        rowUpdated = db.update(tableName, contentValues, selection, selectionArgs);
+        Context context = getContext();
+        if (context != null && rowUpdated > 0) {
+            context.getContentResolver().notifyChange(uri, null);
+        }
+        return rowUpdated;
+    }
+
 
     @Override
     public int bulkInsert(Uri uri, ContentValues[] values) {
@@ -275,32 +373,13 @@ public class BeautyProvider extends ContentProvider {
         }
 
         return insertedCount;
-
-    }
-
-    @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
-        final SQLiteDatabase db = mBeautyDBHelper.getWritableDatabase();
-        int rowDeleted;
-        String tableName = getTableName(uri);
-
-        rowDeleted = db.delete(tableName, selection, selectionArgs);
-        Context context = getContext();
-        if (context != null && rowDeleted > 0) {
-            context.getContentResolver().notifyChange(uri, null);
-        }
-        return rowDeleted;
-    }
-
-    @Override
-    public int update(Uri uri, ContentValues contentValues, String s, String[] strings) {
-        return 0;
     }
 
     private String getTableName(Uri uri) {
         final int matchUri = sUriMatcher.match(uri);
 
         switch (matchUri) {
+
             case TIP:
                 return BeautyContract.TipEntry.TABLE_NAME;
             case TIP_BODYSHAPE:
@@ -323,6 +402,13 @@ public class BeautyProvider extends ContentProvider {
                 return BeautyContract.DressingSkinColorEntry.TABLE_NAME;
             case DRESSING_SKINTYPE:
                 return BeautyContract.DressingSkinTypeEntry.TABLE_NAME;
+            case BEAUTY:
+                return BeautyContract.BeautySalonEntry.TABLE_NAME;
+            case SALON_SERVICES:
+                return BeautyContract.SalonServicesEntry.TABLE_NAME;
+            case FASHIONSHOP:
+                return BeautyContract.FashionshopEntry.TABLE_NAME;
+
             default:
                 throw new UnsupportedOperationException("Unknown uri : " + uri);
         }
