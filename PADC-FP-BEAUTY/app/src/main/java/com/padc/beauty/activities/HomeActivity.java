@@ -1,5 +1,6 @@
 package com.padc.beauty.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -146,9 +147,8 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     private void navigatetoPersonality(){
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, PersonalityListFragment.newInstance())
-                .commit();
+        Intent intent = PersonalityListActivity.newIntent();
+        startActivity(intent);
     }
 
 }
