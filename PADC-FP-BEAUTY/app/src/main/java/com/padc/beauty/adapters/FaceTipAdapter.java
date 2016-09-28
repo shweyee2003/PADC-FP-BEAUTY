@@ -48,7 +48,7 @@ public class FaceTipAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.view_item_tip_list, parent, false);
+            convertView = mInflater.inflate(R.layout.view_item_tip_category_list, parent, false);
         }
 
         if(convertView instanceof ViewItemTipList){

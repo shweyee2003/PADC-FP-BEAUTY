@@ -15,12 +15,12 @@ import java.util.List;
 /**
  * Created by windows on 9/11/2016.
  */
-public class SkinTipAdapter extends BaseAdapter{
+public class SkinTypeAdapter extends BaseAdapter{
 
     private List<String> mSkintipList;
     private LayoutInflater mInflater;
 
-    public SkinTipAdapter(List<String> skintipList) {
+    public SkinTypeAdapter(List<String> skintipList) {
         if (skintipList != null) {
             this.mSkintipList = skintipList;
         } else {
@@ -47,7 +47,7 @@ public class SkinTipAdapter extends BaseAdapter{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.view_item_tip_list, parent, false);
+            convertView = mInflater.inflate(R.layout.view_item_tip_category_list, parent, false);
         }
 
         if(convertView instanceof ViewItemTipList){

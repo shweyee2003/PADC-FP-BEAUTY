@@ -9,11 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.BodyshapeListAdapter;
-import com.padc.beauty.adapters.SkinTipAdapter;
+import com.padc.beauty.adapters.SkinTypeAdapter;
 import com.padc.beauty.adapters.FaceTipAdapter;
 
 import java.util.ArrayList;
@@ -41,7 +40,7 @@ public class SpecialtipActivityFragment extends Fragment {
 //    TextView lblTipsTitle;
 
     private BodyshapeListAdapter mBodyshapeListAdapter;
-    private SkinTipAdapter mSkinTipListAdapter;
+    private SkinTypeAdapter mSkinTipListAdapter;
     private FaceTipAdapter mFaceTipAdapter;
 
     //private FragmentChangeListener mChangeFragment;
@@ -67,7 +66,7 @@ public class SpecialtipActivityFragment extends Fragment {
 //
 //        String[]skintipListArray = getResources().getStringArray(R.array.Skin_Type_tip_list);
 //        List<String> skintipList = new ArrayList<>(Arrays.asList(skintipListArray));
-//        mSkinTipListAdapter = new SkinTipAdapter(skintipList);
+//        mSkinTipListAdapter = new SkinTypeAdapter(skintipList);
     }
 
 

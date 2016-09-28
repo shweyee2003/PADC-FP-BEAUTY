@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * Created by windows on 9/23/2016.
  */
-public class OccassionalDressViewHolder extends RecyclerView.ViewHolder {
+public class DressingViewHolder extends RecyclerView.ViewHolder {
 
     @BindView(R.id.tv_price)
     TextView tvprice;
@@ -45,16 +45,21 @@ public class OccassionalDressViewHolder extends RecyclerView.ViewHolder {
     private String skintypes="";
     private String skincolors="";
 
-    public OccassionalDressViewHolder(View itemView) {
+    public DressingViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
 
     public void bindData(DressingVO dress) {
         mdress = dress;
+        String hairstyle="";
         tvShopName.setText(dress.getShopname());
         tvprice.setText(dress.getprice()+" Ks");
         tvShopDirection.setText(dress.getShopdirection());
+        tvHairStyle.setText(showsuitablepersondata(dress.getHairstyles()));;
+        tvSkinColor.setText(showsuitablepersondata(dress.getSkincolors()));
+        tvSkinType.setText(showsuitablepersondata(dress.getSkintypes()));
+        tvBodyShape.setText(showsuitablepersondata(dress.getBodyshapes()));
 
         String imageUrl =  dress.getimgurl();
        // Log.d(BeautyApp.TAG,"imageurl:"+imageUrl);
@@ -65,29 +70,18 @@ public class OccassionalDressViewHolder extends RecyclerView.ViewHolder {
                 .error(R.drawable.stock_photo_placeholder)
                 .into(ivdress);
 
-
-        tvSkinType.setText(showskintype(dress.getSkintypes()));
-        tvSkinColor.setText(showskincolor(dress.getSkincolors()));
     }
 
-    private String showskintype(String[] skintype)
+    private String showsuitablepersondata(String[] suitableperson)
     {
+        String suitablepersons="";
 
-        for(int index=0;index<skintype.length;index++)
+        for(int index=0;index<suitableperson.length;index++)
         {
 
-            skintypes = skintype[index] + "Skin Type"+"\n" ;
+            suitablepersons = suitablepersons + suitableperson[index] + "\n" ;
         }
-        return skintypes;
+        return suitablepersons;
     }
-    private String showskincolor(String[] skincolor)
-    {
 
-        for(int index=0;index<skincolor.length;index++)
-        {
-
-            skincolors = skincolor[index] + "Skin Color"+"\n" ;
-        }
-        return skincolors;
-    }
 }

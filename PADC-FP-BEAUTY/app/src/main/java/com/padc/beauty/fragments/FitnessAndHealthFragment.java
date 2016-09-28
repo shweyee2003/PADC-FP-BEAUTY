@@ -1,6 +1,5 @@
 package com.padc.beauty.fragments;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,65 +13,55 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
-import com.padc.beauty.activities.PersonalityDetailActivity;
 import com.padc.beauty.adapters.AllTipListAdapter;
-import com.padc.beauty.adapters.PersonalityTipAdapter;
+import com.padc.beauty.adapters.FitnessandhealthAdapter;
 import com.padc.beauty.data.models.TipModel;
 import com.padc.beauty.data.persistence.BeautyContract;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 import com.padc.beauty.utils.BeautyAppConstant;
+import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import de.greenrobot.event.EventBus;
 
 /**
- * Created by windows on 9/17/2016.
+ * Created by windows on 9/27/2016.
  */
-public class PersonalityListFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>  {
+public class FitnessAndHealthFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>   {
+    @BindView(R.id.rv_fitnessandhealth)
+    RecyclerView rvfitnessandhealth;
 
-    @BindView(R.id.rv_personality)
-    RecyclerView rvpersonality;
+    private FitnessandhealthAdapter mfitnessandhealthAdapter;
 
-    private AllTipListAdapter mpersonalitytipAdapter;
-
-    public static PersonalityListFragment newInstance() {
-        return new PersonalityListFragment();
+    public static FitnessAndHealthFragment newInstance() {
+        return new FitnessAndHealthFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_personality_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_fitness_and_health, container, false);
         ButterKnife.bind(this, view);
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
-        mpersonalitytipAdapter = new AllTipListAdapter(tipList);
-        rvpersonality.setAdapter(mpersonalitytipAdapter);
+        mfitnessandhealthAdapter = new FitnessandhealthAdapter(tipList);
+        rvfitnessandhealth.setAdapter(mfitnessandhealthAdapter);
 
         int gridColumnSpanCount = getResources().getInteger(R.integer.tip_list_grid);
-        rvpersonality.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
+        rvfitnessandhealth.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
 
         return view;
 
 
     }
-
-//    @OnClick(R.id.ll_good_personality)
-//    public void onTapPersonality(){
-//        Intent intent = PersonalityDetailActivity.newIntent();
-//        startActivity(intent);
-//    }
-
 
     @Override
     public void onStart() {
@@ -95,8 +84,8 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
         return new CursorLoader(getContext(),
                 BeautyContract.TipEntry.CONTENT_URI,
                 null,
-                BeautyContract.TipEntry.COLUMN_CATEGORY + " = ? ",
-                new String[]{"personality-related"},
+                BeautyContract.TipEntry.COLUMN_CATEGORY + " = ?",
+                new String[]{"fitness-and-health-related"},
                 BeautyContract.TipEntry.COLUMN_TIPID + " ASC");
     }
 
@@ -111,19 +100,13 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
             } while (data.moveToNext());
         }
 
-        Log.d(BeautyApp.TAG, "Retrieved Personality : " + tipList.size());
-        mpersonalitytipAdapter.setNewData(tipList);
+        Log.d(BeautyApp.TAG, "Retrieved Skin Tips : " + tipList.size());
+        mfitnessandhealthAdapter.setNewData(tipList);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
 
-    }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        getActivity().getSupportLoaderManager().initLoader(BeautyAppConstant.PERSONALITY_LIST_LOADER, null, this);
     }
 
     public void onEventMainThread(DataEvent.TipDataLoadedEvent event) {
@@ -132,7 +115,12 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
 
         //List<AttractionVO> newAttractionList = AttractionModel.getInstance().getAttractionList();
         List<TipVO> newTipList = event.getTipList();
-        mpersonalitytipAdapter.setNewData(newTipList);
+        mfitnessandhealthAdapter.setNewData(newTipList);
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().getSupportLoaderManager().initLoader(BeautyAppConstant.FitnessandHealthTIPS_LIST_LOADER, null, this);
+    }
 }
