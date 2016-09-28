@@ -155,7 +155,7 @@
                         android:fontFamily="sans-serif-light"
                         android:text="Cool Skin Tone ,Normal Skin Tone"/>
                     <com.padc.beauty.components.DynamicHeightImageView
-                        android:id="@+id/iv_skintype"
+                        android:id="@+id/iv_tips"
                         android:layout_width="@dimen/icon_in_detail"
                         android:layout_height="@dimen/icon_in_detail"
                         android:tint="@color/primary_light"
@@ -167,7 +167,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/text_black_ish"
-                        android:layout_toRightOf="@id/iv_skintype"
+                        android:layout_toRightOf="@id/iv_tips"
                         android:layout_below="@id/tv_skincolor"
                         android:layout_marginTop="@dimen/margin_small"
                         android:paddingBottom="@dimen/margin_small"
