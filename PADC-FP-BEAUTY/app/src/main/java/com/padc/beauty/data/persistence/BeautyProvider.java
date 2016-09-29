@@ -10,6 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
+
+import com.padc.beauty.BeautyApp;
 
 /**
  * Created by Asus on 9/24/2016.
@@ -19,7 +22,7 @@ public class BeautyProvider extends ContentProvider {
     public static final int SALON_SERVICES = 200;
     public static final int FASHIONSHOP = 300;
 
-    private static final String sBeautyIdSelection = BeautyContract.BeautySalonEntry.COLUMN_ID + " = ?";
+    private static final String sBeautyIdSelection = BeautyContract.SalonServicesEntry.COLUMN_SALON_ID + " = ?";
     private static final String sAttractionSelectionWithTitle = BeautyContract.BeautySalonEntry.COLUMN_ID + " = ?";
 
     private static final UriMatcher sUriMatcher = buildUriMatcher();
@@ -52,15 +55,16 @@ public class BeautyProvider extends ContentProvider {
                         sortOrder);
                 break;
             case SALON_SERVICES:
-//                String title = BeautyContract.SalonServicesEntry.getTitleFromParam(uri);
-//                if (title != null) {
-//                    selection = sAttractionSelectionWithTitle;
-//                    selectionArgs = new String[]{title};
-//                }
+                String saloonid = BeautyContract.SalonServicesEntry.getTitleFromParam(uri);
+                Log.d(BeautyApp.TAG,saloonid);
+                if (!TextUtils.isEmpty(saloonid)) {
+                    selection = sBeautyIdSelection;
+                    selectionArgs = new String[]{saloonid};
+                }
                 queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.SalonServicesEntry.TABLE_NAME,
-                        null,
-                        null,
-                        null,
+                        projection,
+                        selection,
+                        selectionArgs,
                         null,
                         null,
                         sortOrder);

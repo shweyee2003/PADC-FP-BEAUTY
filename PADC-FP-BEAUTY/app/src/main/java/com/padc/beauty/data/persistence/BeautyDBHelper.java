@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Asus on 9/24/2016.
  */
 public class BeautyDBHelper extends SQLiteOpenHelper {
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 12;
     public static final String DATABASE_NAME = "beauty.db";
 
     private static final String SQL_CREATE_BEAUTY_SALON_TABLE ="CREATE TABLE " + BeautyContract.BeautySalonEntry.TABLE_NAME + " (" +

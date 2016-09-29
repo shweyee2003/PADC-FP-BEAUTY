@@ -1,5 +1,6 @@
 package com.padc.beauty.fragments;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -30,6 +31,7 @@ import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.data.vos.FashionShopVO;
 import com.padc.beauty.events.DataEvent;
 import com.padc.beauty.utils.BeautyAppConstant;
+import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +51,7 @@ public class BeautysaloonFragment extends Fragment implements LoaderManager.Load
 
     private BeautySaloonAdapter mBeautySaloonAdapter;
     private List<BeautySaloonVO> beautysalonList;
+    private BeautySaloonViewHolder.ControllerBeautysalonItem controllerBeautysalonItem;
 
     public static BeautysaloonFragment newInstance(){
         BeautysaloonFragment beautysaloonFragment = new BeautysaloonFragment();
@@ -59,7 +62,11 @@ public class BeautysaloonFragment extends Fragment implements LoaderManager.Load
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        controllerBeautysalonItem = (BeautySaloonViewHolder.ControllerBeautysalonItem) context;
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -68,7 +75,7 @@ public class BeautysaloonFragment extends Fragment implements LoaderManager.Load
 
         List<BeautySaloonVO> beautysaloonList = FashionShopandBeautySaloonModel.getInstance().getBeautySaloonList();
         //showdata();
-        mBeautySaloonAdapter = new BeautySaloonAdapter(beautysaloonList);
+        mBeautySaloonAdapter = new BeautySaloonAdapter(beautysaloonList,controllerBeautysalonItem);
         rvbeautysaloon.setAdapter(mBeautySaloonAdapter);
         rvbeautysaloon.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
         return rootView;

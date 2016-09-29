@@ -21,5 +21,6 @@ public class BeautyAppConstant {
     //Loader ID
     public static final int FASHION_SHOP_LIST_LOADER = 1;
     public static final int BEAUTY_SALON_LIST_LOADER = 2;
+    public static final int BEAUTY_SALON_DETAIL_LOADER = 3;
 
 }
