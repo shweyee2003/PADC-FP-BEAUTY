@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.padc.beauty">
+
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:name=".BeautyApp"
@@ -46,6 +48,7 @@
                 android:value="com.padc.beauty.activities.HomeActivity"
                />
         </activity>
+
         <activity
             android:name=".activities.BeautysalonDetailActivity"
             android:parentActivityName=".activities.HomeActivity"
@@ -57,8 +60,7 @@
         <provider
             android:name=".data.persistence.BeautyProvider"
             android:authorities="@string/content_authority"
-            android:exported="false"
-            android:syncable="true" />
+            android:exported="false"/>
     </application>
 
 </manifest>

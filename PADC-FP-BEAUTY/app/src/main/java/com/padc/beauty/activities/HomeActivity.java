@@ -18,7 +18,8 @@ import com.padc.beauty.R;
 import com.padc.beauty.data.vos.BeautySaloonVO;
 import com.padc.beauty.fragments.DressingPagerFragment;
 
-import com.padc.beauty.fragments.FitnessAndHealthFragments;
+import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
+import com.padc.beauty.fragments.FitnessAndHealthFragment;
 import com.padc.beauty.fragments.PersonalityListFragment;
 import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
@@ -26,7 +27,8 @@ import com.padc.beauty.fragments.TutorialsFragment;
 import com.padc.beauty.utils.MMFontUtils;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 
-public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,BeautySaloonViewHolder.ControllerBeautysalonItem,
+public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
+        BeautySaloonViewHolder.ControllerBeautysalonItem,
         MenuItemCompat.OnActionExpandListener{
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -123,7 +125,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
     public void navigateToFitness(){
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, FitnessAndHealthFragments.newInstance())
+                .replace(R.id.fl_container, FitnessAndHealthFragment.newInstance())
                 .commit();
     }
     public void navigateToSaloonandFashionshop(){
@@ -155,4 +157,5 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(),beautysalon.getPhoto());
         startActivity(intent);
     }
+
 }

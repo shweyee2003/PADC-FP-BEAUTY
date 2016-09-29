@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.data.vos.BeautySaloonVO;
-import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
-import com.padc.beauty.views.holders.OccassionalDressViewHolder;
 
 import java.util.List;
 

@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Asus on 9/11/2016.
  */
-public class FitnessAndHealthFragments extends Fragment {
+public class FitnessAndHealthBKFragments extends Fragment {
     @BindView(R.id.tl_tips)
     TabLayout tltips;
 
@@ -26,8 +26,8 @@ public class FitnessAndHealthFragments extends Fragment {
     ViewPager pagerTips;
 
     private TipPagerAdapter mTipsPagerAdapter;
-    public static FitnessAndHealthFragments newInstance(){
-        FitnessAndHealthFragments fitnessAndHealthFragments = new FitnessAndHealthFragments();
+    public static FitnessAndHealthBKFragments newInstance(){
+        FitnessAndHealthBKFragments fitnessAndHealthFragments = new FitnessAndHealthBKFragments();
         return fitnessAndHealthFragments;
     }
 
@@ -42,7 +42,7 @@ public class FitnessAndHealthFragments extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_fitness_and_health, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_temp_fitness_and_health, container, false);
         ButterKnife.bind(this, rootView);
 
         pagerTips.setAdapter(mTipsPagerAdapter);

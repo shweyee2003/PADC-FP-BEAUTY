@@ -10,25 +10,23 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.BeautySaloonAdapter;
-import com.padc.beauty.adapters.OccassionalDressAdapter;
-import com.padc.beauty.data.models.DressingModel;
 import com.padc.beauty.data.models.FashionShopandBeautySaloonModel;
 import com.padc.beauty.data.persistence.BeautyContract;
 import com.padc.beauty.data.vos.BeautySaloonVO;
-import com.padc.beauty.data.vos.DressingVO;
-import com.padc.beauty.data.vos.FashionShopVO;
+
 import com.padc.beauty.events.DataEvent;
 import com.padc.beauty.utils.BeautyAppConstant;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
