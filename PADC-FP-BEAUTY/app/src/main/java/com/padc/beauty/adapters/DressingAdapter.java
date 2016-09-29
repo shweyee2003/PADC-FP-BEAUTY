@@ -8,31 +8,31 @@ import android.view.ViewGroup;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.data.vos.DressingVO;
-import com.padc.beauty.views.holders.OccassionalDressViewHolder;
+import com.padc.beauty.views.holders.DressingViewHolder;
 
 import java.util.List;
 
 /**
  * Created by windows on 9/23/2016.
  */
-public class OccassionalDressAdapter extends RecyclerView.Adapter<OccassionalDressViewHolder>  {
+public class DressingAdapter extends RecyclerView.Adapter<DressingViewHolder>  {
     private List<DressingVO> mDressingList;
     private LayoutInflater inflater;
 
-    public OccassionalDressAdapter(List<DressingVO> dressingList){
+    public DressingAdapter(List<DressingVO> dressingList){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mDressingList = dressingList;
 
     }
 
     @Override
-    public OccassionalDressViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DressingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.view_item_occasionaldress, parent, false);
-        return new OccassionalDressViewHolder(itemView);
+        return new DressingViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(OccassionalDressViewHolder holder, int position) {
+    public void onBindViewHolder(DressingViewHolder holder, int position) {
         holder.bindData(mDressingList.get(position));
     }
 

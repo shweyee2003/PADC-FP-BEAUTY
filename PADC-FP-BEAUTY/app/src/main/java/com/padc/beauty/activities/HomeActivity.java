@@ -3,9 +3,6 @@ package com.padc.beauty.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -14,14 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.padc.beauty.R;
 
 import com.padc.beauty.fragments.DressingPagerFragment;
 
-import com.padc.beauty.fragments.FitnessAndHealthFragments;
-import com.padc.beauty.fragments.FragmentChangeListener;
+import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
+import com.padc.beauty.fragments.FitnessAndHealthFragment;
 import com.padc.beauty.fragments.PersonalityListFragment;
 import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
@@ -125,7 +121,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
     public void navigateToFitness(){
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, FitnessAndHealthFragments.newInstance())
+                .replace(R.id.fl_container, FitnessAndHealthFragment.newInstance())
                 .commit();
     }
     public void navigateToSaloonandFashionshop(){
@@ -147,8 +143,9 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     private void navigatetoPersonality(){
-        Intent intent = PersonalityListActivity.newIntent();
-        startActivity(intent);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, PersonalityListFragment.newInstance())
+                .commit();
     }
 
 }

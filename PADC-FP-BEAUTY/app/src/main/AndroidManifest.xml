@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.padc.beauty">
     <uses-permission android:name="android.permission.INTERNET" />
-    
+
     <application
         android:name=".BeautyApp"
         android:allowBackup="true"
@@ -52,11 +52,11 @@
                 android:value="com.padc.beauty.activities.PersonalityListActivity"
                />
         </activity>
+
         <provider
             android:name=".data.persistence.BeautyProvider"
             android:authorities="@string/content_authority"
-            android:exported="false"
-            android:syncable="true" />
+            android:exported="false"/>
     </application>
 
 </manifest>

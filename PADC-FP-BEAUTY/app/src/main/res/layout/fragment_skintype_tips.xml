@@ -5,13 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <!--<Spinner-->
+        <!--android:id="@+id/sp_tip_list"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="8dp"-->
+        <!--android:layout_gravity="right" />-->
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_fitnessandhealth"
+            android:id="@+id/rv_skintype"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"

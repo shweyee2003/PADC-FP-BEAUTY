@@ -1,6 +1,5 @@
 package com.padc.beauty.data.models;
 
-import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 
@@ -52,7 +51,7 @@ public class TipModel extends BaseModel{
 
     public TipVO getDressingbyId(int tipid) {
         for (TipVO tip : mTipList) {
-            if (tip.getId()==tipid)
+            if (tip.getTipid()==tipid)
                 return tip;
         }
 
@@ -63,7 +62,8 @@ public class TipModel extends BaseModel{
 
         mTipList = tipList;
 
-        broadcastMealLoadedWithEventBus();
+        TipVO.saveTips(mTipList);
+       // broadcastMealLoadedWithEventBus();
 
     }
 
@@ -74,5 +74,7 @@ public class TipModel extends BaseModel{
     private void broadcastMealLoadedWithEventBus() {
         EventBus.getDefault().post(new DataEvent.TipDataLoadedEvent("extra-in-broadcast", mTipList));
     }
+
+
 
 }

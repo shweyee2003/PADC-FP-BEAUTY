@@ -24,9 +24,9 @@ public class PersonalityListActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, PersonalityListFragment.newInstance())
-                .commit();
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fl_container, PersonalityListFragment.newInstance())
+//                .commit();
     }
 
     @Override
