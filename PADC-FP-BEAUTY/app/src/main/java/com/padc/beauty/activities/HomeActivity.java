@@ -11,10 +11,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.padc.beauty.R;
 
+
 import com.padc.beauty.data.vos.TipVO;
+
+import com.padc.beauty.data.vos.BeautySaloonVO;
+
 import com.padc.beauty.fragments.DressingPagerFragment;
 
 import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
@@ -27,9 +32,11 @@ import com.padc.beauty.fragments.WorkoutDetailFragment;
 import com.padc.beauty.utils.MMFontUtils;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 import com.padc.beauty.views.holders.PersonalityViewHolder;
+import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
-        MenuItemCompat.OnActionExpandListener,PersonalityViewHolder.ControllerPersonalityItem,FitnessandhealthViewHolder.ControllerFitnessandhealthItem{
+        MenuItemCompat.OnActionExpandListener,PersonalityViewHolder.ControllerPersonalityItem, BeautySaloonViewHolder.ControllerBeautysalonItem,FitnessandhealthViewHolder.ControllerFitnessandhealthItem{
+
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
@@ -155,6 +162,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     @Override
+
     public void onTapPersonality(TipVO tip) {
         Intent intent=PersonalityDetailActivity.newIntent(tip.getTipid());
         startActivity(intent);
@@ -165,4 +173,10 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Intent intent= WorkoutDetailActivity.newIntent(tip.getTipid());
         startActivity(intent);
     }
+
+    public void onTapAttraction(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
+        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(),beautysalon.getPhoto());
+        startActivity(intent);
+    }
+
 }
