@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
 import com.padc.beauty.data.vos.BeautySaloonVO;
 import com.padc.beauty.data.vos.ServiceVO;
+import com.padc.beauty.data.vos.TipVO;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,10 +60,11 @@ public class BeautySaloonViewHolder extends RecyclerView.ViewHolder implements V
 
     @Override
     public void onClick(View view) {
-        mController.onTapAttraction(mbeauty, ivbeautysaloon);
+        mController.onTapBeautysalon(mbeauty, ivbeautysaloon);
     }
 
     public interface ControllerBeautysalonItem {
-        void onTapAttraction(BeautySaloonVO beautysalon, ImageView ivbeautysaloon);
+        void onTapBeautysalon(BeautySaloonVO beautysalon, ImageView ivbeautysaloon);
     }
+
 }

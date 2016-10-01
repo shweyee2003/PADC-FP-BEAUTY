@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical">
     <com.padc.beauty.components.DynamicHeightImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/good_personality_1"
         android:scaleType="centerCrop"/>

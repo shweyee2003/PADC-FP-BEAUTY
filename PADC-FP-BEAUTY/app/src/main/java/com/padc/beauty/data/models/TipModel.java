@@ -1,5 +1,8 @@
 package com.padc.beauty.data.models;
 
+import android.util.Log;
+
+import com.padc.beauty.BeautyApp;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 
@@ -57,7 +60,15 @@ public class TipModel extends BaseModel{
 
         return null;
     }
-
+    public TipVO getTipsById(Long tipId) {
+        Log.d(BeautyApp.TAG,"Reach tip condition");
+        for (TipVO tip : mTipList) {
+            if (tip.getTipid()== tipId) {
+                return tip;
+            }
+        }
+        return null;
+    }
     public void notifyTipssLoaded(List<TipVO> tipList) {
 
         mTipList = tipList;
