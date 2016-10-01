@@ -40,8 +40,8 @@ import de.greenrobot.event.EventBus;
  */
 public class BodyShapeTipsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
-    @BindView(R.id.sp_tip_list)
-    Spinner sptiplist;
+//    @BindView(R.id.sp_tip_list)
+//    Spinner sptiplist;
 
     @BindView(R.id.rv_bodyshape)
     RecyclerView rvbodyshape;
@@ -70,7 +70,7 @@ public class BodyShapeTipsFragment extends Fragment implements LoaderManager.Loa
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_bodyshape_tips, container, false);
         ButterKnife.bind(this, rootView);
-        sptiplist.setAdapter(mBodyTypeTipListAdapter);
+        //sptiplist.setAdapter(mBodyTypeTipListAdapter);
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
         mTipListAdapter = new AllTipListAdapter(tipList);
         rvbodyshape.setAdapter(mTipListAdapter);
@@ -81,13 +81,13 @@ public class BodyShapeTipsFragment extends Fragment implements LoaderManager.Loa
         return rootView;
     }
 
-
-    @OnItemSelected(R.id.sp_tip_list)
-    public void OnSelectedSpinner(){
-        String spinnertext=sptiplist.getSelectedItem().toString();
-      //  tvbodytiptitle.setText(sptiplist.getSelectedItem().toString());
-       // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
-    }
+//
+//    @OnItemSelected(R.id.sp_tip_list)
+//    public void OnSelectedSpinner(){
+//        //String spinnertext=sptiplist.getSelectedItem().toString();
+//      //  tvbodytiptitle.setText(sptiplist.getSelectedItem().toString());
+//       // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+//    }
 
     @Override
     public void onStart() {

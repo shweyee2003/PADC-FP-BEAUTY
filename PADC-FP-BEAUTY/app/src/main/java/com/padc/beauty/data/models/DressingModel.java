@@ -112,7 +112,7 @@ public class DressingModel extends BaseModel {
 
             ContentValues cv = new ContentValues();
             cv.put(BeautyContract.DressingSkinTypeEntry.COLUMN_DRESSINGID, dressingid);
-            cv.put(BeautyContract.DressingSkinTypeEntry.COLUMN_SKINTYPE,skintype+" Skin Type");
+            cv.put(BeautyContract.DressingSkinTypeEntry.COLUMN_SKINTYPE,skintype+" skin type");
 
             dressingskintypeCVs[index] = cv;
         }
@@ -130,7 +130,7 @@ public class DressingModel extends BaseModel {
 
             ContentValues cv = new ContentValues();
             cv.put(BeautyContract.DressingSkinColorEntry.COLUMN_DRESSINGID, dressingid);
-            cv.put(BeautyContract.DressingSkinColorEntry.COLUMN_SKINCOLOR,skincolor+" Skin Tone");
+            cv.put(BeautyContract.DressingSkinColorEntry.COLUMN_SKINCOLOR,skincolor+" skin tone");
 
             dressingsskincolorCVs[index] = cv;
         }
@@ -148,7 +148,7 @@ public class DressingModel extends BaseModel {
 
             ContentValues cv = new ContentValues();
             cv.put(BeautyContract.DressingBodyShapeEntry.COLUMN_DRESSINGID, dressingid);
-            cv.put(BeautyContract.DressingBodyShapeEntry.COLUMN_BODYSHAPE,bodyshape+" Body Type");
+            cv.put(BeautyContract.DressingBodyShapeEntry.COLUMN_BODYSHAPE,bodyshape+" body type");
 
             dressingsbodyshapeCVs[index] = cv;
         }
@@ -166,7 +166,7 @@ public class DressingModel extends BaseModel {
 
             ContentValues cv = new ContentValues();
             cv.put(BeautyContract.DressingHairStyleEntry.COLUMN_DRESSINGID, dressingid);
-            cv.put(BeautyContract.DressingHairStyleEntry.COLUMN_HAIRSTYLE,hairstyle+" Hair Style");
+            cv.put(BeautyContract.DressingHairStyleEntry.COLUMN_HAIRSTYLE,hairstyle+" hair style");
 
             tipshairstyleCVs[index] = cv;
         }

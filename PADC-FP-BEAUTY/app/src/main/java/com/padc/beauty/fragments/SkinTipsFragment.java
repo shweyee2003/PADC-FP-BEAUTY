@@ -56,8 +56,8 @@ public class SkinTipsFragment extends Fragment implements LoaderManager.LoaderCa
     @BindView(R.id.rv_skintype)
     RecyclerView rvskintype;
 
-    @BindView(R.id.sp_tip_list)
-    Spinner sptiplist;
+//    @BindView(R.id.sp_tip_list)
+//    Spinner sptiplist;
 
     private FaceTipAdapter mFaceTipListAdapter;
     private AllTipListAdapter mTipListAdapter;
@@ -83,7 +83,7 @@ public class SkinTipsFragment extends Fragment implements LoaderManager.LoaderCa
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_skintype_tips, container, false);
         ButterKnife.bind(this, rootView);
-        sptiplist.setAdapter(mFaceTipListAdapter);
+//        sptiplist.setAdapter(mFaceTipListAdapter);
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
         mTipListAdapter = new AllTipListAdapter(tipList);
         rvskintype.setAdapter(mTipListAdapter);
@@ -117,13 +117,13 @@ public class SkinTipsFragment extends Fragment implements LoaderManager.LoaderCa
         eventBus.unregister(this);
     }
 
-    @OnItemSelected(R.id.sp_tip_list)
-    public void OnSelectedSpinner(){
-        String spinnertext=sptiplist.getSelectedItem().toString();
-        //sptiplist.setAdapter
-   //     tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
-//        Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
-    }
+//    @OnItemSelected(R.id.sp_tip_list)
+//    public void OnSelectedSpinner(){
+//  //      String spinnertext=sptiplist.getSelectedItem().toString();
+//        //sptiplist.setAdapter
+//   //     tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+////        Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+//    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
