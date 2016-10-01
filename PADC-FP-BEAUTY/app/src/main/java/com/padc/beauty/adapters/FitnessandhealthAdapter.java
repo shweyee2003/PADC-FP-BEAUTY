@@ -13,7 +13,6 @@ import com.padc.beauty.data.vos.TipVO;
 
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
-import com.padc.beauty.views.holders.TipViewHolder;
 
 import java.util.List;
 
@@ -25,10 +24,11 @@ public class FitnessandhealthAdapter  extends RecyclerView.Adapter<Fitnessandhea
     private LayoutInflater inflater;
     private FitnessandhealthViewHolder.ControllerFitnessandHealth mControllerHealth;
 
-    public FitnessandhealthAdapter(List<TipVO> tipList, FitnessandhealthViewHolder.ControllerFitnessandHealth controllerFitnessandHealth){
+    public FitnessandhealthAdapter(List<TipVO> tipList, FitnessandhealthViewHolder.ControllerFitnessandHealth controllerItem){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mTipList = tipList;
-        mControllerHealth = controllerFitnessandHealth;
+        mControllerHealth=controllerItem;
+
     }
 
     @Override

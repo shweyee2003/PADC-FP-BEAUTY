@@ -20,15 +20,18 @@ public class PersonalityTipAdapter extends   RecyclerView.Adapter<PersonalityVie
     private List<TipVO> mTipList;
     private LayoutInflater inflater;
 
-    public PersonalityTipAdapter(List<TipVO> TipList){
+    private  PersonalityViewHolder.ControllerPersonalityItem mController;
+
+    public PersonalityTipAdapter(List<TipVO> TipList, PersonalityViewHolder.ControllerPersonalityItem controllerItem){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mTipList = TipList;
+        mController=controllerItem;
     }
 
     @Override
     public PersonalityViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.view_item_personality, parent, false);
-        return new PersonalityViewHolder(itemView);
+        return new PersonalityViewHolder(itemView,mController);
     }
 
     @Override

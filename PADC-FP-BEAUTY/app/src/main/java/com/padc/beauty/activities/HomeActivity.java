@@ -32,11 +32,11 @@ import com.padc.beauty.utils.MMFontUtils;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 import com.padc.beauty.views.holders.TipViewHolder;
+import com.padc.beauty.views.holders.PersonalityViewHolder;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
-        BeautySaloonViewHolder.ControllerBeautysalonItem,
-        FitnessandhealthViewHolder.ControllerFitnessandHealth,
-        MenuItemCompat.OnActionExpandListener{
+        MenuItemCompat.OnActionExpandListener,PersonalityViewHolder.ControllerPersonalityItem,FitnessandhealthViewHolder.ControllerFitnessandHealth,BeautySaloonViewHolder.ControllerBeautysalonItem{
+
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
@@ -157,17 +157,24 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, PersonalityListFragment.newInstance())
                 .commit();
+//        Intent intent = PersonalityListActivity.newIntent();
+ //       startActivity(intent);
     }
 
     @Override
     public void onTapBeautysalon(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
-        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(),beautysalon.getPhoto());
+        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto());
+        startActivity(intent);
+    }
+    public void onTapPersonality(TipVO tip) {
+        Intent intent=PersonalityDetailActivity.newIntent(tip.getTipid());
         startActivity(intent);
     }
 
     @Override
+
     public void onTapHealth(TipVO healthrelatedTips, ImageView ivfitandhealthimage) {
-        Log.d(BeautyApp.TAG,"Tip id"+healthrelatedTips.getTipid());
+        Log.d(BeautyApp.TAG, "Tip id" + healthrelatedTips.getTipid());
         Intent intent = WorkoutDetailActivity.newIntent(healthrelatedTips.getTipid());
         startActivity(intent);
     }

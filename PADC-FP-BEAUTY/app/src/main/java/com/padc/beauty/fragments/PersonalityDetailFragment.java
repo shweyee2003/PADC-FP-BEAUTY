@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.padc.beauty.R;
 import com.padc.beauty.data.models.PersonalityDetailModel;
 import com.padc.beauty.data.vos.PersonalityDetailVO;
@@ -54,6 +55,8 @@ public class PersonalityDetailFragment extends Fragment {
         }
     }
 
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -61,7 +64,13 @@ public class PersonalityDetailFragment extends Fragment {
         ButterKnife.bind(this, mView);
         tvpersonalitytitle.setText(personalityDetailVO.getPersonalityTitle());
         tvpersonalitydesc.setText(personalityDetailVO.getPersonalityContent());
-        ivpersonality.setImageResource(personalityDetailVO.getPersonalityImage());
+       // ivpersonality.setImageResource(personalityDetailVO.getPersonalityImage());
+        Glide.with(ivpersonality.getContext())
+                .load(personalityDetailVO.getPersonalityImage())
+                .centerCrop()
+                .placeholder(R.drawable.stock_photo_placeholder)
+                .error(R.drawable.stock_photo_placeholder)
+                .into(ivpersonality);
         return  mView;
     }
 }

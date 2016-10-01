@@ -15,7 +15,9 @@ import butterknife.ButterKnife;
 /**
  * Created by windows on 9/27/2016.
  */
-public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
+
+public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener   {
+
     @BindView(R.id.tv_fitnessandhealth)
     TextView tvtitle;
 
@@ -23,6 +25,7 @@ public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder implemen
     ImageView ivfitnessandhealth;
 
     private TipVO mtip;
+
     private ControllerFitnessandHealth mController;
 
     public FitnessandhealthViewHolder(View itemView, ControllerFitnessandHealth controller) {
@@ -46,7 +49,6 @@ public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder implemen
                 .into(ivfitnessandhealth);
 
     }
-
     @Override
     public void onClick(View view) {
         mController.onTapHealth(mtip, ivfitnessandhealth);
@@ -54,5 +56,6 @@ public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder implemen
 
     public interface ControllerFitnessandHealth {
         void onTapHealth(TipVO healthrelatedTips, ImageView ivfitnessandhealth);
+
     }
 }

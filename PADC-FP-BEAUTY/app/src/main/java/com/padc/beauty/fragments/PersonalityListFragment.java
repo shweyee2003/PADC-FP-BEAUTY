@@ -1,5 +1,6 @@
 package com.padc.beauty.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import com.padc.beauty.data.persistence.BeautyContract;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 import com.padc.beauty.utils.BeautyAppConstant;
+import com.padc.beauty.views.holders.PersonalityViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +47,7 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
     RecyclerView rvpersonality;
 
     private PersonalityTipAdapter mpersonalitytipAdapter;
+    private PersonalityViewHolder.ControllerPersonalityItem mcontroller;
 
     public static PersonalityListFragment newInstance() {
         return new PersonalityListFragment();
@@ -56,7 +59,7 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
         View view = inflater.inflate(R.layout.fragment_personality_list, container, false);
         ButterKnife.bind(this, view);
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
-        mpersonalitytipAdapter = new PersonalityTipAdapter(tipList);
+        mpersonalitytipAdapter = new PersonalityTipAdapter(tipList,mcontroller);
         rvpersonality.setAdapter(mpersonalitytipAdapter);
 
         int gridColumnSpanCount = getResources().getInteger(R.integer.tip_list_grid);
@@ -73,6 +76,12 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
 //        startActivity(intent);
 //    }
 
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mcontroller = (PersonalityViewHolder.ControllerPersonalityItem) context;
+    }
 
     @Override
     public void onStart() {

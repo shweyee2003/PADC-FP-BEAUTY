@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * Created by windows on 9/26/2016.
  */
-public class PersonalityViewHolder extends RecyclerView.ViewHolder  {
+public class PersonalityViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     @BindView(R.id.tv_personality)
     TextView tvtitle;
 
@@ -23,10 +23,13 @@ public class PersonalityViewHolder extends RecyclerView.ViewHolder  {
     ImageView ivpersonality;
 
     private TipVO mtip;
+    private ControllerPersonalityItem mController;
 
-    public PersonalityViewHolder(View itemView) {
+    public PersonalityViewHolder(View itemView,ControllerPersonalityItem controller) {
         super(itemView);
         ButterKnife.bind(this, itemView);
+        itemView.setOnClickListener(this);
+        mController=controller;
     }
 
     public void bindData(TipVO tip) {
@@ -41,6 +44,14 @@ public class PersonalityViewHolder extends RecyclerView.ViewHolder  {
                 .error(R.drawable.stock_photo_placeholder)
                 .into(ivpersonality);
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        mController.onTapPersonality(mtip);
+    }
+    public interface ControllerPersonalityItem {
+        void onTapPersonality(TipVO tip);
     }
 
 }
