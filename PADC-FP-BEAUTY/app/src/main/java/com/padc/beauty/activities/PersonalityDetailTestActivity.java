@@ -10,33 +10,28 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
-import com.padc.beauty.adapters.PersonalityDetailPagerAdapter;
 import com.padc.beauty.fragments.PersonalityDetailFragment;
-import com.padc.beauty.fragments.WorkoutDetailFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
- * Created by windows on 9/17/2016.
+ * Created by windows on 10/1/2016.
  */
-public class PersonalityDetailActivity extends AppCompatActivity {
+public class PersonalityDetailTestActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-//    @BindView(R.id.pager_personalitydetail)
-//    ViewPager pagerpersonalitydetail;
-    @BindView(R.id.btn_next)
-    Button btnnext;
-
-    @BindView(R.id.btn_previous)
-    Button btnprevious;
+    @BindView(R.id.pager_personalitydetail)
+    ViewPager pagerpersonalitydetail;
+//    @BindView(R.id.btn_next)
+//    Button btnnext;
+//
+//    @BindView(R.id.btn_previous)
+//    Button btnprevious;
 
     private int presonalityIndex = -1;
 
@@ -48,7 +43,7 @@ public class PersonalityDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personality_detail);
+        setContentView(R.layout.activity_personality_detail_test);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
@@ -58,7 +53,7 @@ public class PersonalityDetailActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
         if (savedInstanceState == null) {
-            presonalityIndex++;
+            //presonalityIndex++;
             navigateToPersonality(presonalityIndex);
         }
     }
@@ -74,27 +69,27 @@ public class PersonalityDetailActivity extends AppCompatActivity {
         //Toast.makeText(getApplicationContext(), R.string.msg_no_more_joke, Toast.LENGTH_SHORT).show();
     }
 
-    @OnClick(R.id.btn_next)
-    public void  onTapNext(){
-        presonalityIndex++;
-        if (presonalityIndex < 3) {
-            navigateToPersonality(presonalityIndex);
-        } else {
-            presonalityIndex =2;
-            //Toast.makeText(getApplicationContext(), R.string.msg_no_more_joke, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @OnClick(R.id.btn_previous)
-    public void  onTapPrevious(){
-        presonalityIndex--;
-        if (presonalityIndex >=0) {
-            navigateToPersonality(presonalityIndex);
-        } else {
-            presonalityIndex =0;
-            //Toast.makeText(getApplicationContext(), R.string.msg_no_more_joke, Toast.LENGTH_SHORT).show();
-        }
-    }
+//    @OnClick(R.id.btn_next)
+//    public void  onTapNext(){
+//        presonalityIndex++;
+//        if (presonalityIndex < 3) {
+//            navigateToPersonality(presonalityIndex);
+//        } else {
+//            presonalityIndex =2;
+//            //Toast.makeText(getApplicationContext(), R.string.msg_no_more_joke, Toast.LENGTH_SHORT).show();
+//        }
+//    }
+//
+//    @OnClick(R.id.btn_previous)
+//    public void  onTapPrevious(){
+//        presonalityIndex--;
+//        if (presonalityIndex >=0) {
+//            navigateToPersonality(presonalityIndex);
+//        } else {
+//            presonalityIndex =0;
+//            //Toast.makeText(getApplicationContext(), R.string.msg_no_more_joke, Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
     private void navigateToPersonality(int presonalityIndex) {
         //PersonalityDetailPagerAdapter.setNumPage();

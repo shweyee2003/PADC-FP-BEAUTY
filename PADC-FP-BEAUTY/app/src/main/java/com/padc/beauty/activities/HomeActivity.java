@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.padc.beauty.R;
 
+import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.fragments.DressingPagerFragment;
 
 import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
@@ -22,10 +23,13 @@ import com.padc.beauty.fragments.PersonalityListFragment;
 import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.fragments.TutorialsFragment;
+import com.padc.beauty.fragments.WorkoutDetailFragment;
 import com.padc.beauty.utils.MMFontUtils;
+import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
+import com.padc.beauty.views.holders.PersonalityViewHolder;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
-        MenuItemCompat.OnActionExpandListener{
+        MenuItemCompat.OnActionExpandListener,PersonalityViewHolder.ControllerPersonalityItem,FitnessandhealthViewHolder.ControllerFitnessandhealthItem{
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
@@ -146,6 +150,19 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, PersonalityListFragment.newInstance())
                 .commit();
+//        Intent intent = PersonalityListActivity.newIntent();
+ //       startActivity(intent);
     }
 
+    @Override
+    public void onTapPersonality(TipVO tip) {
+        Intent intent=PersonalityDetailActivity.newIntent(tip.getTipid());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapFitnessandhealth(TipVO tip) {
+        Intent intent= WorkoutDetailActivity.newIntent(tip.getTipid());
+        startActivity(intent);
+    }
 }

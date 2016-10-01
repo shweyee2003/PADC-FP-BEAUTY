@@ -34,15 +34,15 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.padc.beauty.activities.HomeActivity" />
+                android:value="com.padc.beauty.activities.FitnessandhealthActivity" />
         </activity>
-        <activity android:name=".activities.PersonalityListActivity"
-            android:label="Personality"
+        <activity
+            android:name=".activities.FitnessandhealthActivity"
+            android:label="@string/title_activity_workout"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.padc.beauty.activities.HomeActivity"
-                />
+                android:value="com.padc.beauty.activities.HomeActivity" />
         </activity>
         <activity android:name=".activities.PersonalityDetailActivity"
             android:label="Personality"
@@ -51,6 +51,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.padc.beauty.activities.PersonalityListActivity"
                />
+        </activity>
+        <activity android:name=".activities.PersonalityListActivity"
+            android:label="Personality"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.padc.beauty.activities.HomeActivity"
+                />
         </activity>
 
         <provider

@@ -24,7 +24,7 @@ public class WorkoutDetailActivity extends AppCompatActivity {
     Toolbar toolbar;
 
 
-    public static Intent newIntent() {
+    public static Intent newIntent(Long tipid) {
         Intent intent = new Intent(BeautyApp.getContext(), WorkoutDetailActivity.class);
         return intent;
     }

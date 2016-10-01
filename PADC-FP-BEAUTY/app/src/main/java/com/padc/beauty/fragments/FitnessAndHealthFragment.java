@@ -1,5 +1,6 @@
 package com.padc.beauty.fragments;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -25,6 +26,7 @@ import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 import com.padc.beauty.utils.BeautyAppConstant;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
+import com.padc.beauty.views.holders.PersonalityViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,7 @@ public class FitnessAndHealthFragment extends Fragment implements LoaderManager.
     RecyclerView rvfitnessandhealth;
 
     private FitnessandhealthAdapter mfitnessandhealthAdapter;
+    private FitnessandhealthViewHolder.ControllerFitnessandhealthItem mcontroller;
 
     public static FitnessAndHealthFragment newInstance() {
         return new FitnessAndHealthFragment();
@@ -52,7 +55,7 @@ public class FitnessAndHealthFragment extends Fragment implements LoaderManager.
         View view = inflater.inflate(R.layout.fragment_fitness_and_health, container, false);
         ButterKnife.bind(this, view);
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
-        mfitnessandhealthAdapter = new FitnessandhealthAdapter(tipList);
+        mfitnessandhealthAdapter = new FitnessandhealthAdapter(tipList,mcontroller);
         rvfitnessandhealth.setAdapter(mfitnessandhealthAdapter);
 
         int gridColumnSpanCount = getResources().getInteger(R.integer.tip_list_grid);
@@ -61,6 +64,12 @@ public class FitnessAndHealthFragment extends Fragment implements LoaderManager.
         return view;
 
 
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mcontroller = (FitnessandhealthViewHolder.ControllerFitnessandhealthItem) context;
     }
 
     @Override
