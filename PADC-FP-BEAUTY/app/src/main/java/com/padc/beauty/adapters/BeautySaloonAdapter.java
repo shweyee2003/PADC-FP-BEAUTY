@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.data.vos.BeautySaloonVO;
-import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
-import com.padc.beauty.views.holders.OccassionalDressViewHolder;
 
 import java.util.List;
 
@@ -20,15 +18,17 @@ import java.util.List;
 public class BeautySaloonAdapter extends RecyclerView.Adapter<BeautySaloonViewHolder>   {
     private List<BeautySaloonVO> mBeautySaloonList;
     private LayoutInflater inflater;
+    private BeautySaloonViewHolder.ControllerBeautysalonItem mControllerBeautysalonItem;
 
-    public BeautySaloonAdapter(List<BeautySaloonVO> beautysaloonList){
+    public BeautySaloonAdapter(List<BeautySaloonVO> beautysaloonList,BeautySaloonViewHolder.ControllerBeautysalonItem controllerBeautysalonItem){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mBeautySaloonList = beautysaloonList;
+        mControllerBeautysalonItem = controllerBeautysalonItem;
     }
     @Override
     public BeautySaloonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.view_item_beautysaloon, parent, false);
-        return new BeautySaloonViewHolder(itemView);
+        return new BeautySaloonViewHolder(itemView,mControllerBeautysalonItem);
     }
 
     @Override

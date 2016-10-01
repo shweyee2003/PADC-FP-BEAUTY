@@ -47,4 +47,3 @@ public class FashionShopAdapter extends RecyclerView.Adapter<FashionShopViewHold
         notifyDataSetChanged();//framework method
     }
 }
-

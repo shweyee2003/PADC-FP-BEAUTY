@@ -3,8 +3,6 @@
     package="com.padc.beauty">
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".BeautyApp"
         android:allowBackup="true"
@@ -38,19 +36,35 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.padc.beauty.activities.HomeActivity" />
         </activity>
-        <activity android:name=".activities.PersonalityDetailActivity"
+        <activity android:name=".activities.PersonalityListActivity"
             android:label="Personality"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.padc.beauty.activities.HomeActivity"
+                />
+        </activity>
+        <activity android:name=".activities.PersonalityDetailActivity"
+            android:label="Personality"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.padc.beauty.activities.PersonalityListActivity"
                />
+        </activity>
+
+        <activity
+            android:name=".activities.BeautysalonDetailActivity"
+            android:parentActivityName=".activities.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.padc.beauty.activities.HomeActivity" />
         </activity>
         <provider
             android:name=".data.persistence.BeautyProvider"
             android:authorities="@string/content_authority"
-            android:exported="false"
-            android:syncable="true" />
+            android:exported="false"/>
     </application>
 
 </manifest>

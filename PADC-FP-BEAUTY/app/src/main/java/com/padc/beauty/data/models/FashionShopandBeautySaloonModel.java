@@ -81,6 +81,7 @@ public class FashionShopandBeautySaloonModel extends BaseModel {
 
         FashionShopVO.saveFashionshops(mFashionShopList);
         BeautySaloonVO.saveBeautysalons(mBeautySaloonList);
+
         //broadcastMealLoadedWithEventBus();
         //broadcastAttractionLoadedWithLocalBroadcastManager();
     }
@@ -99,5 +100,8 @@ public class FashionShopandBeautySaloonModel extends BaseModel {
     }
     public void setStoredBeautysalonData(List<BeautySaloonVO> beautysalonList) {
         mBeautySaloonList = beautysalonList;
+    }
+    public void setStoredServicesData(List<ServiceVO> mServices){
+
     }
 }

@@ -1,70 +1,53 @@
 package com.padc.beauty.fragments;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.Html;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.content.Loader;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
+import com.padc.beauty.adapters.AllTipListAdapter;
 import com.padc.beauty.adapters.FaceTipAdapter;
+import com.padc.beauty.data.models.TipModel;
+import com.padc.beauty.data.persistence.BeautyContract;
+import com.padc.beauty.data.vos.TipVO;
+import com.padc.beauty.events.DataEvent;
+import com.padc.beauty.utils.BeautyAppConstant;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnItemSelected;
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by windows on 9/5/2016.
  */
-public class FaceTipsFragment extends Fragment {
+public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>  {
 
-    @BindView(R.id.sp_tip_list)
-    Spinner sptiplist;
+//    @BindView(R.id.sp_tip_list)
+//    Spinner sptiplist;
 
-    @BindView(R.id.tv_hairtip_title)
-    TextView tvfacetiptitle;
+    @BindView(R.id.rv_facetype)
+    RecyclerView rvfacetype;
 
-    @BindView(R.id.tv_hairtip_desc)
-    TextView tvfacetipdesc;
-
-    @BindView(R.id.iv_hairtipimg)
-    ImageView ivfacetip;
-
-    @BindView(R.id.tv_sunglasstip_title)
-    TextView tvSunglassTipTitle;
-
-    @BindView(R.id.tv_sunglasstip_desc)
-    TextView tvSunglassTipDesc;
-
-    @BindView(R.id.iv_sunglasstip)
-    ImageView ivsunglasstip;
-
-    @BindView(R.id.tv_jewelrytip_title)
-    TextView tvjewlrytiptitle;
-
-    @BindView(R.id.tv_jewelrytip_desc)
-    TextView tvjewlrytipdesc;
-
-    @BindView(R.id.iv_jewelrytip)
-    ImageView ivjewelrytip;
-
-    private FaceTipAdapter mTipListAdapter;
-
-
-    private Integer[] mhairstyleids = {R.drawable.special_hair_style1,R.drawable.special_hair_style2,R.drawable.special_hair_style3};
-
+    private FaceTipAdapter mFaceTipListAdapter;
+    private AllTipListAdapter mTipListAdapter;
 
     public static FaceTipsFragment newInstance(){
         FaceTipsFragment faceTipsFragment=new FaceTipsFragment();
@@ -78,7 +61,7 @@ public class FaceTipsFragment extends Fragment {
         String[] tipListArray = getResources().getStringArray(R.array.face_tip_list);
         List<String> tipList = new ArrayList<>(Arrays.asList(tipListArray));
 
-        mTipListAdapter = new FaceTipAdapter(tipList);
+        mFaceTipListAdapter = new FaceTipAdapter(tipList);
 
     }
 
@@ -88,46 +71,85 @@ public class FaceTipsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_face_tips, container, false);
         ButterKnife.bind(this, rootView);
 
-        sptiplist.setAdapter(mTipListAdapter);
-        showdata();
+       // sptiplist.setAdapter(mFaceTipListAdapter);
+
+        List<TipVO> tipList = TipModel.getInstance().getmTipList();
+        mTipListAdapter = new AllTipListAdapter(tipList);
+        rvfacetype.setAdapter(mTipListAdapter);
+
+        int gridColumnSpanCount = getResources().getInteger(R.integer.tip_list_grid);
+        rvfacetype.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
+
+
         return rootView;
     }
+//
+//    @OnItemSelected(R.id.sp_tip_list)
+//    public void OnSelectedSpinner(){
+//        //String spinnertext=sptiplist.getSelectedItem().toString();
+//      //  tvfacetiptitle.setText(sptiplist.getSelectedItem().toString());
+//      // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+//    }
 
-    private void showdata()
-    {
-        tvfacetiptitle.setText(R.string.hairstyle_facetip_title);
-        tvSunglassTipTitle.setText(R.string.sunglass_facetip_title);
-        tvjewlrytiptitle.setText(R.string.jewlery_facetip_title);
-
-        Random random = new Random();
-        int randomInt = random.nextInt(3);
-
-      //  Toast.makeText(getContext(),"ImageRandom"+ mhairstyleids.length,Toast.LENGTH_SHORT).show();
-        tvfacetipdesc.setText(Html.fromHtml(getString(R.string.hairstyle_facetips)));
-        tvSunglassTipDesc.setText(Html.fromHtml(getString(R.string.sunglasses_facetips)));
-        tvjewlrytipdesc.setText(Html.fromHtml(getString(R.string.jewellery_facetips)));
-
-        Glide.with(ivfacetip.getContext())
-                .load(mhairstyleids[randomInt])
-             //   .centerCrop()
-                .into(ivfacetip);
-
-
-        Glide.with(ivsunglasstip.getContext())
-                .load(R.drawable.sunglassforroundface)
-              //  .centerCrop()
-                .into(ivsunglasstip);
-
-        Glide.with(ivjewelrytip.getContext())
-                .load(R.drawable.accessories_for_roundface)
-                //  .centerCrop()
-                .into(ivjewelrytip);
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus eventBus = EventBus.getDefault();
+        if (!eventBus.isRegistered(this)) {
+            eventBus.register(this);
+        }
     }
 
-    @OnItemSelected(R.id.sp_tip_list)
-    public void OnSelectedSpinner(){
-        String spinnertext=sptiplist.getSelectedItem().toString();
-      //  tvfacetiptitle.setText(sptiplist.getSelectedItem().toString());
-       Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus eventBus = EventBus.getDefault();
+        eventBus.unregister(this);
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        return new CursorLoader(getContext(),
+                BeautyContract.TipEntry.CONTENT_URI,
+                null,
+                BeautyContract.TipEntry.COLUMN_CATEGORY + " = ?",
+                new String[]{"face-related"},
+                BeautyContract.TipEntry.COLUMN_TIPID + " ASC");
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        List<TipVO> tipList = new ArrayList<>();
+        if (data != null && data.moveToFirst()) {
+            do {
+                TipVO tip = TipVO.parseFromCursor(data);
+                //tip.setImages(AttractionVO.loadAttractionImagesByTitle(attraction.getTitle()));
+                tipList.add(tip);
+            } while (data.moveToNext());
+        }
+
+        Log.d(BeautyApp.TAG, "Retrieved Skin Tips : " + tipList.size());
+        mTipListAdapter.setNewData(tipList);
+
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+
+    }
+
+    public void onEventMainThread(DataEvent.TipDataLoadedEvent event) {
+        String extra = event.getExtraMessage();
+        Toast.makeText(getContext(), "Extra : " + extra, Toast.LENGTH_SHORT).show();
+
+        //List<AttractionVO> newAttractionList = AttractionModel.getInstance().getAttractionList();
+        List<TipVO> newTipList = event.getTipList();
+        mTipListAdapter.setNewData(newTipList);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().getSupportLoaderManager().initLoader(BeautyAppConstant.FACETIPS_LIST_LOADER, null, this);
     }
 }
