@@ -11,7 +11,8 @@ import com.padc.beauty.data.persistence.BeautyContract;
  */
 public class BeautyDBHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 12;
+
     public static final String DATABASE_NAME = "beauty.db";
 
     private static final String SQL_CREATE_TIP_TABLE = "CREATE TABLE IF NOT EXISTS " + BeautyContract.TipEntry.TABLE_NAME + " (" +

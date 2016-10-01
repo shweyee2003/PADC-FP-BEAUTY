@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.gson.annotations.SerializedName;
 import com.padc.beauty.BeautyApp;
@@ -36,7 +38,7 @@ public class BeautySaloonVO {
     private String opendaily;
 
     @SerializedName("available-services")
-    private ArrayList<ServiceVO> available_services;
+    private List<ServiceVO> available_services;
 
     public long getsaloonid(){return saloonid;}
 
@@ -50,7 +52,12 @@ public class BeautySaloonVO {
 
     public String getOpendaily(){return opendaily;}
 
-    public ArrayList<ServiceVO> getAvailable_services() {
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+
+    public List<ServiceVO> getAvailable_services() {
         return available_services;
     }
 
@@ -60,7 +67,8 @@ public class BeautySaloonVO {
         for (int index = 0; index < beautysalonList.size(); index++) {
             BeautySaloonVO beauytsalon = beautysalonList.get(index);
             beautySalonsCVs[index] = beauytsalon.parseToContentValues();
-
+            //Bulk insert into attraction_images.
+            ServiceVO.saveServices(beautysalonList.get(index).getsaloonid(),beautysalonList.get(index).getAvailable_services());
         }
 
         //Bulk insert into attractions.
@@ -68,6 +76,8 @@ public class BeautySaloonVO {
 
         Log.d(BeautyApp.TAG, "Bulk inserted into beauty salon table : " + insertedCount);
     }
+
+
 
     private ContentValues parseToContentValues() {
         ContentValues cv = new ContentValues();
@@ -90,4 +100,6 @@ public class BeautySaloonVO {
         beautysalon.opendaily = data.getString(data.getColumnIndex(BeautyContract.BeautySalonEntry.COLUMN_OPEN));
         return beautysalon;
     }
+
+
 }

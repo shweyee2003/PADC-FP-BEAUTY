@@ -44,7 +44,7 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
     @BindView(R.id.rv_personality)
     RecyclerView rvpersonality;
 
-    private AllTipListAdapter mpersonalitytipAdapter;
+    private PersonalityTipAdapter mpersonalitytipAdapter;
 
     public static PersonalityListFragment newInstance() {
         return new PersonalityListFragment();
@@ -56,7 +56,7 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
         View view = inflater.inflate(R.layout.fragment_personality_list, container, false);
         ButterKnife.bind(this, view);
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
-        mpersonalitytipAdapter = new AllTipListAdapter(tipList);
+        mpersonalitytipAdapter = new PersonalityTipAdapter(tipList);
         rvpersonality.setAdapter(mpersonalitytipAdapter);
 
         int gridColumnSpanCount = getResources().getInteger(R.integer.tip_list_grid);

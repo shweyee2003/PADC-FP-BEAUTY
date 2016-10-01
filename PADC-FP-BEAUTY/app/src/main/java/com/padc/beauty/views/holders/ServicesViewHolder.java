@@ -14,40 +14,36 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by windows on 9/24/2016.
+ * Created by Asus on 9/29/2016.
  */
-public class BeautySaloonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class ServicesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    @BindView(R.id.tv_beautysaloonname)
+    @BindView(R.id.tv_service_title)
     TextView tvname;
 
-    @BindView(R.id.tv_beautysaloonaddr)
+    @BindView(R.id.tv_services_description)
     TextView tvaddr;
 
-    @BindView(R.id.tv_openhr)
-    TextView tvOpenhr;
-
-    @BindView(R.id.iv_beautysaloon)
+    @BindView(R.id.iv_services_image)
     ImageView ivbeautysaloon;
 
     private BeautySaloonVO mbeauty;
     private ControllerBeautysalonItem mController;
     private ServiceVO mServices;
 
-    public BeautySaloonViewHolder(View itemView, ControllerBeautysalonItem controller) {
+    public ServicesViewHolder(View itemView, ControllerBeautysalonItem controller) {
         super(itemView);
         ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(this);
         mController = controller;
     }
 
-    public void bindData(BeautySaloonVO beautysaloon) {
-        mbeauty = beautysaloon;
+    public void bindServicesData(ServiceVO services) {
+        mServices = services;
 
-        tvname.setText(beautysaloon.getsaloonname());
-        tvaddr.setText(beautysaloon.getdirectiontosaloon());
-        tvOpenhr.setText("Open Daily : "+beautysaloon.getOpendaily());
-        String imageUrl =  beautysaloon.getPhoto();
+        tvname.setText(services.getservicetitle());
+        tvaddr.setText(services.getdescription());
+        String imageUrl =  services.getimgurl();
 
         Glide.with(ivbeautysaloon.getContext())
                 .load(imageUrl)
@@ -56,7 +52,6 @@ public class BeautySaloonViewHolder extends RecyclerView.ViewHolder implements V
                 .error(R.drawable.stock_photo_placeholder)
                 .into(ivbeautysaloon);
     }
-
     @Override
     public void onClick(View view) {
         mController.onTapAttraction(mbeauty, ivbeautysaloon);

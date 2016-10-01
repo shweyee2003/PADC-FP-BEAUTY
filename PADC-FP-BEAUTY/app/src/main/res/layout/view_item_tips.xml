@@ -2,22 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="@dimen/margin_medium_2">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_medium">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <com.padc.beauty.components.DynamicHeightImageView
+            android:id="@+id/iv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:scaleType="centerCrop"/>
     <com.padc.beauty.components.MMTextView
         android:id="@+id/tv_tips_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_gravity="bottom"
+        android:textAllCaps="true"
         style="@style/TitleTextStyle"/>
 
-    <com.padc.beauty.components.DynamicHeightImageView
-        android:id="@+id/iv_tips"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_small"
-        android:scaleType="centerCrop"/>
 
+    </FrameLayout>
     <com.padc.beauty.components.MMTextView
         android:id="@+id/tv_tips_desc"
         android:layout_width="wrap_content"

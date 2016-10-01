@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.padc.beauty">
-
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-
 
     <application
         android:name=".BeautyApp"
@@ -40,15 +36,31 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.padc.beauty.activities.HomeActivity" />
         </activity>
-        <activity android:name=".activities.PersonalityDetailActivity"
+        <activity android:name=".activities.PersonalityListActivity"
             android:label="Personality"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.padc.beauty.activities.HomeActivity"
+                />
+        </activity>
+        <activity android:name=".activities.PersonalityDetailActivity"
+            android:label="Personality"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.padc.beauty.activities.PersonalityListActivity"
                />
         </activity>
 
+        <activity
+            android:name=".activities.BeautysalonDetailActivity"
+            android:parentActivityName=".activities.HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.padc.beauty.activities.HomeActivity" />
+        </activity>
         <provider
             android:name=".data.persistence.BeautyProvider"
             android:authorities="@string/content_authority"

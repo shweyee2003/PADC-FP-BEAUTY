@@ -400,8 +400,14 @@ public class BeautyContract {
             //content://xyz.aungpyaephyo.padc.myanmarattractions/attractions/1
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
+        public static Uri buildBeautySalonUriWithId(long salon_id) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attractions?title="Yangon"
+            return CONTENT_URI.buildUpon()
+                    .appendQueryParameter(COLUMN_SALON_ID, String.valueOf(salon_id))
+                    .build();
+        }
         public static String getTitleFromParam(Uri uri) {
-            return uri.getQueryParameter(COLUMN_SERVICE_ID);
+            return uri.getQueryParameter(COLUMN_SALON_ID);
         }
     }
 

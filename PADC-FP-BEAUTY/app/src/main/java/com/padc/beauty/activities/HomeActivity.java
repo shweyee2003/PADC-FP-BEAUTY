@@ -1,5 +1,6 @@
 package com.padc.beauty.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -10,9 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 import com.padc.beauty.R;
 
+import com.padc.beauty.data.vos.BeautySaloonVO;
 import com.padc.beauty.fragments.DressingPagerFragment;
 
 import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
@@ -22,8 +25,10 @@ import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.fragments.TutorialsFragment;
 import com.padc.beauty.utils.MMFontUtils;
+import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
+        BeautySaloonViewHolder.ControllerBeautysalonItem,
         MenuItemCompat.OnActionExpandListener{
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -145,6 +150,12 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, PersonalityListFragment.newInstance())
                 .commit();
+    }
+
+    @Override
+    public void onTapAttraction(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
+        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(),beautysalon.getPhoto());
+        startActivity(intent);
     }
 
 }
