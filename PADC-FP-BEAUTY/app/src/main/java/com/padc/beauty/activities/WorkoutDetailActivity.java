@@ -28,7 +28,6 @@ public class WorkoutDetailActivity extends AppCompatActivity{
 
 
     public static Intent newIntent(Long tipid) {
-
         Intent intent = new Intent(BeautyApp.getContext(), WorkoutDetailActivity.class);
         intent.putExtra(IE_TIP_ID,tipid);
         return intent;

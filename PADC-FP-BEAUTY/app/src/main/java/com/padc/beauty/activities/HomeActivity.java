@@ -17,6 +17,9 @@ import android.widget.ImageView;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 
+
+import com.padc.beauty.data.vos.TipVO;
+
 import com.padc.beauty.data.vos.BeautySaloonVO;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.fragments.DressingPagerFragment;
@@ -29,13 +32,16 @@ import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.fragments.TutorialsFragment;
 import com.padc.beauty.fragments.WorkoutDetailFragment;
 import com.padc.beauty.utils.MMFontUtils;
+import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
+import com.padc.beauty.views.holders.PersonalityViewHolder;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 import com.padc.beauty.views.holders.TipViewHolder;
 import com.padc.beauty.views.holders.PersonalityViewHolder;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
-        MenuItemCompat.OnActionExpandListener,PersonalityViewHolder.ControllerPersonalityItem,FitnessandhealthViewHolder.ControllerFitnessandHealth,BeautySaloonViewHolder.ControllerBeautysalonItem{
+        MenuItemCompat.OnActionExpandListener,PersonalityViewHolder.ControllerPersonalityItem, BeautySaloonViewHolder.ControllerBeautysalonItem,FitnessandhealthViewHolder.ControllerFitnessandHealth{
+
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -159,6 +165,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
                 .commit();
 //        Intent intent = PersonalityListActivity.newIntent();
  //       startActivity(intent);
+
     }
 
     @Override
@@ -166,13 +173,14 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto());
         startActivity(intent);
     }
+
+    @Override
     public void onTapPersonality(TipVO tip) {
         Intent intent=PersonalityDetailActivity.newIntent(tip.getTipid());
         startActivity(intent);
     }
 
     @Override
-
     public void onTapHealth(TipVO healthrelatedTips, ImageView ivfitandhealthimage) {
         Log.d(BeautyApp.TAG, "Tip id" + healthrelatedTips.getTipid());
         Intent intent = WorkoutDetailActivity.newIntent(healthrelatedTips.getTipid());

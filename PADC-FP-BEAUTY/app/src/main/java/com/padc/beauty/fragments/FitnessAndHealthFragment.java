@@ -72,7 +72,6 @@ public class FitnessAndHealthFragment extends Fragment implements LoaderManager.
     }
 
 
-
     @Override
     public void onStart() {
         super.onStart();
