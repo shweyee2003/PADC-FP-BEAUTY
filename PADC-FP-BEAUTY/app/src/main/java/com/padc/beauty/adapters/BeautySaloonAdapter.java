@@ -18,15 +18,17 @@ import java.util.List;
 public class BeautySaloonAdapter extends RecyclerView.Adapter<BeautySaloonViewHolder>   {
     private List<BeautySaloonVO> mBeautySaloonList;
     private LayoutInflater inflater;
+    private BeautySaloonViewHolder.ControllerBeautysalonItem mControllerBeautysalonItem;
 
-    public BeautySaloonAdapter(List<BeautySaloonVO> beautysaloonList){
+    public BeautySaloonAdapter(List<BeautySaloonVO> beautysaloonList,BeautySaloonViewHolder.ControllerBeautysalonItem controllerBeautysalonItem){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mBeautySaloonList = beautysaloonList;
+        mControllerBeautysalonItem = controllerBeautysalonItem;
     }
     @Override
     public BeautySaloonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.view_item_beautysaloon, parent, false);
-        return new BeautySaloonViewHolder(itemView);
+        return new BeautySaloonViewHolder(itemView,mControllerBeautysalonItem);
     }
 
     @Override

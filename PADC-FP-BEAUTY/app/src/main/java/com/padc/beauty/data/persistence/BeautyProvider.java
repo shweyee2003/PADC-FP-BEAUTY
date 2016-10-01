@@ -10,12 +10,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
+
+import com.padc.beauty.BeautyApp;
 
 /**
 
  * Created by windows on 9/24/2016.
  */
 public class BeautyProvider extends ContentProvider {
+
 
     public static final int TIP = 100;
     public static final int TIP_SKINCOLOR = 200;
@@ -39,7 +43,7 @@ public class BeautyProvider extends ContentProvider {
     private static final String sBodyShapeSelectionWithDressingid = BeautyContract.DressingBodyShapeEntry.COLUMN_DRESSINGID + " = ?";
     private static final String sSkinTypeSelectionWithDressingid = BeautyContract.DressingSkinTypeEntry.COLUMN_DRESSINGID + " = ?";
     private static final String sSkinColorSelectionWithDressingid = BeautyContract.DressingSkinColorEntry.COLUMN_DRESSINGID + " = ?";
-    private static final String sBeautyIdSelection = BeautyContract.BeautySalonEntry.COLUMN_ID + " = ?";
+    private static final String sBeautyIdSelection = BeautyContract.SalonServicesEntry.COLUMN_SALON_ID + " = ?";
     private static final String sAttractionSelectionWithTitle = BeautyContract.BeautySalonEntry.COLUMN_ID + " = ?";
 
     private static final UriMatcher sUriMatcher = buildUriMatcher();
@@ -167,10 +171,16 @@ public class BeautyProvider extends ContentProvider {
                         sortOrder);
                 break;
             case SALON_SERVICES:
-                 queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.SalonServicesEntry.TABLE_NAME,
-                        null,
-                        null,
-                        null,
+                String saloonid = BeautyContract.SalonServicesEntry.getTitleFromParam(uri);
+                Log.d(BeautyApp.TAG,saloonid);
+                if (!TextUtils.isEmpty(saloonid)) {
+                    selection = sBeautyIdSelection;
+                    selectionArgs = new String[]{saloonid};
+                }
+                queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.SalonServicesEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
                         null,
                         null,
                         sortOrder);
