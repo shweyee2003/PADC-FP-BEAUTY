@@ -11,7 +11,9 @@ import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.data.vos.FashionShopVO;
 import com.padc.beauty.data.vos.TipVO;
 
+import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
+import com.padc.beauty.views.holders.TipViewHolder;
 
 import java.util.List;
 
@@ -21,16 +23,18 @@ import java.util.List;
 public class FitnessandhealthAdapter  extends RecyclerView.Adapter<FitnessandhealthViewHolder>  {
     private List<TipVO> mTipList;
     private LayoutInflater inflater;
+    private FitnessandhealthViewHolder.ControllerFitnessandHealth mControllerHealth;
 
-    public FitnessandhealthAdapter(List<TipVO> tipList){
+    public FitnessandhealthAdapter(List<TipVO> tipList, FitnessandhealthViewHolder.ControllerFitnessandHealth controllerFitnessandHealth){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mTipList = tipList;
+        mControllerHealth = controllerFitnessandHealth;
     }
 
     @Override
     public FitnessandhealthViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.view_item_fitness_and_health, parent, false);
-        return new FitnessandhealthViewHolder(itemView);
+        return new FitnessandhealthViewHolder(itemView,mControllerHealth);
     }
 
     @Override

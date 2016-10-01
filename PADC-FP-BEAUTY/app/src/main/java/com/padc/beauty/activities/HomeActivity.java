@@ -9,13 +9,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 
 import com.padc.beauty.data.vos.BeautySaloonVO;
+import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.fragments.DressingPagerFragment;
 
 import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
@@ -24,11 +27,15 @@ import com.padc.beauty.fragments.PersonalityListFragment;
 import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.fragments.TutorialsFragment;
+import com.padc.beauty.fragments.WorkoutDetailFragment;
 import com.padc.beauty.utils.MMFontUtils;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
+import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
+import com.padc.beauty.views.holders.TipViewHolder;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
         BeautySaloonViewHolder.ControllerBeautysalonItem,
+        FitnessandhealthViewHolder.ControllerFitnessandHealth,
         MenuItemCompat.OnActionExpandListener{
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -153,9 +160,15 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     @Override
-    public void onTapAttraction(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
+    public void onTapBeautysalon(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
         Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(),beautysalon.getPhoto());
         startActivity(intent);
     }
 
+    @Override
+    public void onTapHealth(TipVO healthrelatedTips, ImageView ivfitandhealthimage) {
+        Log.d(BeautyApp.TAG,"Tip id"+healthrelatedTips.getTipid());
+        Intent intent = WorkoutDetailActivity.newIntent(healthrelatedTips.getTipid());
+        startActivity(intent);
+    }
 }

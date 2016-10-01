@@ -67,13 +67,13 @@ public class WorkoutFragment extends Fragment {
         workoutDesc3.setText(Html.fromHtml(getString(R.string.workout_desc_for_curvybdtype)));
         workoutDesc4.setText(Html.fromHtml(getString(R.string.workout_desc_for_pearbdtype)));
     }
-    @OnClick(R.id.workoutlist)
-    public void onTapDetailWorkoutList(View view) {
-        //Toast.makeText(getContext(),"specific tips",Toast.LENGTH_SHORT).show();
-//        Fragment fr=new WorkoutDetailFragment();
-//        FragmentChangeListener fc=(FragmentChangeListener)getActivity();
-//        fc.replaceFragment(fr);
-        Intent intent = WorkoutDetailActivity.newIntent();
-        startActivity(intent);
-    }
+//    @OnClick(R.id.workoutlist)
+//    public void onTapDetailWorkoutList(View view) {
+//        //Toast.makeText(getContext(),"specific tips",Toast.LENGTH_SHORT).show();
+////        Fragment fr=new WorkoutDetailFragment();
+////        FragmentChangeListener fc=(FragmentChangeListener)getActivity();
+////        fc.replaceFragment(fr);
+//        Intent intent = WorkoutDetailActivity.newIntent();
+//        startActivity(intent);
+//    }
 }

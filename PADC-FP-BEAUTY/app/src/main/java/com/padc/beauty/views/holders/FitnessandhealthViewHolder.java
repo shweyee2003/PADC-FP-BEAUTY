@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
 /**
  * Created by windows on 9/27/2016.
  */
-public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder  {
+public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
     @BindView(R.id.tv_fitnessandhealth)
     TextView tvtitle;
 
@@ -23,16 +23,20 @@ public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder  {
     ImageView ivfitnessandhealth;
 
     private TipVO mtip;
+    private ControllerFitnessandHealth mController;
 
-    public FitnessandhealthViewHolder(View itemView) {
+    public FitnessandhealthViewHolder(View itemView, ControllerFitnessandHealth controller) {
         super(itemView);
         ButterKnife.bind(this, itemView);
+        mController = controller;
     }
 
     public void bindData(TipVO tip) {
         mtip = tip;
         tvtitle.setText(tip.getTitle());
         String imageUrl =  tip.getImg_url();
+
+        itemView.setOnClickListener(this);
 
         Glide.with(ivfitnessandhealth.getContext())
                 .load(imageUrl)
@@ -41,5 +45,14 @@ public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder  {
                 .error(R.drawable.stock_photo_placeholder)
                 .into(ivfitnessandhealth);
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        mController.onTapHealth(mtip, ivfitnessandhealth);
+    }
+
+    public interface ControllerFitnessandHealth {
+        void onTapHealth(TipVO healthrelatedTips, ImageView ivfitnessandhealth);
     }
 }
