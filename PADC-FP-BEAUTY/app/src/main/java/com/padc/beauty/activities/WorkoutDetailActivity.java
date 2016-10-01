@@ -27,9 +27,9 @@ public class WorkoutDetailActivity extends AppCompatActivity{
     Toolbar toolbar;
 
 
-    public static Intent newIntent(long tipId) {
+    public static Intent newIntent(Long tipid) {
         Intent intent = new Intent(BeautyApp.getContext(), WorkoutDetailActivity.class);
-        intent.putExtra(IE_TIP_ID,tipId);
+        intent.putExtra(IE_TIP_ID,tipid);
         return intent;
     }
 
@@ -52,13 +52,13 @@ public class WorkoutDetailActivity extends AppCompatActivity{
                     .commit();
         }
         mTipId = getIntent().getLongExtra(IE_TIP_ID,0);
-        final TipVO mHealth = TipModel.getInstance().getTipsById(mTipId);
-        if(mHealth == null){
-            throw new RuntimeException("Can't find Tips obj with tipid : "+mTipId);
-        }
-        else {
-            Log.d(BeautyApp.TAG,"Health");
-        }
+        //final TipVO mHealth = TipModel.getInstance().getTipsById(mTipId);
+//        if(mHealth == null){
+//            throw new RuntimeException("Can't find Tips obj with tipid : "+mTipId);
+//        }
+//        else {
+//            Log.d(BeautyApp.TAG,"Health");
+//        }
     }
 
 }

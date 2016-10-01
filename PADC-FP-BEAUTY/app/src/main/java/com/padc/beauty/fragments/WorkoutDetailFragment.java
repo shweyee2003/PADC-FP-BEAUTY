@@ -1,5 +1,6 @@
 package com.padc.beauty.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,7 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
+import com.padc.beauty.data.vos.PersonalityDetailVO;
+import com.padc.beauty.data.vos.TipVO;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +26,7 @@ public class WorkoutDetailFragment extends Fragment {
     TextView cardio;
     @BindView(R.id.tv_capoeria)
     TextView capoeria;
+
     public static WorkoutDetailFragment newInstance(){
         WorkoutDetailFragment workoutDetailFragment = new WorkoutDetailFragment();
         return workoutDetailFragment;
