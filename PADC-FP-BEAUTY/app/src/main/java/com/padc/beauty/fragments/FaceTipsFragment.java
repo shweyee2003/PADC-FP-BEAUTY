@@ -109,11 +109,16 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        String selectionbyid =BeautyContract.TipEntry.COLUMN_CATEGORY + " IN( " + " ?  "+ "," +" ? "+")";
+//        String selectionbyid =BeautyContract.TipEntry.COLUMN_CATEGORY + " = ? "+ " AND " + BeautyContract.TipEntry.COLUMN_CATEGORY +" =? ";
+//        String select = "((" + Contacts.DISPLAY_NAME + " NOTNULL) AND ("
+//                + Contacts.HAS_PHONE_NUMBER + "=1) AND ("
+//                + Contacts.DISPLAY_NAME + " != '' ))";
         return new CursorLoader(getContext(),
                 BeautyContract.TipEntry.CONTENT_URI,
                 null,
-                BeautyContract.TipEntry.COLUMN_CATEGORY + " = ?",
-                new String[]{"face-related"},
+                selectionbyid,
+                new String[]{"face-related","hair-related"},
                 BeautyContract.TipEntry.COLUMN_TIPID + " ASC");
     }
 
@@ -124,11 +129,15 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
             do {
                 TipVO tip = TipVO.parseFromCursor(data);
                 //tip.setImages(AttractionVO.loadAttractionImagesByTitle(attraction.getTitle()));
+                tip.setSkincolors(TipModel.loadSkinColorByTipID(tip.getTipid()));
+                tip.setSkintypes(TipModel.loadSkinTypeByTipID(tip.getTipid()));
+                tip.setBodyshapes(TipModel.loadBodyShapeByTipID(tip.getTipid()));
+                tip.setFacetypes(TipModel.loadFaceTypeByTipID(tip.getTipid()));
                 tipList.add(tip);
             } while (data.moveToNext());
         }
 
-        Log.d(BeautyApp.TAG, "Retrieved Skin Tips : " + tipList.size());
+        Log.d(BeautyApp.TAG, "Retrieved Face Tips : " + tipList.size());
         mTipListAdapter.setNewData(tipList);
 
     }

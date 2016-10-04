@@ -30,5 +30,6 @@ public class BeautyAppConstant {
     public static final int FASHION_SHOP_LIST_LOADER = 8;
     public static final int BEAUTY_SALON_LIST_LOADER = 9;
     public static final int BEAUTY_SALON_DETAIL_LOADER = 10;
+    public static final int FitnessandHealthDetailTIPS_LIST_LOADER=11;
 
 }

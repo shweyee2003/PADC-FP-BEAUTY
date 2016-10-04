@@ -10,27 +10,22 @@
     android:paddingLeft="@dimen/margin_small"
     android:paddingRight="@dimen/margin_small"
     android:paddingTop="@dimen/margin_small"
-    android:paddingBottom="@dimen/margin_small">
-    <com.padc.beauty.components.MMTextView
-        android:id="@+id/tv_fitnessandhealth"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:maxLines="3"
-        android:background="@drawable/border_color"
-        android:ellipsize="end"
-        android:textColor="@color/primary"
-        android:textAllCaps="true"
-        android:layout_marginBottom="2dp"
-        android:fontFamily="sans-serif-condensed"
-        android:elevation="@dimen/margin_small"
-        android:paddingLeft="@dimen/margin_medium"/>
+    android:paddingBottom="@dimen/margin_small"
+    android:background="@drawable/border_color">
     <com.padc.beauty.components.DynamicHeightImageView
         android:id="@+id/iv_fitandhealth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/best_body_pear_forworkout1"
         android:scaleType="centerCrop"/>
-
-
+    <com.padc.beauty.components.MMTextView
+        android:id="@+id/tv_fitnessandhealth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="sans-serif-condensed"
+        android:elevation="@dimen/margin_small"
+        android:paddingLeft="@dimen/margin_medium"/>
 
 </LinearLayout>

@@ -74,7 +74,7 @@
             android:layout_height="match_parent"
             android:layout_below="@id/tv_personalitytitle"/>
         <xyz.aungpyaephyo.padc.myanmarattractions.components.PageIndicatorView
-            android:id="@+id/pi_attraction_image_slider"
+            android:id="@+id/pi_personailty_slider"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_gravity="bottom"

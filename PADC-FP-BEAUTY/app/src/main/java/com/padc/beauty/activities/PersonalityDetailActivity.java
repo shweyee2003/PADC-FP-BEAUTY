@@ -11,13 +11,19 @@ import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.adapters.PersonalityDetailPagerAdapter;
+import com.padc.beauty.data.models.PersonalityDetailModel;
+import com.padc.beauty.data.vos.PerDetailVO;
+import com.padc.beauty.data.vos.PersonalityDetailVO;
 import com.padc.beauty.fragments.PersonalityDetailFragment;
 import com.padc.beauty.fragments.WorkoutDetailFragment;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,9 +33,13 @@ import butterknife.OnClick;
  * Created by windows on 9/17/2016.
  */
 public class PersonalityDetailActivity extends AppCompatActivity {
+    private static final String IE_TIPID = "IE_TIPID";
+    private static final String IE_TITLE = "IE_TITLE";
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    @BindView(R.id.tv_personalitytitle)
+    TextView tvpersonalitytitle;
 //    @BindView(R.id.pager_personalitydetail)
 //    ViewPager pagerpersonalitydetail;
     @BindView(R.id.btn_next)
@@ -37,11 +47,15 @@ public class PersonalityDetailActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_previous)
     Button btnprevious;
-
+    private List<PerDetailVO> mperdtllist;
     private int presonalityIndex = -1;
+    private long tipid;
+    private PersonalityDetailVO mperDtlVO;
 
-    public static Intent newIntent(Long tipid) {
+    public static Intent newIntent(Long tipid,String title) {
         Intent intent = new Intent(BeautyApp.getContext(), PersonalityDetailActivity.class);
+        intent.putExtra(IE_TIPID, tipid);
+        intent.putExtra(IE_TITLE, title);
         return intent;
     }
 
@@ -57,7 +71,13 @@ public class PersonalityDetailActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
         if (savedInstanceState == null) {
+            tipid=getIntent().getExtras().getLong(IE_TIPID);
+            tvpersonalitytitle.setText(getIntent().getStringExtra(IE_TITLE));
+          //  mperDtlVO = PersonalityDetailModel.getInstance().getPersonalityByID(tipid);
+
+          //  List<PerDetailVO> perDtlVOList=mperDtlVO.getPersondtlVO();
             presonalityIndex++;
             navigateToPersonality(presonalityIndex);
         }
@@ -77,7 +97,7 @@ public class PersonalityDetailActivity extends AppCompatActivity {
     @OnClick(R.id.btn_next)
     public void  onTapNext(){
         presonalityIndex++;
-        if (presonalityIndex < 3) {
+        if (presonalityIndex <3) {
             navigateToPersonality(presonalityIndex);
         } else {
             presonalityIndex =2;
@@ -99,7 +119,7 @@ public class PersonalityDetailActivity extends AppCompatActivity {
     private void navigateToPersonality(int presonalityIndex) {
         //PersonalityDetailPagerAdapter.setNumPage();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, PersonalityDetailFragment.newInstance(presonalityIndex))
+                .replace(R.id.fl_container, PersonalityDetailFragment.newInstance(tipid,presonalityIndex))
                 .commit();
     }
 }
