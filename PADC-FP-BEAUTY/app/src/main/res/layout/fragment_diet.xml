@@ -23,14 +23,14 @@
         android:background="@drawable/border_color"
         android:orientation="horizontal"
         android:padding="@dimen/margin_medium">
-        <ImageView
+        <com.padc.beauty.components.DynamicHeightImageView
             android:id="@+id/iv_diet"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:src="@drawable/one"
             android:layout_weight="1"/>
 
-            <TextView
+            <com.padc.beauty.components.MMTextView
                 android:id="@+id/tv_diet_one"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"

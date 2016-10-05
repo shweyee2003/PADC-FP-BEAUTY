@@ -142,9 +142,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
                 .commit();
     }
     public void navigateToSaloonandFashionshop(){
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, SaloonandFashionshopFragment.newInstance())
-                .commit();
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.fl_container, SaloonandFashionshopFragment.newInstance())
+//                .commit();
+        Intent intent = SalonandFashionshopActivity.newIntent();
+        startActivity(intent);
     }
     public void navigateToBeautyTutorial(){
         getSupportFragmentManager().beginTransaction()
@@ -170,7 +172,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
 
     @Override
     public void onTapBeautysalon(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
-        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto());
+        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto(),beautysalon.getsaloonname());
         startActivity(intent);
     }
 
@@ -181,7 +183,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     @Override
-    public void onTapHealth(TipVO healthrelatedTips, ImageView ivfitandhealthimage) {
+    public void onTapHealth(TipVO healthrelatedTips) {
         Log.d(BeautyApp.TAG, "Tip id" + healthrelatedTips.getTipid());
         Intent intent = WorkoutDetailActivity.newIntent(healthrelatedTips.getTipid());
         startActivity(intent);

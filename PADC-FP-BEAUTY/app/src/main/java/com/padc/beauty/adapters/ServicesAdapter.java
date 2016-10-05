@@ -28,7 +28,8 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesViewHolder>   
     }
     @Override
     public ServicesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = inflater.inflate(R.layout.view_item_beautysalon_detail, parent, false);
+        //View itemView = inflater.inflate(R.layout.view_item_beautysalon_detail, parent, false);
+        View itemView = inflater.inflate(R.layout.fragment_salon_services, parent, false);
         return new ServicesViewHolder(itemView,mControllerBeautysalonItem);
     }
 

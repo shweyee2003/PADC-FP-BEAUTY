@@ -249,6 +249,7 @@ public class TipVO {
     public static TipVO parseFromCursor(Cursor data) {
         TipVO tip = new TipVO();
         tip.tipid=data.getLong(data.getColumnIndex(BeautyContract.TipEntry.COLUMN_TIPID));
+        tip.tipcategory=data.getString(data.getColumnIndex(BeautyContract.TipEntry.COLUMN_CATEGORY));
         tip.title = data.getString(data.getColumnIndex(BeautyContract.TipEntry.COLUMN_TITLE));
         tip.description = data.getString(data.getColumnIndex(BeautyContract.TipEntry.COLUMN_DESC));
         tip.img_url = data.getString(data.getColumnIndex(BeautyContract.TipEntry.COLUMN_IMAGE));

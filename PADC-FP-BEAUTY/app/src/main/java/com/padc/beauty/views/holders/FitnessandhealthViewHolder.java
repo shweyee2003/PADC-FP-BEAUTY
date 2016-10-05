@@ -54,11 +54,11 @@ public class FitnessandhealthViewHolder extends RecyclerView.ViewHolder implemen
     @Override
     public void onClick(View view) {
 
-        mController.onTapHealth(mtip, ivfitnessandhealth);
+        mController.onTapHealth(mtip);
     }
 
     public interface ControllerFitnessandHealth {
-        void onTapHealth(TipVO healthrelatedTips, ImageView ivfitnessandhealth);
+        void onTapHealth(TipVO healthrelatedTips);
 
     }
 

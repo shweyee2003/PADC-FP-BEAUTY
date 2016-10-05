@@ -24,8 +24,7 @@ import butterknife.ButterKnife;
 public class WorkoutDetailFragment extends Fragment {
     @BindView(R.id.tv_cardio)
     TextView cardio;
-    @BindView(R.id.tv_capoeria)
-    TextView capoeria;
+
 
     public static WorkoutDetailFragment newInstance(){
         WorkoutDetailFragment workoutDetailFragment = new WorkoutDetailFragment();
@@ -48,7 +47,7 @@ public class WorkoutDetailFragment extends Fragment {
     private void showdata()
     {
         cardio.setText(Html.fromHtml(getString(R.string.cardio_exercise)));
-        capoeria.setText(Html.fromHtml(getString(R.string.capoeria_exercise)));
+
     }
 
 }

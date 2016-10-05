@@ -13,6 +13,8 @@ import com.padc.beauty.data.models.TipModel;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.fragments.WorkoutDetailFragment;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -26,6 +28,7 @@ public class WorkoutDetailActivity extends AppCompatActivity{
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    private TipVO mtiplist;
 
     public static Intent newIntent(Long tipid) {
         Intent intent = new Intent(BeautyApp.getContext(), WorkoutDetailActivity.class);
@@ -52,13 +55,16 @@ public class WorkoutDetailActivity extends AppCompatActivity{
                     .commit();
         }
         mTipId = getIntent().getLongExtra(IE_TIP_ID,0);
-        //final TipVO mHealth = TipModel.getInstance().getTipsById(mTipId);
-//        if(mHealth == null){
-//            throw new RuntimeException("Can't find Tips obj with tipid : "+mTipId);
-//        }
-//        else {
-//            Log.d(BeautyApp.TAG,"Health");
-//        }
+        mtiplist.getBodyshapes();
+        final TipVO mHealth = TipModel.getInstance().getTipsById(mTipId);
+        if(mHealth == null){
+            throw new RuntimeException("Can't find Tips obj with tipid : "+mTipId);
+        }
+        else {
+            Log.d(BeautyApp.TAG,"Health");
+        }
     }
+
+
 
 }

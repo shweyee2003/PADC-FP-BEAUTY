@@ -27,7 +27,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
 
-            <ImageView
+            <com.padc.beauty.components.DynamicHeightImageView
                 android:id="@+id/iv_beautysaloon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -54,14 +54,35 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/my_recycler_view"
-                android:scrollbars="vertical"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium">
+            <com.padc.beauty.components.MMTextView
+                android:id="@+id/tv_meals_price_detail"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="wrap_content"
+                android:text="Daily Open Hour : 8AM ~ 9PM"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium_2"/>
+            <!--<FrameLayout-->
+            <!--android:id="@+id/fl_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@+id/tv_meals_price_detail"-->
+            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"/>-->
+
+        </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
