@@ -178,7 +178,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
 
     @Override
     public void onTapPersonality(TipVO tip) {
-        Intent intent=PersonalityDetailActivity.newIntent(tip.getTipid());
+        Intent intent=PersonalityDetailActivity.newIntent(tip.getTipid(),tip.getTitle());
         startActivity(intent);
     }
 

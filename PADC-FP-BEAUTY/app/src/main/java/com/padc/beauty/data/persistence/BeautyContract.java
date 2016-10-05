@@ -57,6 +57,13 @@ public class BeautyContract {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
 
+        public static Uri buildTipUriWithTipId(Long tipId) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attractions?title="Yangon"
+            return CONTENT_URI.buildUpon()
+                    .appendQueryParameter(COLUMN_TIPID, String.valueOf(tipId))
+                    .build();
+        }
+
         public static String getTipFromParam(Uri uri) {
             return uri.getQueryParameter(COLUMN_CATEGORY);
         }
@@ -80,6 +87,13 @@ public class BeautyContract {
         public static Uri buildSkinColorTipUri(long id) {
             //content://xyz.aungpyaephyo.padc.myanmarattractions/attractions/1
             return ContentUris.withAppendedId(CONTENT_URI, id);
+        }
+
+        public static Uri buildSkinColorUriWithTipID(long tipid) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attraction_images?attraction_title=Yangon
+            return CONTENT_URI.buildUpon()
+                    .appendQueryParameter(COLUMN_TIPID, String.valueOf(tipid))
+                    .build();
         }
 
         public static String getTipFromParam(Uri uri) {
@@ -107,6 +121,13 @@ public class BeautyContract {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
 
+        public static Uri buildBodyShapeUriWithTipID(long tipid) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attraction_images?attraction_title=Yangon
+            return CONTENT_URI.buildUpon()
+                    .appendQueryParameter(COLUMN_TIPID, String.valueOf(tipid))
+                    .build();
+        }
+
         public static String getTipFromParam(Uri uri) {
             return uri.getQueryParameter(COLUMN_TIPID);
         }
@@ -130,6 +151,13 @@ public class BeautyContract {
         public static Uri buildHairColorTipUri(long id) {
             //content://xyz.aungpyaephyo.padc.myanmarattractions/attractions/1
             return ContentUris.withAppendedId(CONTENT_URI, id);
+        }
+
+        public static Uri buildHairColorUriWithTipID(long tipid) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attraction_images?attraction_title=Yangon
+            return CONTENT_URI.buildUpon()
+                    .appendQueryParameter(COLUMN_TIPID, String.valueOf(tipid))
+                    .build();
         }
 
         public static String getTipFromParam(Uri uri) {
@@ -157,6 +185,13 @@ public class BeautyContract {
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
 
+        public static Uri buildSkinTypeUriWithTipID(long tipid) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attraction_images?attraction_title=Yangon
+            return CONTENT_URI.buildUpon()
+                    .appendQueryParameter(COLUMN_TIPID, String.valueOf(tipid))
+                    .build();
+        }
+
         public static String getTipFromParam(Uri uri) {
             return uri.getQueryParameter(COLUMN_TIPID);
         }
@@ -179,6 +214,13 @@ public class BeautyContract {
 
         public static Uri buildFaceTypeUri(long id) {
             return ContentUris.withAppendedId(CONTENT_URI, id);
+        }
+
+        public static Uri buildFaceTypeUriWithTipID(long tipid) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attraction_images?attraction_title=Yangon
+            return CONTENT_URI.buildUpon()
+                    .appendQueryParameter(COLUMN_TIPID, String.valueOf(tipid))
+                    .build();
         }
 
         public static String getTipFromParam(Uri uri) {
@@ -300,12 +342,14 @@ public class BeautyContract {
             //content://xyz.aungpyaephyo.padc.myanmarattractions/attractions/1
             return ContentUris.withAppendedId(CONTENT_URI, id);
         }
+
         public static Uri buildHairStyleUriWithDressingID(long dressingid) {
-            //content://xyz.aungpyaephyo.padc.myanmarattractions/attraction_images?attraction_title=Yangon
+
             return CONTENT_URI.buildUpon()
                     .appendQueryParameter(COLUMN_DRESSINGID, String.valueOf(dressingid))
                     .build();
         }
+
         public static String getDressingHairStyleFromParam(Uri uri) {
             return uri.getQueryParameter(COLUMN_DRESSINGID);
         }

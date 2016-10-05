@@ -2,42 +2,28 @@ package com.padc.beauty.data.vos;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 /**
  * Created by aung on 6/24/16.
  */
 public class PersonalityDetailVO {
-    @SerializedName("tip-id")
+    @SerializedName("personality_id")
     private long tipid;
 
-    @SerializedName("title")
-    private String PersonalityTitle;
+    @SerializedName("detail")
+    private List<PerDetailVO> persondtlVO;
 
-    @SerializedName("image")
-    private String PersonalityImage;
-
-    @SerializedName("description")
-    private String PersonalityContent;
-
-    public PersonalityDetailVO(Long Tipid,String personalityTitle, String personalityContent, String personalityImage) {
-        this.PersonalityTitle = personalityTitle;
-        this.PersonalityContent = personalityContent;
-        this.PersonalityImage = personalityImage;
+    public PersonalityDetailVO(Long Tipid,List<PerDetailVO> PersondtlVO) {
         this.tipid=Tipid;
+        this.persondtlVO=PersondtlVO;
     }
 
     public long getTipid() {
         return tipid;
     }
 
-    public String getPersonalityTitle() {
-        return PersonalityTitle;
-    }
-
-    public String getPersonalityContent() {
-        return PersonalityContent;
-    }
-
-    public String  getPersonalityImage() {
-        return PersonalityImage;
+    public List<PerDetailVO> getPersondtlVO() {
+        return persondtlVO;
     }
 }

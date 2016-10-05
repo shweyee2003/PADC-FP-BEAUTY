@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="@dimen/margin_small"
+    android:paddingBottom="@dimen/margin_small"
     tools:context=".fragments.PersonalityDetailFragment">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".fragments.PersonalityDetailFragment">
+        android:layout_height="match_parent">
         <com.padc.beauty.components.DynamicHeightImageView
             android:id="@+id/iv_personality"
             android:layout_width="wrap_content"
@@ -26,6 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_small"
             style="@style/DescTextStyle"/>
 
     </LinearLayout>

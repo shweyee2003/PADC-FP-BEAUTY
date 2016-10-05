@@ -42,7 +42,7 @@ import de.greenrobot.event.EventBus;
 public class FitnessAndHealthFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>   {
     @BindView(R.id.rv_fitnessandhealth)
     RecyclerView rvfitnessandhealth;
-
+    private long tipid;
     private FitnessandhealthAdapter mfitnessandhealthAdapter;
     private FitnessandhealthViewHolder.ControllerFitnessandHealth controllerFitnessandHealth;
     public static FitnessAndHealthFragment newInstance() {
@@ -59,6 +59,7 @@ public class FitnessAndHealthFragment extends Fragment implements LoaderManager.
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fitness_and_health, container, false);
         ButterKnife.bind(this, view);
+
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
         mfitnessandhealthAdapter = new FitnessandhealthAdapter(tipList,controllerFitnessandHealth);
         rvfitnessandhealth.setAdapter(mfitnessandhealthAdapter);
@@ -104,7 +105,7 @@ public class FitnessAndHealthFragment extends Fragment implements LoaderManager.
         if (data != null && data.moveToFirst()) {
             do {
                 TipVO tip = TipVO.parseFromCursor(data);
-                //tip.setImages(AttractionVO.loadAttractionImagesByTitle(attraction.getTitle()));
+                //tip.setImg_url(.loadAttractionImagesByTitle(attraction.getTitle()));
                 tipList.add(tip);
             } while (data.moveToNext());
         }

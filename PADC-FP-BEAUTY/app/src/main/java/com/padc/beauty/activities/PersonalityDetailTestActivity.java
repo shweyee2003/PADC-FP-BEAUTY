@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
+import com.padc.beauty.components.PageIndicatorView;
 import com.padc.beauty.fragments.PersonalityDetailFragment;
 
 import butterknife.BindView;
@@ -27,12 +28,15 @@ public class PersonalityDetailTestActivity extends AppCompatActivity {
 
     @BindView(R.id.pager_personalitydetail)
     ViewPager pagerpersonalitydetail;
+
+    @BindView(R.id.pi_personailty_slider)
+    PageIndicatorView piAttractionImageSlider;
 //    @BindView(R.id.btn_next)
 //    Button btnnext;
 //
 //    @BindView(R.id.btn_previous)
 //    Button btnprevious;
-
+    private long tipid;
     private int presonalityIndex = -1;
 
     public static Intent newIntent(Long tipid) {
@@ -94,7 +98,7 @@ public class PersonalityDetailTestActivity extends AppCompatActivity {
     private void navigateToPersonality(int presonalityIndex) {
         //PersonalityDetailPagerAdapter.setNumPage();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fl_container, PersonalityDetailFragment.newInstance(presonalityIndex))
+                .replace(R.id.fl_container, PersonalityDetailFragment.newInstance(tipid,presonalityIndex))
                 .commit();
     }
 }
