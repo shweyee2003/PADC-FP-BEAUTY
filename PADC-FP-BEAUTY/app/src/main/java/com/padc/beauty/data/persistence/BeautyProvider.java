@@ -38,6 +38,10 @@ public class BeautyProvider extends ContentProvider {
     public static final int SALON_SERVICES = 1300;
     public static final int FASHIONSHOP = 1400;
 
+    private static final String sFaceTypeSelectionWithTipid = BeautyContract.TipFaceTypeEntry.COLUMN_TIPID+ " = ?";
+    private static final String sBodyShapeSelectionWithTipid = BeautyContract.TipBodyShapeEntry.COLUMN_TIPID + " = ?";
+    private static final String sSkinTypeSelectionWithTipid = BeautyContract.TipSkinTypeEntry.COLUMN_TIPID + " = ?";
+    private static final String sSkinColorSelectionWithTipid = BeautyContract.TipSkinColorEntry.COLUMN_TIPID + " = ?";
 
     private static final String sHairStyleSelectionWithDressingid = BeautyContract.DressingHairStyleEntry.COLUMN_DRESSINGID + " = ?";
     private static final String sBodyShapeSelectionWithDressingid = BeautyContract.DressingBodyShapeEntry.COLUMN_DRESSINGID + " = ?";
@@ -88,6 +92,62 @@ public class BeautyProvider extends ContentProvider {
 
             case TIP:
                 queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.TipEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null, //group_by
+                        null, //having
+                        sortOrder);
+                break;
+            case TIP_FACETYPE:
+                String facetypetipid = BeautyContract.TipFaceTypeEntry.getTipFromParam(uri);
+                if (facetypetipid != null) {
+                    selection = sFaceTypeSelectionWithTipid;
+                    selectionArgs = new String[]{facetypetipid};
+                }
+                queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.TipFaceTypeEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null, //group_by
+                        null, //having
+                        sortOrder);
+                break;
+            case TIP_BODYSHAPE:
+                String bdshapetipid = BeautyContract.TipBodyShapeEntry.getTipFromParam(uri);
+                if (bdshapetipid != null) {
+                    selection = sBodyShapeSelectionWithTipid;
+                    selectionArgs = new String[]{bdshapetipid};
+                }
+                queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.TipBodyShapeEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null, //group_by
+                        null, //having
+                        sortOrder);
+                break;
+            case TIP_SKINCOLOR:
+                String skincolortipid = BeautyContract.TipSkinColorEntry.getTipFromParam(uri);
+                if (skincolortipid != null) {
+                    selection = sSkinColorSelectionWithTipid;
+                    selectionArgs = new String[]{skincolortipid};
+                }
+                queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.TipSkinColorEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null, //group_by
+                        null, //having
+                        sortOrder);
+                break;
+            case TIP_SKINTYPE:
+                String skintypetipid = BeautyContract.TipSkinTypeEntry.getTipFromParam(uri);
+                if (skintypetipid != null) {
+                    selection = sSkinTypeSelectionWithTipid;
+                    selectionArgs = new String[]{skintypetipid};
+                }
+                queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.TipSkinTypeEntry.TABLE_NAME,
                         projection,
                         selection,
                         selectionArgs,

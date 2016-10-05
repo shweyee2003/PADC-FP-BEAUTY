@@ -2,6 +2,7 @@ package com.padc.beauty.data.models;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.google.gson.reflect.TypeToken;
 import com.padc.beauty.BeautyApp;
@@ -72,12 +73,17 @@ public class PersonalityDetailModel {
     }
 
     public PersonalityDetailVO getPersonalityByID(long tipid) {
-        for (PersonalityDetailVO personality : personalityList) {
-            if (personality.getTipid()== tipid) {
 
+        for (PersonalityDetailVO personality : personalityList) {
+            Log.d(BeautyApp.TAG,"personalityid"+personality.getTipid());
+            if (personality.getTipid()== tipid) {
+                return personality;
+            }
+            else
+            {
                 return personality;
             }
         }
-        return null;
+       return null;
     }
 }

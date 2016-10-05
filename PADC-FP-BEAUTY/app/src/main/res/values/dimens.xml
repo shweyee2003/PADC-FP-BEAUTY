@@ -15,6 +15,7 @@
     <dimen name="margin_medium_3">18dp</dimen>
     <dimen name="margin_large">24dp</dimen>
     <dimen name="margin_xlarge">32dp</dimen>
+    <dimen name="margin_xxlarge">40dp</dimen>
 
     <dimen name="text_small">12sp</dimen>
     <dimen name="text_regular">14sp</dimen>

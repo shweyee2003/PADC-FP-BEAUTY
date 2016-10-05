@@ -1,8 +1,11 @@
 package com.padc.beauty.data.models;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.util.Log;
 
 import com.padc.beauty.BeautyApp;
+import com.padc.beauty.data.persistence.BeautyContract;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 
@@ -39,7 +42,6 @@ public class TipModel extends BaseModel{
     }
 
     public List<TipVO> getmTipList() {
-
         return mTipList;
     }
 
@@ -69,6 +71,81 @@ public class TipModel extends BaseModel{
         }
         return null;
     }
+
+    public static String[] loadSkinTypeByTipID(long Tipid) {
+        Context context = BeautyApp.getContext();
+        ArrayList<String> skintypes = new ArrayList<>();
+
+        Cursor cursor = context.getContentResolver().query(BeautyContract.TipSkinTypeEntry.buildSkinTypeUriWithTipID(Tipid),
+                null, null, null, null);
+
+        if(cursor != null && cursor.moveToFirst()) {
+            do {
+                skintypes.add(cursor.getString(cursor.getColumnIndex(BeautyContract.TipSkinTypeEntry.COLUMN_SKINTYPE)));
+            } while (cursor.moveToNext());
+        }
+
+        String[] skintypeArray = new String[skintypes.size()];
+        skintypes.toArray(skintypeArray);
+        return skintypeArray;
+    }
+
+    public static String[] loadSkinColorByTipID(long Tipid) {
+        Context context = BeautyApp.getContext();
+        ArrayList<String> skincolors = new ArrayList<>();
+
+        Cursor cursor = context.getContentResolver().query(BeautyContract.TipSkinColorEntry.buildSkinColorUriWithTipID(Tipid),
+                null, null, null, null);
+
+        if(cursor != null && cursor.moveToFirst()) {
+            do {
+                skincolors.add(cursor.getString(cursor.getColumnIndex(BeautyContract.TipSkinColorEntry.COLUMN_SKINCOLOR)));
+            } while (cursor.moveToNext());
+        }
+
+        String[] skincolorArray = new String[skincolors.size()];
+        skincolors.toArray(skincolorArray);
+        return skincolorArray;
+    }
+
+    public static String[] loadBodyShapeByTipID(long Tipid) {
+        Context context = BeautyApp.getContext();
+        ArrayList<String> bodyshapes = new ArrayList<>();
+
+        Cursor cursor = context.getContentResolver().query(BeautyContract.TipBodyShapeEntry.buildBodyShapeUriWithTipID(Tipid),
+                null, null, null, null);
+
+        if(cursor != null && cursor.moveToFirst()) {
+            do {
+                bodyshapes.add(cursor.getString(cursor.getColumnIndex(BeautyContract.TipBodyShapeEntry.COLUMN_BODYSHAPE)));
+            } while (cursor.moveToNext());
+        }
+
+        String[] bodyshapeArray = new String[bodyshapes.size()];
+        bodyshapes.toArray(bodyshapeArray);
+        return bodyshapeArray;
+    }
+
+    public static String[] loadFaceTypeByTipID(long Tipid) {
+        Context context = BeautyApp.getContext();
+        ArrayList<String> facetypes = new ArrayList<>();
+
+        Cursor cursor = context.getContentResolver().query(BeautyContract.TipFaceTypeEntry.buildFaceTypeUriWithTipID(Tipid),
+                null, null, null, null);
+
+        if(cursor != null && cursor.moveToFirst()) {
+            do {
+                facetypes.add(cursor.getString(cursor.getColumnIndex(BeautyContract.TipFaceTypeEntry.COLUMN_FACETYPE)));
+            } while (cursor.moveToNext());
+        }
+
+        String[] facetypeArray = new String[facetypes.size()];
+        facetypes.toArray(facetypeArray);
+        return facetypeArray;
+    }
+
+
+
     public void notifyTipssLoaded(List<TipVO> tipList) {
 
         mTipList = tipList;
@@ -81,6 +158,7 @@ public class TipModel extends BaseModel{
     public void notifyErrorInLoadingTipItems(String message) {
 
     }
+
 
     private void broadcastMealLoadedWithEventBus() {
         EventBus.getDefault().post(new DataEvent.TipDataLoadedEvent("extra-in-broadcast", mTipList));

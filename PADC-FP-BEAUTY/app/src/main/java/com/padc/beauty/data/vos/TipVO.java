@@ -9,6 +9,7 @@ import com.google.gson.annotations.SerializedName;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.data.persistence.BeautyContract;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -255,4 +256,6 @@ public class TipVO {
 
         return tip;
     }
+
+
 }
