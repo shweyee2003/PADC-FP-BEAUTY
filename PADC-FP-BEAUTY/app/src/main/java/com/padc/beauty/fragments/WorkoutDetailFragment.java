@@ -37,6 +37,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Asus on 9/14/2016.
  */
+
 public class WorkoutDetailFragment extends Fragment  implements LoaderManager.LoaderCallbacks<Cursor>{
     private static final String BARG_FTTNESSANDHEALTH_INDEX = "BARG_FITNESSANDHEALTH_INDEX";
 
