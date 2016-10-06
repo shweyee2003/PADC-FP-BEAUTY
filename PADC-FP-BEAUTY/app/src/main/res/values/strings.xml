@@ -19,7 +19,7 @@
 
     <string-array name="face_tip_list">
         <item>Long Face</item>
-        <item>Rounded Face</item>
+        <item>Round Face</item>
         <item>Oval Face</item>
         <item>Square Face</item>
         <item>Heart Face</item>
@@ -199,6 +199,6 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="estimate">Estimate</string>
     <string name="suitable_style">Suitable Person</string>
 
-
+    <string name="msg_search_dressing">Please,key in price that you want to search</string>
 
 </resources>

@@ -9,6 +9,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,14 +41,15 @@ import de.greenrobot.event.EventBus;
  */
 public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>  {
 
-//    @BindView(R.id.sp_tip_list)
-//    Spinner sptiplist;
+    @BindView(R.id.sp_tip_list)
+    Spinner sptiplist;
 
     @BindView(R.id.rv_facetype)
     RecyclerView rvfacetype;
 
     private FaceTipAdapter mFaceTipListAdapter;
     private AllTipListAdapter mTipListAdapter;
+    private List<TipVO> mtipList;
 
     public static FaceTipsFragment newInstance(){
         FaceTipsFragment faceTipsFragment=new FaceTipsFragment();
@@ -71,7 +73,7 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
         View rootView = inflater.inflate(R.layout.fragment_face_tips, container, false);
         ButterKnife.bind(this, rootView);
 
-       // sptiplist.setAdapter(mFaceTipListAdapter);
+        sptiplist.setAdapter(mFaceTipListAdapter);
 
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
         mTipListAdapter = new AllTipListAdapter(tipList);
@@ -83,13 +85,33 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
 
         return rootView;
     }
-//
-//    @OnItemSelected(R.id.sp_tip_list)
-//    public void OnSelectedSpinner(){
-//        //String spinnertext=sptiplist.getSelectedItem().toString();
-//      //  tvfacetiptitle.setText(sptiplist.getSelectedItem().toString());
-//      // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
-//    }
+
+    @OnItemSelected(R.id.sp_tip_list)
+    public void OnSelectedSpinner(){
+        String spinnertext=sptiplist.getSelectedItem().toString();
+        //sptiplist.setAdapter
+        // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+        List<TipVO>  tipList = new ArrayList<>();
+        for(TipVO tipVO:mtipList) {
+            String[] facetypes=tipVO.getFacetypes();
+            for(int i=0;i<facetypes.length;i++){
+                String skincolor=facetypes[i]+" Face";
+                if(TextUtils.equals(skincolor,spinnertext) )
+                {
+                    TipVO tip=new TipVO();
+                    tip.setDescription(tipVO.getDescription());
+                    tip.setImg_url(tipVO.getImg_url());
+                    tip.setTitle(tipVO.getTitle());
+                    tipList.add(tip);
+                    mTipListAdapter = new AllTipListAdapter(tipList);
+                    rvfacetype.setAdapter(mTipListAdapter);
+                    Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        }
+        // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onStart() {
@@ -139,7 +161,7 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
 
         Log.d(BeautyApp.TAG, "Retrieved Face Tips : " + tipList.size());
         mTipListAdapter.setNewData(tipList);
-
+        mtipList=tipList;
     }
 
     @Override

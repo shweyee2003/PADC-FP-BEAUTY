@@ -9,6 +9,7 @@ import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.views.holders.DressingViewHolder;
+import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 
 import java.util.List;
 
@@ -18,17 +19,18 @@ import java.util.List;
 public class DressingAdapter extends RecyclerView.Adapter<DressingViewHolder>  {
     private List<DressingVO> mDressingList;
     private LayoutInflater inflater;
-
-    public DressingAdapter(List<DressingVO> dressingList){
+    private DressingViewHolder.ControllerDressing mControllerDressing;
+    public DressingAdapter(List<DressingVO> dressingList,DressingViewHolder.ControllerDressing controlleritem){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mDressingList = dressingList;
+        mControllerDressing=controlleritem;
 
     }
 
     @Override
     public DressingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = inflater.inflate(R.layout.view_item_occasionaldress, parent, false);
-        return new DressingViewHolder(itemView);
+        return new DressingViewHolder(itemView,mControllerDressing);
     }
 
     @Override
