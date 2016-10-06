@@ -18,14 +18,19 @@ import butterknife.ButterKnife;
  */
 public class ServicesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    @BindView(R.id.tv_service_title)
-    TextView tvname;
-
+    //    @BindView(R.id.tv_service_title)
+//    TextView tvname;
+//
     @BindView(R.id.tv_services_description)
-    TextView tvaddr;
-
+    TextView tvServicesdescription;
+    //
     @BindView(R.id.iv_services_image)
     ImageView ivbeautysaloon;
+    @BindView(R.id.tv_service_price)
+    TextView tvServices;
+
+    @BindView(R.id.tv_service_title)
+    TextView tvServiceTitle;
 
     private BeautySaloonVO mbeauty;
     private ControllerBeautysalonItem mController;
@@ -41,8 +46,9 @@ public class ServicesViewHolder extends RecyclerView.ViewHolder implements View.
     public void bindServicesData(ServiceVO services) {
         mServices = services;
 
-        tvname.setText(services.getservicetitle());
-        tvaddr.setText(services.getdescription());
+        tvServiceTitle.setText(services.getservicetitle());
+        tvServices.setText("20000MMk");
+        tvServicesdescription.setText(services.getdescription());
         String imageUrl =  services.getimgurl();
 
         Glide.with(ivbeautysaloon.getContext())
@@ -54,10 +60,12 @@ public class ServicesViewHolder extends RecyclerView.ViewHolder implements View.
     }
     @Override
     public void onClick(View view) {
-        mController.onTapAttraction(mbeauty, ivbeautysaloon);
+        //mController.onTapAttraction(mbeauty, ivbeautysaloon);
+        mController.onTapAttraction(mbeauty);
     }
 
     public interface ControllerBeautysalonItem {
-        void onTapAttraction(BeautySaloonVO beautysalon, ImageView ivbeautysaloon);
+        //void onTapAttraction(BeautySaloonVO beautysalon, ImageView ivbeautysaloon);
+        void onTapAttraction(BeautySaloonVO beautysalon);
     }
 }

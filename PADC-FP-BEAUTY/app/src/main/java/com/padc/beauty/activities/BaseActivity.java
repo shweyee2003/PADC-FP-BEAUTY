@@ -1,19 +1,25 @@
 package com.padc.beauty.activities;
 
 import android.content.Intent;
-import android.net.Uri;
-import android.provider.MediaStore;
+
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.padc.beauty.BeautyApp;
-import com.padc.beauty.data.vos.DressingVO;
-import com.padc.beauty.views.holders.DressingViewHolder;
+import com.padc.beauty.R;
 
 /**
- * Created by windows on 10/5/2016.
+ * Created by Asus on 10/2/2016.
  */
-public class BaseActivity extends AppCompatActivity  {
+public class BaseActivity extends AppCompatActivity {
+
+    protected void sendViaShareIntent(String msg) {
+        startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(BaseActivity.this)
+                .setType("text/plain")
+                .setText(msg)
+                .getIntent(), getString(R.string.action_share)));
+    }
     public void sharemsg(String msg){
 //        Toast.makeText(BeautyApp.getContext(), "share", Toast.LENGTH_SHORT).show();
 //        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
@@ -32,6 +38,4 @@ public class BaseActivity extends AppCompatActivity  {
 
         startActivity(Intent.createChooser(intent, "Share Image"));
     }
-
-
 }

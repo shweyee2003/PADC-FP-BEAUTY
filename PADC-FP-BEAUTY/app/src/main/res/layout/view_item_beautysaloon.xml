@@ -4,19 +4,20 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:padding="3dp"
+        android:orientation="vertical">
         <com.padc.beauty.components.DynamicHeightImageView
             android:id="@+id/iv_beautysaloon"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:src="@drawable/lilibeautysalon"
             android:scaleType="centerCrop"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:orientation="vertical"
             android:layout_gravity="bottom"
-            android:background="#bbffffff"
+            android:background="#bbc7c7c7"
             android:focusable="false"
             android:focusableInTouchMode="false" >
 
@@ -26,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:textColor="@color/primary"
-                android:textSize="10sp"
+                android:textSize="14sp"
                 android:paddingBottom="0dp"
                 android:paddingLeft="5dp"
                 android:minHeight="20dp"
@@ -37,20 +38,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textSize="10sp"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.2"
                 android:paddingBottom="0dp"
                 android:paddingLeft="5dp"
-                android:minHeight="20dp"
                 />
             <com.padc.beauty.components.MMTextView
                 android:id="@+id/tv_openhr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textSize="10sp"
+                android:textSize="14sp"
                 android:paddingBottom="0dp"
                 android:paddingLeft="5dp"
-                android:minHeight="20dp"
+                android:lineSpacingMultiplier="1.2"
                 />
         </LinearLayout>
   </FrameLayout>

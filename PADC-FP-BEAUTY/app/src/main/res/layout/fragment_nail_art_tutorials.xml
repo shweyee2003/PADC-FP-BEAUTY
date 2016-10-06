@@ -20,7 +20,7 @@
             android:src="@drawable/nailart2"
             android:layout_weight="1"/>
 
-        <TextView
+        <com.padc.beauty.components.MMTextView
             android:id="@+id/tv_nailart_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

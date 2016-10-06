@@ -115,7 +115,6 @@
     <string name="title_activity_special_tips">SpecialTipsActivity</string>
     <string name="title_activity_workout">Health and Fitness Detail</string>
 
-
     <string name="sample_facetips1">V-necks are not good, but bows and soft cowls are fine</string>
     <string name="sample_skintips">
 Conceal your blemishes. Oily skin is prone to breakouts and blemishes. Applying light layers of liquid matte concealer will help to minimize these imperfections without causing new breakouts. Use the wand or a concealer brush to cover your dark circles, red marks, and imperfections.
@@ -141,7 +140,8 @@ If you do not like powder foundation, select a mousse foundation or a water-base
 
     <string name="saloon">Beauty Salon</string>
     <string name="fashionshop">Fashion Shop</string>
-
+    <string name="saloon_services">Services</string>
+    <string name="aboutus">About</string>
 
     <!--Tips -->
     <string name="wedding_dressing">Occasional</string>
@@ -199,6 +199,10 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="estimate">Estimate</string>
     <string name="suitable_style">Suitable Person</string>
 
+
     <string name="msg_search_dressing">Please,key in price that you want to search</string>
+
+    <string name="action_share">Share</string>
+
 
 </resources>
