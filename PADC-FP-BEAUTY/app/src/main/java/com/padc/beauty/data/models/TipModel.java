@@ -151,7 +151,7 @@ public class TipModel extends BaseModel{
         mTipList = tipList;
 
         TipVO.saveTips(mTipList);
-       // broadcastMealLoadedWithEventBus();
+        // broadcastMealLoadedWithEventBus();
 
     }
 

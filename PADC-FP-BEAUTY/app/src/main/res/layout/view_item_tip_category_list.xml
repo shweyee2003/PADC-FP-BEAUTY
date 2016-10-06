@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/margin_medium_2">
 
-    <TextView
+    <com.padc.beauty.components.MMTextView
         android:id="@+id/tv_tip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
+import android.support.v4.app.ShareCompat;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.ActionBar;
@@ -16,6 +17,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +31,8 @@ import com.padc.beauty.data.models.FashionShopandBeautySaloonModel;
 import com.padc.beauty.data.persistence.BeautyContract;
 import com.padc.beauty.data.vos.BeautySaloonVO;
 import com.padc.beauty.data.vos.ServiceVO;
+import com.padc.beauty.fragments.SalonDetailPagerFragment;
+import com.padc.beauty.fragments.SaloonandFashionshopFragment;
 import com.padc.beauty.utils.BeautyAppConstant;
 
 import java.util.ArrayList;
@@ -40,7 +44,7 @@ import butterknife.ButterKnife;
 /**
  * Created by Asus on 9/26/2016.
  */
-public class BeautysalonDetailActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class BeautysalonDetailActivity extends BaseActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -50,11 +54,12 @@ public class BeautysalonDetailActivity extends AppCompatActivity implements Load
     @BindView(R.id.iv_beautysaloon)
     ImageView ivBeautysaloon;
 
-    @BindView(R.id.my_recycler_view)
-    RecyclerView myrecyclerview;
+//    @BindView(R.id.my_recycler_view)
+//    RecyclerView myrecyclerview;
 
     private static final String IE_ATTRACTION_NAME = "IE_SALON_ID";
     private static final String IE_BEAUTY_SALON_IMAGE = "IE_SALON_IMAGE";
+    private static final String IE_BEAUTY_SALON_NAME = "IE_SALON_NAME";
 
     private int gridColumnSpanCount=1;
     private Long  mBeautysalonId;
@@ -63,10 +68,11 @@ public class BeautysalonDetailActivity extends AppCompatActivity implements Load
     private List<ServiceVO> mServices;
     private ServicesAdapter mServicesAdapter;
 
-    public static Intent newIntent(long salonid, String photo) {
+    public static Intent newIntent(long salonid,  String photo, String beautysalonPhoto) {
         Intent intent = new Intent(BeautyApp.getContext(), BeautysalonDetailActivity.class);
         intent.putExtra(IE_ATTRACTION_NAME,salonid);
         intent.putExtra(IE_BEAUTY_SALON_IMAGE,photo);
+        intent.putExtra(IE_BEAUTY_SALON_NAME,beautysalonPhoto);
         return intent;
     }
 
@@ -82,17 +88,33 @@ public class BeautysalonDetailActivity extends AppCompatActivity implements Load
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+        final String mServices_image = getIntent().getStringExtra(IE_BEAUTY_SALON_IMAGE);
+        final String mSalon_name  = getIntent().getStringExtra(IE_BEAUTY_SALON_NAME);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sendViaShareIntent(BeautyAppConstant.APP_NAME + "\n"+ mSalon_name +" - "  + mServices_image);
+            }
+        });
+
         mSalonid = getIntent().getLongExtra(IE_ATTRACTION_NAME,0);
-        String mServices_image = getIntent().getStringExtra(IE_BEAUTY_SALON_IMAGE);
+
         showdata(mServices_image);
         Log.d(BeautyApp.TAG, "Salon ID : " + mSalonid);
 
         List<ServiceVO> serviceList = FashionShopandBeautySaloonModel.getInstance().getServiceList();
         //showdata();
         mServicesAdapter = new ServicesAdapter(serviceList);
-        myrecyclerview.setAdapter(mServicesAdapter);
-        myrecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), gridColumnSpanCount));
-        getSupportLoaderManager().initLoader(BeautyAppConstant.BEAUTY_SALON_DETAIL_LOADER, null, this);
+//        myrecyclerview.setAdapter(mServicesAdapter);
+//        myrecyclerview.setLayoutManager(new GridLayoutManager(getApplicationContext(), gridColumnSpanCount));
+//        getSupportLoaderManager().initLoader(BeautyAppConstant.BEAUTY_SALON_DETAIL_LOADER, null, this);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fl_container, SalonDetailPagerFragment.newInstance(mSalonid))
+                    .commit();
+        }
     }
 
     private void showdata(String mServices_image) {
@@ -141,7 +163,7 @@ public class BeautysalonDetailActivity extends AppCompatActivity implements Load
         Log.d(BeautyApp.TAG, "Retrieved services table ASC : " + mServices.size());
         mServicesAdapter.setNewData(mServices);
 
-        FashionShopandBeautySaloonModel.getInstance().setStoredServicesData(mServices);;
+        FashionShopandBeautySaloonModel.getInstance().setStoredServicesData(mServices);
 
     }
 

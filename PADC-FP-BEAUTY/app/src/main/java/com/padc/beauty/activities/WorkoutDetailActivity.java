@@ -24,7 +24,6 @@ import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 import com.padc.beauty.fragments.WorkoutDetailFragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -41,6 +40,7 @@ public class WorkoutDetailActivity extends AppCompatActivity{
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
 
     private TipVO tipVO;
     private List<TipVO> mtiplist;
@@ -72,19 +72,6 @@ public class WorkoutDetailActivity extends AppCompatActivity{
                     .replace(R.id.fl_container, WorkoutDetailFragment.newInstance(mTipId))
                     .commit();
         }
-
-
-
-
-
-//        final TipVO mHealth = TipModel.getInstance().getTipsById(mTipId);
-//        if(mHealth == null){
-//            throw new RuntimeException("Can't find Tips obj with tipid : "+mTipId);
-//        }
-//        else {
-//            Log.d(BeautyApp.TAG,"Health");
-//            binddata();
-//        }
     }
 
     private void binddata(){
