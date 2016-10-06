@@ -185,9 +185,11 @@ public class WeddingDressFragment extends Fragment implements LoaderManager.Load
         llserach.setVisibility(View.INVISIBLE);
         rvdress.setVisibility(View.VISIBLE);
         fabsearch.setVisibility(View.VISIBLE);
+        Boolean norecord=true;
         List<DressingVO>  dressingList = new ArrayList<>();
         if(TextUtils.equals(etsearch.getText(),""))
         {
+            Toast.makeText(BeautyApp.getContext(), R.string.no_record, Toast.LENGTH_SHORT).show();
             mDressAdapter=new DressingAdapter(mdressingList,controllerDressing);
             rvdress.setAdapter(mDressAdapter);
         }
@@ -209,11 +211,18 @@ public class WeddingDressFragment extends Fragment implements LoaderManager.Load
                     dressingList.add(dressing);
                     mDressAdapter=new DressingAdapter(dressingList,controllerDressing);
                     rvdress.setAdapter(mDressAdapter);
-                    Toast.makeText(BeautyApp.getContext(), "Equal", Toast.LENGTH_SHORT).show();
+                    norecord=true;
+                }
+                else
+                {
+                    norecord=false;
                 }
             }
         }
-
+        if(norecord==false)
+        {
+            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+        }
 
     }
 }

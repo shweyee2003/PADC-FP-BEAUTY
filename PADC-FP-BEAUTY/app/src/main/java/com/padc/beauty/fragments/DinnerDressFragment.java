@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -189,8 +190,11 @@ public class DinnerDressFragment extends Fragment implements LoaderManager.Loade
        // rvdress.setVisibility(View.VISIBLE);
         fabsearch.setVisibility(View.VISIBLE);
         List<DressingVO>  dressingList = new ArrayList<>();
+        Boolean norecord=true;
         if(TextUtils.equals(etsearch.getText(),""))
         {
+
+            Toast.makeText(BeautyApp.getContext(), R.string.no_record, Toast.LENGTH_SHORT).show();
             mDressAdapter=new DressingAdapter(mdressingList,controllerDressing);
             rvdress.setAdapter(mDressAdapter);
         }
@@ -211,11 +215,18 @@ public class DinnerDressFragment extends Fragment implements LoaderManager.Loade
                     dressingList.add(dressing);
                     mDressAdapter=new DressingAdapter(dressingList,controllerDressing);
                     rvdress.setAdapter(mDressAdapter);
-                    Toast.makeText(BeautyApp.getContext(), "Equal", Toast.LENGTH_SHORT).show();
+                    norecord=true;
+                }
+                else
+                {
+                    norecord=false;
                 }
             }
         }
-
+        if(norecord==false)
+        {
+            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+        }
 
     }
 

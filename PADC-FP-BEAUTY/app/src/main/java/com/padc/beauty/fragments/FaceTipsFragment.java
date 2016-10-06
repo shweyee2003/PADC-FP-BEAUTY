@@ -89,6 +89,7 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
     @OnItemSelected(R.id.sp_tip_list)
     public void OnSelectedSpinner(){
         String spinnertext=sptiplist.getSelectedItem().toString();
+        Boolean norecord=true;
         //sptiplist.setAdapter
         // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
         List<TipVO>  tipList = new ArrayList<>();
@@ -105,10 +106,19 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
                     tipList.add(tip);
                     mTipListAdapter = new AllTipListAdapter(tipList);
                     rvfacetype.setAdapter(mTipListAdapter);
-                    Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+                    norecord=true;
+                }
+                else
+                {
+                    norecord=false;
                 }
             }
 
+        }
+        if(norecord==false)
+        {
+            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
         }
         // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
     }

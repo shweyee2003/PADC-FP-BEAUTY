@@ -120,11 +120,13 @@ public class SkinTipsFragment extends Fragment implements LoaderManager.LoaderCa
         eventBus.unregister(this);
     }
 
+
     @OnItemSelected(R.id.sp_tip_list)
     public void OnSelectedSpinner(){
         String spinnertext=sptiplist.getSelectedItem().toString();
         //sptiplist.setAdapter
        // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+        Boolean norecord=true;
         List<TipVO>  tipList = new ArrayList<>();
         for(TipVO tipVO:mtipList) {
             String[] skincolors=tipVO.getSkincolors();
@@ -139,10 +141,19 @@ public class SkinTipsFragment extends Fragment implements LoaderManager.LoaderCa
                     tipList.add(tip);
                     mTipListAdapter = new AllTipListAdapter(tipList);
                     rvskintype.setAdapter(mTipListAdapter);
-                    Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+                    norecord=true;
+                  //  Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    norecord=false;
                 }
             }
 
+        }
+        if(norecord==false)
+        {
+            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
         }
        // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
     }
