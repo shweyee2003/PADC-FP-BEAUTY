@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +49,12 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
 
     @BindView(R.id.rv_personality)
     RecyclerView rvpersonality;
+//
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
+
+    @BindView(R.id.collapsing_toolbar)
+    CollapsingToolbarLayout collapsingToolbar;
 
     private PersonalityTipAdapter mpersonalitytipAdapter;
     private PersonalityViewHolder.ControllerPersonalityItem mcontroller;
@@ -53,11 +63,19 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
         return new PersonalityListFragment();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_personality_list, container, false);
         ButterKnife.bind(this, view);
+
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
         mpersonalitytipAdapter = new PersonalityTipAdapter(tipList,mcontroller);
         rvpersonality.setAdapter(mpersonalitytipAdapter);
@@ -70,6 +88,10 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 //    @OnClick(R.id.ll_good_personality)
 //    public void onTapPersonality(){
 //        Intent intent = PersonalityDetailActivity.newIntent();
@@ -95,6 +117,8 @@ public class PersonalityListFragment extends Fragment implements LoaderManager.L
     @Override
     public void onStop() {
         super.onStop();
+
+
         EventBus eventBus = EventBus.getDefault();
         eventBus.unregister(this);
     }
