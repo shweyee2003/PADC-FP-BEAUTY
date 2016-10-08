@@ -1,6 +1,7 @@
 package com.padc.beauty.events;
 
 import com.padc.beauty.data.vos.BeautySaloonVO;
+import com.padc.beauty.data.vos.BookmarkVO;
 import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.data.vos.FashionShopVO;
 import com.padc.beauty.data.vos.ServiceVO;
@@ -80,6 +81,18 @@ public class DataEvent {
 
         public List<TipVO> getTipList() {
             return TipList;
+        }
+    }
+
+    public static class BookMarkDataLoadedEvent{
+        private List<BookmarkVO> bookmarkList;
+        public BookMarkDataLoadedEvent(List<BookmarkVO> bookmList) {
+
+            this.bookmarkList = bookmList;
+        }
+
+        public List<BookmarkVO> getbookmarkList() {
+            return bookmarkList;
         }
     }
 

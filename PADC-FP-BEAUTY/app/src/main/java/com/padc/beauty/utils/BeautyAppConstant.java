@@ -32,5 +32,9 @@ public class BeautyAppConstant {
     public static final int BEAUTY_SALON_LIST_LOADER = 9;
     public static final int BEAUTY_SALON_DETAIL_LOADER = 10;
     public static final int FitnessandHealthDetailTIPS_LIST_LOADER=11;
+    public static final int BOOKMARK_LIST_LOADER = 12;
+
+    public static final String PREFS_NAME = "BEAUTY_APP";
+    public static final String FAVORITES = "Beauty_Favorite";
 
 }

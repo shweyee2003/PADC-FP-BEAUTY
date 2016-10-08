@@ -34,6 +34,8 @@ public class BeautyContract {
     public static final String PATH_DRESSING_HAIRSTYLE = "dressing_hairstyle";
     public static final String PATH_DRESSING_SKINTYPE = "dressing_skintype";
 
+    public static final String PATH_BOOKMARK = "bookmark";
+
     public static final class TipEntry implements BaseColumns{
         public static final Uri CONTENT_URI =
                 BASE_CONTENT_URI.buildUpon().appendPath(PATH_TIPS).build();
@@ -481,4 +483,33 @@ public class BeautyContract {
             return uri.getQueryParameter(COLUMN_SHOP_ID);
         }
     }
+
+    public static final class BookMarkEntry implements BaseColumns{
+        public static final Uri CONTENT_URI =
+                BASE_CONTENT_URI.buildUpon().appendPath(PATH_BOOKMARK).build();
+
+        public static final String DIR_TYPE =
+                ContentResolver.CURSOR_DIR_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_BOOKMARK;
+
+        public static final String ITEM_TYPE =
+                ContentResolver.CURSOR_ITEM_BASE_TYPE + "/" + CONTENT_AUTHORITY + "/" + PATH_BOOKMARK;
+
+        public static final String TABLE_NAME = "bookmark";
+
+        public static final String COLUMN_BOOKMARKID = "bookmarkid";
+        public static final String COLUMN_BOOKMARKSCREENNAME = "screenname";
+        public static final String COLUMN_BOOKMARKTITLE = "bookmarktitle";
+        public static final String COLUMN_IMAGE = "image";
+
+
+        public static Uri buildBookMarkUri(long id) {
+            //content://xyz.aungpyaephyo.padc.myanmarattractions/attractions/1
+            return ContentUris.withAppendedId(CONTENT_URI, id);
+        }
+
+        public static String getTipFromParam(Uri uri) {
+            return uri.getQueryParameter(COLUMN_BOOKMARKID);
+        }
+    }
+
 }

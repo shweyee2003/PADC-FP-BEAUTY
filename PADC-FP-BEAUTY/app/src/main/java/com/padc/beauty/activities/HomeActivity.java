@@ -23,6 +23,7 @@ import com.padc.beauty.data.vos.TipVO;
 
 import com.padc.beauty.data.vos.BeautySaloonVO;
 import com.padc.beauty.data.vos.TipVO;
+import com.padc.beauty.fragments.BookmarkFragment;
 import com.padc.beauty.fragments.DressingPagerFragment;
 
 import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
@@ -134,6 +135,9 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
             case R.id.personality:
                 navigatetoPersonality();
                 return true;
+            case R.id.bookmarks:
+                navigatetoBookmark();
+                return true;
         }
         return false;
     }
@@ -167,6 +171,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
                 .commit();
     }
 
+    private  void  navigatetoBookmark(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, BookmarkFragment.newInstance())
+                .commit();
+    }
     private void navigatetoPersonality(){
 
 //        Intent intent = PersonalityListActivity.newIntent();

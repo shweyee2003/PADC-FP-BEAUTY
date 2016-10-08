@@ -68,8 +68,6 @@ public class FitnessAndHealthFragment extends Fragment implements LoaderManager.
         rvfitnessandhealth.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
 
         return view;
-
-
     }
 
 
