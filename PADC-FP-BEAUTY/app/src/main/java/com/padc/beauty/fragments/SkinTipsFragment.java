@@ -59,8 +59,8 @@ public class SkinTipsFragment extends Fragment implements LoaderManager.LoaderCa
     @BindView(R.id.rv_skintype)
     RecyclerView rvskintype;
 
-    @BindView(R.id.sp_tip_list)
-    Spinner sptiplist;
+//    @BindView(R.id.sp_tip_list)
+//    Spinner sptiplist;
 
     private FaceTipAdapter mFaceTipListAdapter;
     private AllTipListAdapter mTipListAdapter;
@@ -87,52 +87,52 @@ public class SkinTipsFragment extends Fragment implements LoaderManager.LoaderCa
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_skintype_tips, container, false);
         ButterKnife.bind(this, rootView);
-       sptiplist.setAdapter(mFaceTipListAdapter);
-
-        sptiplist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String spinnertext=sptiplist.getSelectedItem().toString();
-                String norecord="true";
-                //sptiplist.setAdapter
-                // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
-                List<TipVO>  tipList = new ArrayList<>();
-                for(TipVO tipVO:mtipList) {
-                    String[] skincolors=tipVO.getSkincolors();
-                    for(int ind=0;ind<skincolors.length;ind++){
-                        String skincolor=skincolors[ind]+" Skin Tone";
-                        if(TextUtils.equals(skincolor,spinnertext) )
-                        {
-                            TipVO tip=new TipVO();
-                            tip.setDescription(tipVO.getDescription());
-                            tip.setImg_url(tipVO.getImg_url());
-                            tip.setTitle(tipVO.getTitle());
-                            tipList.add(tip);
-                            mTipListAdapter = new AllTipListAdapter(tipList);
-                            rvskintype.setAdapter(mTipListAdapter);
-                            norecord="true";
-                            //  Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            norecord="false";
-                        }
-                    }
-
-                }
-                if(TextUtils.equals(norecord,"false"))
-                {
-                    Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
-
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+//       sptiplist.setAdapter(mFaceTipListAdapter);
+//
+//        sptiplist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                String spinnertext=sptiplist.getSelectedItem().toString();
+//                String norecord="true";
+//                //sptiplist.setAdapter
+//                // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+//                List<TipVO>  tipList = new ArrayList<>();
+//                for(TipVO tipVO:mtipList) {
+//                    String[] skincolors=tipVO.getSkincolors();
+//                    for(int ind=0;ind<skincolors.length;ind++){
+//                        String skincolor=skincolors[ind]+" Skin Tone";
+//                        if(TextUtils.equals(skincolor,spinnertext) )
+//                        {
+//                            TipVO tip=new TipVO();
+//                            tip.setDescription(tipVO.getDescription());
+//                            tip.setImg_url(tipVO.getImg_url());
+//                            tip.setTitle(tipVO.getTitle());
+//                            tipList.add(tip);
+//                            mTipListAdapter = new AllTipListAdapter(tipList);
+//                            rvskintype.setAdapter(mTipListAdapter);
+//                            norecord="true";
+//                            //  Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+//                        }
+//                        else
+//                        {
+//                            norecord="false";
+//                        }
+//                    }
+//
+//                }
+//                if(TextUtils.equals(norecord,"false"))
+//                {
+//                    Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+//
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
 
 
         List<TipVO> tipList = TipModel.getInstance().getmTipList();

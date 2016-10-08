@@ -9,9 +9,8 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:fitsSystemWindows="true">
+        android:layout_height="256dp"
+        android:orientation="vertical">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
@@ -23,11 +22,18 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:statusBarScrim="@android:color/transparent">
 
-            <com.padc.beauty.components.DynamicHeightImageView
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/good_personality_1"
                 android:scaleType="centerCrop"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -47,9 +53,8 @@
             android:id="@+id/swipe_refresh_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_marginTop="2dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            >
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_personality"
                 android:layout_width="match_parent"

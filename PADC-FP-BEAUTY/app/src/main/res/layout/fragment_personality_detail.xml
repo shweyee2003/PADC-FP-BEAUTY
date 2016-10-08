@@ -18,6 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_small"
+                android:scaleType="centerCrop"
                 android:layout_gravity="top"/>
             <ImageView
                 android:id="@+id/iv_bookmark"
