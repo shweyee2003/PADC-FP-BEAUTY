@@ -194,7 +194,7 @@ public class DinnerDressFragment extends Fragment implements LoaderManager.Loade
         if(TextUtils.equals(etsearch.getText(),""))
         {
 
-            Toast.makeText(BeautyApp.getContext(), R.string.no_record, Toast.LENGTH_SHORT).show();
+            Toast.makeText(BeautyApp.getContext(), R.string.price_msg, Toast.LENGTH_SHORT).show();
             mDressAdapter=new DressingAdapter(mdressingList,controllerDressing);
             rvdress.setAdapter(mDressAdapter);
         }
@@ -225,7 +225,7 @@ public class DinnerDressFragment extends Fragment implements LoaderManager.Loade
         }
         if(norecord==false)
         {
-            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
         }
 
     }

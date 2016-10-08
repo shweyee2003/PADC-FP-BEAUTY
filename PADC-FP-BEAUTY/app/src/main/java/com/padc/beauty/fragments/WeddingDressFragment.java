@@ -225,7 +225,7 @@ public class WeddingDressFragment extends Fragment implements LoaderManager.Load
         }
         if(norecord==false)
         {
-            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
         }
 
     }
