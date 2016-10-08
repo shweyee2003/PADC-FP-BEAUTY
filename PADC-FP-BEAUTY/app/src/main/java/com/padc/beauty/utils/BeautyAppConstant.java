@@ -19,6 +19,9 @@ public class BeautyAppConstant {
 
     public static final String ACCESS_TOKEN = "b002c7e1a528b7cb460933fc2875e916";
 
+    public static final String CUSTOMER_SUPPORT_PHONE = "0912345678";
+    public static final String URI_TO_OPEN_IN_MAP = "http://maps.google.com/maps?daddr=";
+
     //Loader ID
 
     public static final int SKINTIPS_LIST_LOADER = 1;
