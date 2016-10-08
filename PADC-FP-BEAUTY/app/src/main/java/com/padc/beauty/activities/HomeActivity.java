@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
@@ -32,6 +33,7 @@ import com.padc.beauty.fragments.TipsPagerFragment;
 import com.padc.beauty.fragments.TutorialsFragment;
 import com.padc.beauty.fragments.WorkoutDetailFragment;
 import com.padc.beauty.utils.MMFontUtils;
+import com.padc.beauty.views.holders.DressingViewHolder;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 import com.padc.beauty.views.holders.PersonalityViewHolder;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
@@ -40,7 +42,11 @@ import com.padc.beauty.views.holders.TipViewHolder;
 import com.padc.beauty.views.holders.PersonalityViewHolder;
 
 public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener,
-        MenuItemCompat.OnActionExpandListener,PersonalityViewHolder.ControllerPersonalityItem, BeautySaloonViewHolder.ControllerBeautysalonItem,FitnessandhealthViewHolder.ControllerFitnessandHealth{
+        MenuItemCompat.OnActionExpandListener,
+        PersonalityViewHolder.ControllerPersonalityItem,
+        BeautySaloonViewHolder.ControllerBeautysalonItem,
+        FitnessandhealthViewHolder.ControllerFitnessandHealth,
+        DressingViewHolder.ControllerDressing{
 
 
     private DrawerLayout drawerLayout;
@@ -162,11 +168,12 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     private void navigatetoPersonality(){
+
+//        Intent intent = PersonalityListActivity.newIntent();
+//        startActivity(intent);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_container, PersonalityListFragment.newInstance())
                 .commit();
-//        Intent intent = PersonalityListActivity.newIntent();
- //       startActivity(intent);
 
     }
 
@@ -188,5 +195,18 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         Log.d(BeautyApp.TAG, "Tip id" + healthrelatedTips.getTipid());
         Intent intent = WorkoutDetailActivity.newIntent(healthrelatedTips.getTipid());
         startActivity(intent);
+    }
+
+    @Override
+    public void onTabshare(String imageurl,String Price,String ShopName,String ShopDirection) {
+        Toast.makeText(BeautyApp.getContext(), "get activiyt", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_SEND);
+
+        intent.setType("text/plain");
+
+        intent.putExtra(Intent.EXTRA_TEXT,imageurl+"\r\n" + "Price : " +Price+"\r\n" + "Shop : " +ShopName +"\r\n"  +ShopDirection );
+
+
+        startActivity(Intent.createChooser(intent, "Share Image"));
     }
 }

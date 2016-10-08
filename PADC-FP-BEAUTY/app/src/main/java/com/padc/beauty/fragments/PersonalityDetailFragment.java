@@ -81,8 +81,8 @@ public class PersonalityDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_personality_detail, container, false);
         ButterKnife.bind(this, mView);
-        Log.d(BeautyApp.TAG, "onCreateView: "+perDtlVOList.size()+"INDEX"+personalityIndex);
-        Log.d(BeautyApp.TAG,"title"+perDtlVOList.get(personalityIndex).getPersonalityTitle());
+       // Log.d(BeautyApp.TAG, "onCreateView: "+perDtlVOList.size()+"INDEX"+personalityIndex);
+        //Log.d(BeautyApp.TAG,"title"+perDtlVOList.get(personalityIndex).getPersonalityTitle());
         tvpersonalitytitle.setText(perDtlVOList.get(personalityIndex).getPersonalityTitle());
         tvpersonalitydesc.setText(perDtlVOList.get(personalityIndex).getPersonalityContent());
        // ivpersonality.setImageResource(personalityDetailVO.getPersonalityImage());

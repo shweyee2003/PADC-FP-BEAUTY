@@ -9,6 +9,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,14 +41,15 @@ import de.greenrobot.event.EventBus;
  */
 public class BodyShapeTipsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 
-//    @BindView(R.id.sp_tip_list)
-//    Spinner sptiplist;
+    @BindView(R.id.sp_tip_list)
+    Spinner sptiplist;
 
     @BindView(R.id.rv_bodyshape)
     RecyclerView rvbodyshape;
 
     private AllTipListAdapter mTipListAdapter;
     private FaceTipAdapter mBodyTypeTipListAdapter;
+    private List<TipVO> mtipList;
 
     public static BodyShapeTipsFragment newInstance(){
         BodyShapeTipsFragment bodyshapeTipsFragment=new BodyShapeTipsFragment();
@@ -70,7 +72,7 @@ public class BodyShapeTipsFragment extends Fragment implements LoaderManager.Loa
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_bodyshape_tips, container, false);
         ButterKnife.bind(this, rootView);
-        //sptiplist.setAdapter(mBodyTypeTipListAdapter);
+        sptiplist.setAdapter(mBodyTypeTipListAdapter);
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
         mTipListAdapter = new AllTipListAdapter(tipList);
         rvbodyshape.setAdapter(mTipListAdapter);
@@ -81,13 +83,42 @@ public class BodyShapeTipsFragment extends Fragment implements LoaderManager.Loa
         return rootView;
     }
 
-//
-//    @OnItemSelected(R.id.sp_tip_list)
-//    public void OnSelectedSpinner(){
-//        //String spinnertext=sptiplist.getSelectedItem().toString();
-//      //  tvbodytiptitle.setText(sptiplist.getSelectedItem().toString());
-//       // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
-//    }
+    @OnItemSelected(R.id.sp_tip_list)
+    public void OnSelectedSpinner(){
+        String spinnertext=sptiplist.getSelectedItem().toString();
+        Boolean norecord=true;
+        //sptiplist.setAdapter
+        // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+        List<TipVO>  tipList = new ArrayList<>();
+        for(TipVO tipVO:mtipList) {
+            String[] bodyshapes=tipVO.getBodyshapes();
+            for(int i=0;i<bodyshapes.length;i++){
+                String bodyshape=bodyshapes[i]+" Body Type";
+                if(TextUtils.equals(bodyshape,spinnertext) )
+                {
+                    TipVO tip=new TipVO();
+                    tip.setDescription(tipVO.getDescription());
+                    tip.setImg_url(tipVO.getImg_url());
+                    tip.setTitle(tipVO.getTitle());
+                    tipList.add(tip);
+                    mTipListAdapter = new AllTipListAdapter(tipList);
+                    rvbodyshape.setAdapter(mTipListAdapter);
+                    norecord=true;
+                    //Toast.makeText(BeautyApp.getContext(), "Equal"+bodyshape, Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    norecord=false;
+                }
+            }
+
+        }
+        if(norecord==false)
+        {
+            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+        }
+        // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onStart() {
@@ -121,14 +152,17 @@ public class BodyShapeTipsFragment extends Fragment implements LoaderManager.Loa
         if (data != null && data.moveToFirst()) {
             do {
                 TipVO tip = TipVO.parseFromCursor(data);
-                //tip.setImages(AttractionVO.loadAttractionImagesByTitle(attraction.getTitle()));
+                tip.setSkincolors(TipModel.loadSkinColorByTipID(tip.getTipid()));
+                tip.setSkintypes(TipModel.loadSkinTypeByTipID(tip.getTipid()));
+                tip.setBodyshapes(TipModel.loadBodyShapeByTipID(tip.getTipid()));
+                tip.setFacetypes(TipModel.loadFaceTypeByTipID(tip.getTipid()));
                 tipList.add(tip);
             } while (data.moveToNext());
         }
 
         Log.d(BeautyApp.TAG, "Retrieved Skin Tips : " + tipList.size());
         mTipListAdapter.setNewData(tipList);
-
+        mtipList=tipList;
     }
 
     @Override
