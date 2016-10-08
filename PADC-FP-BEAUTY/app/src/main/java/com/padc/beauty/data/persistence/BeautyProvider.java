@@ -38,6 +38,8 @@ public class BeautyProvider extends ContentProvider {
     public static final int SALON_SERVICES = 1300;
     public static final int FASHIONSHOP = 1400;
 
+    public static final int BOOKMARK = 1500;
+
     private static final String sFaceTypeSelectionWithTipid = BeautyContract.TipFaceTypeEntry.COLUMN_TIPID+ " = ?";
     private static final String sBodyShapeSelectionWithTipid = BeautyContract.TipBodyShapeEntry.COLUMN_TIPID + " = ?";
     private static final String sSkinTypeSelectionWithTipid = BeautyContract.TipSkinTypeEntry.COLUMN_TIPID + " = ?";
@@ -73,6 +75,7 @@ public class BeautyProvider extends ContentProvider {
         uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_SALON_SERVICES, SALON_SERVICES);
         uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_FASHION_SHOP, FASHIONSHOP);
 
+        uriMatcher.addURI(BeautyContract.CONTENT_AUTHORITY, BeautyContract.PATH_BOOKMARK, BOOKMARK);
         return uriMatcher;
     }
 
@@ -254,6 +257,15 @@ public class BeautyProvider extends ContentProvider {
                         null,
                         sortOrder);
                 break;
+            case BOOKMARK:
+                queryCursor = mBeautyDBHelper.getReadableDatabase().query(BeautyContract.BookMarkEntry.TABLE_NAME,
+                        projection,
+                        selection,
+                        selectionArgs,
+                        null,
+                        null,
+                        sortOrder);
+                break;
 
             default:
                 throw new UnsupportedOperationException("Unknown uri : " + uri);
@@ -375,6 +387,15 @@ public class BeautyProvider extends ContentProvider {
                 }
                 break;
             }
+            case BOOKMARK: {
+                long _id = db.insert(BeautyContract.BookMarkEntry.TABLE_NAME, null, contentValues);
+                if (_id > 0) {
+                    insertedUri = BeautyContract.BookMarkEntry.buildBookMarkUri(_id);
+                } else {
+                    throw new SQLException("Failed to insert row into " + uri);
+                }
+                break;
+            }
             default:
                 throw new UnsupportedOperationException("Unknown uri : " + uri);
 
@@ -478,7 +499,8 @@ public class BeautyProvider extends ContentProvider {
                 return BeautyContract.SalonServicesEntry.TABLE_NAME;
             case FASHIONSHOP:
                 return BeautyContract.FashionshopEntry.TABLE_NAME;
-
+            case BOOKMARK:
+                return  BeautyContract.BookMarkEntry.TABLE_NAME;
             default:
                 throw new UnsupportedOperationException("Unknown uri : " + uri);
         }

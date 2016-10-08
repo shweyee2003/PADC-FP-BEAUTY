@@ -9,7 +9,7 @@ public class PerDetailVO {
     @SerializedName("title")
     private String PersonalityTitle;
 
-    @SerializedName("image")
+    @SerializedName("photo")
     private String PersonalityImage;
 
     @SerializedName("description")

@@ -10,11 +10,26 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.padc.beauty.components.DynamicHeightImageView
-            android:id="@+id/iv_personality"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_small"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.padc.beauty.components.DynamicHeightImageView
+                android:id="@+id/iv_personality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_small"
+                android:layout_gravity="top"/>
+            <ImageView
+                android:id="@+id/iv_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:contentDescription="@string/favorites"
+                android:src="@drawable/ic_import_contacts_black_24dp"
+                android:background="@null" />
+        </FrameLayout>
+
+
         <com.padc.beauty.components.MMTextView
             android:id="@+id/tv_personality_title"
             android:layout_width="wrap_content"

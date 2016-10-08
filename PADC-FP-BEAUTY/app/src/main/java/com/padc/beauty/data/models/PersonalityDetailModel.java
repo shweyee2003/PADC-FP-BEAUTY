@@ -7,7 +7,10 @@ import android.util.Log;
 import com.google.gson.reflect.TypeToken;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
+import com.padc.beauty.data.vos.BookmarkVO;
+import com.padc.beauty.data.vos.PerDetailVO;
 import com.padc.beauty.data.vos.PersonalityDetailVO;
+import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.utils.CommonInstances;
 import com.padc.beauty.utils.JsonUtils;
 
@@ -85,5 +88,14 @@ public class PersonalityDetailModel {
             }
         }
        return null;
+    }
+
+    public void addFavorite(PersonalityDetailVO personalitydtl,Integer index) {
+        List<PerDetailVO> perdtllist=personalitydtl.getPersondtlVO();
+        BookmarkVO bookmarkvo=new BookmarkVO(personalitydtl.getTipid(),perdtllist.get(index).getPersonalityTitle(),perdtllist.get(index).getPersonalityImage(),perdtllist.get(index).getPersonalityContent());
+        List<BookmarkVO> currentbookmarklist=new ArrayList<>();
+        currentbookmarklist.add(bookmarkvo);
+        BookMarkModel.getInstance().notifyBookMarkLoaded(currentbookmarklist);
+
     }
 }

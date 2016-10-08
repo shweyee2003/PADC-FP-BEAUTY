@@ -6,6 +6,8 @@ import android.util.Log;
 
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.data.persistence.BeautyContract;
+import com.padc.beauty.data.vos.BookmarkVO;
+import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 
@@ -164,6 +166,13 @@ public class TipModel extends BaseModel{
         EventBus.getDefault().post(new DataEvent.TipDataLoadedEvent("extra-in-broadcast", mTipList));
     }
 
+    public void addFavorite(TipVO tip) {
 
+        BookmarkVO bookmarkvo=new BookmarkVO(tip.getTipid(),tip.getTitle(),tip.getImg_url(),tip.getTipcategory());
+        List<BookmarkVO> currentbookmarklist=new ArrayList<>();
+        currentbookmarklist.add(bookmarkvo);
+        BookMarkModel.getInstance().notifyBookMarkLoaded(currentbookmarklist);
+
+    }
 
 }

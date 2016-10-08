@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,6 +31,7 @@ import com.padc.beauty.data.persistence.BeautyContract;
 import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.events.DataEvent;
 import com.padc.beauty.utils.BeautyAppConstant;
+import com.padc.beauty.utils.SharedPreference;
 import com.padc.beauty.views.holders.DressingViewHolder;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 
@@ -68,7 +70,7 @@ public class WeddingDressFragment extends Fragment implements LoaderManager.Load
     private DressingAdapter mDressAdapter;
     private DressingViewHolder.ControllerDressing controllerDressing;
     private List<DressingVO> mdressingList;
-
+    private DressingVO mdressing;
     public static WeddingDressFragment newInstance() {
         return new WeddingDressFragment();
     }
@@ -135,9 +137,10 @@ public class WeddingDressFragment extends Fragment implements LoaderManager.Load
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         List<DressingVO> dressingList = new ArrayList<>();
+        DressingVO dressing;
         if (data != null && data.moveToFirst()) {
             do {
-                DressingVO dressing = DressingVO.parseFromCursor(data);
+                dressing = DressingVO.parseFromCursor(data);
                 dressing.setHairstyles(DressingModel.loadHairStyleByDressingID(dressing.getid()));
                 dressing.setBodyshapes(DressingModel.loadBodyShapeByDressingID(dressing.getid()));
                 dressing.setSkintypes(DressingModel.loadSkinTypeByDressingID(dressing.getid()));
@@ -149,6 +152,7 @@ public class WeddingDressFragment extends Fragment implements LoaderManager.Load
         Log.d(BeautyApp.TAG, "Retrieved Occassional Dress : " + dressingList.size());
         mDressAdapter.setNewData(dressingList);
         mdressingList=dressingList;
+
     }
 
     @Override
@@ -225,4 +229,7 @@ public class WeddingDressFragment extends Fragment implements LoaderManager.Load
         }
 
     }
+
+
+
 }

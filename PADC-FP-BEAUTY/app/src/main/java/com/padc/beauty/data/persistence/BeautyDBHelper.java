@@ -11,7 +11,7 @@ import com.padc.beauty.data.persistence.BeautyContract;
  */
 public class BeautyDBHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 13;
+    private static final int DATABASE_VERSION = 15;
 
     public static final String DATABASE_NAME = "beauty.db";
 
@@ -164,6 +164,15 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
             " UNIQUE (" + BeautyContract.FashionshopEntry.COLUMN_SHOP_ID  + ") ON CONFLICT IGNORE" +
             " );";
 
+    private static final String SQL_CREATE_BOOKMARK_TABLE = "CREATE TABLE IF NOT EXISTS " + BeautyContract.BookMarkEntry.TABLE_NAME + " (" +
+            BeautyContract.BookMarkEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            BeautyContract.BookMarkEntry.COLUMN_BOOKMARKID + " LONG NOT NULL,"+
+            BeautyContract.BookMarkEntry.COLUMN_BOOKMARKTITLE + " TEXT NOT NULL, "+
+            BeautyContract.BookMarkEntry.COLUMN_IMAGE + " TEXT NOT NULL, "+
+            BeautyContract.BookMarkEntry.COLUMN_BOOKMARKSCREENNAME + " TEXT NOT NULL, "+
+            " UNIQUE (" + BeautyContract.BookMarkEntry.COLUMN_BOOKMARKID + ") ON CONFLICT IGNORE" +
+            " );";
+
     public BeautyDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -188,6 +197,8 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
             sqLiteDatabase.execSQL(SQL_CREATE_BEAUTY_SALON_TABLE);
             sqLiteDatabase.execSQL(SQL_CREATE_SALON_SERVICES_TABLE);
             sqLiteDatabase.execSQL(SQL_CREATE_FASHION_SHOP_TABLE);
+
+            sqLiteDatabase.execSQL(SQL_CREATE_BOOKMARK_TABLE);
         }
         catch (Exception e) {
             //This happens on every launch that isn't the first one.
@@ -215,6 +226,8 @@ public class BeautyDBHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.BeautySalonEntry.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.SalonServicesEntry.TABLE_NAME);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + BeautyContract.FashionshopEntry.TABLE_NAME);
+
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " +BeautyContract.BookMarkEntry.TABLE_NAME);
 
         onCreate(sqLiteDatabase);
     }

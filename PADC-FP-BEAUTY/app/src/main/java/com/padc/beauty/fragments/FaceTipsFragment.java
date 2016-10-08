@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -50,6 +51,7 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
     private FaceTipAdapter mFaceTipListAdapter;
     private AllTipListAdapter mTipListAdapter;
     private List<TipVO> mtipList;
+    private  int gridColumnSpanCount;
 
     public static FaceTipsFragment newInstance(){
         FaceTipsFragment faceTipsFragment=new FaceTipsFragment();
@@ -75,53 +77,115 @@ public class FaceTipsFragment extends Fragment implements LoaderManager.LoaderCa
 
         sptiplist.setAdapter(mFaceTipListAdapter);
 
+        sptiplist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String spinnertext=sptiplist.getSelectedItem().toString();
+                String norecord="true";
+                //sptiplist.setAdapter
+                // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+                List<TipVO>  tipList = new ArrayList<>();
+                for(TipVO tipVO:mtipList) {
+                    String[] facetypes=tipVO.getFacetypes();
+                    for(int ind=0;ind<facetypes.length;ind++){
+                        String facetype=facetypes[ind]+" Face";
+                        if(TextUtils.equals(facetype,spinnertext) )
+                        {
+                            TipVO tip=new TipVO();
+                            tip.setDescription(tipVO.getDescription());
+                            tip.setImg_url(tipVO.getImg_url());
+                            tip.setTitle(tipVO.getTitle());
+                            tipList.add(tip);
+                            mTipListAdapter = new AllTipListAdapter(tipList);
+                            rvfacetype.setAdapter(mTipListAdapter);
+                            norecord="true";
+                            //  Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            norecord="false";
+                        }
+                    }
+
+                }
+                if(TextUtils.equals(norecord,"false"))
+                {
+                    Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
         List<TipVO> tipList = TipModel.getInstance().getmTipList();
         mTipListAdapter = new AllTipListAdapter(tipList);
         rvfacetype.setAdapter(mTipListAdapter);
 
-        int gridColumnSpanCount = getResources().getInteger(R.integer.tip_list_grid);
+        gridColumnSpanCount = getResources().getInteger(R.integer.tip_list_grid);
         rvfacetype.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
 
 
         return rootView;
     }
-
-    @OnItemSelected(R.id.sp_tip_list)
-    public void OnSelectedSpinner(){
-        String spinnertext=sptiplist.getSelectedItem().toString();
-        Boolean norecord=true;
-        //sptiplist.setAdapter
-        // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
-        List<TipVO>  tipList = new ArrayList<>();
-        for(TipVO tipVO:mtipList) {
-            String[] facetypes=tipVO.getFacetypes();
-            for(int i=0;i<facetypes.length;i++){
-                String skincolor=facetypes[i]+" Face";
-                if(TextUtils.equals(skincolor,spinnertext) )
-                {
-                    TipVO tip=new TipVO();
-                    tip.setDescription(tipVO.getDescription());
-                    tip.setImg_url(tipVO.getImg_url());
-                    tip.setTitle(tipVO.getTitle());
-                    tipList.add(tip);
-                    mTipListAdapter = new AllTipListAdapter(tipList);
-                    rvfacetype.setAdapter(mTipListAdapter);
-                    //Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
-                    norecord=true;
-                }
-                else
-                {
-                    norecord=false;
-                }
-            }
-
-        }
-        if(norecord==false)
-        {
-            Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
-        }
-        // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
-    }
+//
+//    @OnItemSelected(R.id.sp_tip_list)
+//    public void OnSelectedSpinner(){
+//        String spinnertext=sptiplist.getSelectedItem().toString();
+//        Boolean norecord=true;
+//        //sptiplist.setAdapter
+//        // tvskintiptitle.setText(sptiplist.getSelectedItem().toString());
+//        String facetype=BeautyApp.getContext().getString(R.string.allfacetype).toString();
+//        if(TextUtils.equals(spinnertext,facetype)){
+//           // List<TipVO> tipList = TipModel.getInstance().getmTipList();
+//            //mTipListAdapter = new AllTipListAdapter(tipList);
+//            //mTipListAdapter.setNewData(tipList);
+//            //rvfacetype.setAdapter(mTipListAdapter);
+//            //rvfacetype.setLayoutManager(new GridLayoutManager(getContext(), gridColumnSpanCount));
+//        }
+//        else
+//        {
+//            List<TipVO>  tipList = new ArrayList<>();
+//            for(TipVO tipVO:mtipList) {
+//                String[] facetypes=tipVO.getFacetypes();
+//                for(int i=0;i<facetypes.length;i++){
+//                    String skincolor=facetypes[i]+" Face";
+//                    if(TextUtils.equals(skincolor,spinnertext) )
+//                    {
+//                        TipVO tip=new TipVO();
+//                        tip.setDescription(tipVO.getDescription());
+//                        tip.setImg_url(tipVO.getImg_url());
+//                        tip.setTitle(tipVO.getTitle());
+//                        tipList.add(tip);
+//                        mTipListAdapter = new AllTipListAdapter(tipList);
+//                        rvfacetype.setAdapter(mTipListAdapter);
+//                        //Toast.makeText(BeautyApp.getContext(), "Equal"+skincolor, Toast.LENGTH_SHORT).show();
+//                        norecord=true;
+//                    }
+//                    else
+//                    {
+//                        norecord=false;
+//                    }
+//                }
+//
+//            }
+//            if(norecord==false)
+//            {
+//
+//
+//                Toast.makeText(getContext(),R.string.no_record,Toast.LENGTH_SHORT).show();
+//
+//
+//            }
+//        }
+//
+//        // Toast.makeText(getContext(),"Spinner selected Data"+spinnertext,Toast.LENGTH_SHORT).show();
+//    }
 
     @Override
     public void onStart() {

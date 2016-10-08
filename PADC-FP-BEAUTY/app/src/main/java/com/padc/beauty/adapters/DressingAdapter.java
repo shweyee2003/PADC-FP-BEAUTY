@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.R;
 import com.padc.beauty.data.vos.DressingVO;
+import com.padc.beauty.utils.SharedPreference;
 import com.padc.beauty.views.holders.DressingViewHolder;
 import com.padc.beauty.views.holders.FitnessandhealthViewHolder;
 
@@ -17,14 +18,17 @@ import java.util.List;
  * Created by windows on 9/23/2016.
  */
 public class DressingAdapter extends RecyclerView.Adapter<DressingViewHolder>  {
+
     private List<DressingVO> mDressingList;
     private LayoutInflater inflater;
     private DressingViewHolder.ControllerDressing mControllerDressing;
+    SharedPreference   sharedPreference;
+
     public DressingAdapter(List<DressingVO> dressingList,DressingViewHolder.ControllerDressing controlleritem){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mDressingList = dressingList;
         mControllerDressing=controlleritem;
-
+        sharedPreference = new SharedPreference();
     }
 
     @Override
