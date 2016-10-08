@@ -23,6 +23,7 @@ import com.padc.beauty.data.vos.TipVO;
 
 import com.padc.beauty.data.vos.BeautySaloonVO;
 import com.padc.beauty.data.vos.TipVO;
+import com.padc.beauty.fragments.BookmarkFragment;
 import com.padc.beauty.fragments.DressingPagerFragment;
 
 import com.padc.beauty.fragments.FitnessAndHealthBKFragments;
@@ -79,7 +80,7 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_home, menu);
+        //getMenuInflater().inflate(R.menu.menu_home, menu);
         return true;
     }
 
@@ -134,6 +135,9 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
             case R.id.personality:
                 navigatetoPersonality();
                 return true;
+            case R.id.bookmarks:
+                navigatetoBookmark();
+                return true;
         }
         return false;
     }
@@ -148,11 +152,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
                 .commit();
     }
     public void navigateToSaloonandFashionshop(){
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(R.id.fl_container, SaloonandFashionshopFragment.newInstance())
-//                .commit();
-        Intent intent = SalonandFashionshopActivity.newIntent();
-        startActivity(intent);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, SaloonandFashionshopFragment.newInstance())
+                .commit();
+//        Intent intent = SalonandFashionshopActivity.newIntent();
+//        startActivity(intent);
     }
     public void navigateToBeautyTutorial(){
         getSupportFragmentManager().beginTransaction()
@@ -167,6 +171,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
                 .commit();
     }
 
+    private  void  navigatetoBookmark(){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, BookmarkFragment.newInstance())
+                .commit();
+    }
     private void navigatetoPersonality(){
 
 //        Intent intent = PersonalityListActivity.newIntent();
@@ -179,7 +188,8 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
 
     @Override
     public void onTapBeautysalon(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
-        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto(),beautysalon.getsaloonname());
+        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto(),
+                beautysalon.getsaloonname(),beautysalon.getfulladdr());
         startActivity(intent);
     }
 

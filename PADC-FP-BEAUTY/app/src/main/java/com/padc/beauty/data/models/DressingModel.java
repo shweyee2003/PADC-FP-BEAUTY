@@ -2,16 +2,21 @@ package com.padc.beauty.data.models;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.util.Log;
 import android.util.LongSparseArray;
 
+import com.google.gson.Gson;
 import com.padc.beauty.BeautyApp;
 import com.padc.beauty.data.persistence.BeautyContract;
+import com.padc.beauty.data.vos.BookmarkVO;
 import com.padc.beauty.data.vos.DressingVO;
 import com.padc.beauty.events.DataEvent;
+import com.padc.beauty.utils.BeautyAppConstant;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -248,4 +253,15 @@ public class DressingModel extends BaseModel {
         bodyshapes.toArray(bodyshapeArray);
         return bodyshapeArray;
     }
+
+    public void addFavorite(DressingVO dressing) {
+
+        BookmarkVO bookmarkvo=new BookmarkVO(dressing.getid(),dressing.getShopname(),dressing.getimgurl(),dressing.getdresstype());
+        List<BookmarkVO> currentbookmarklist=new ArrayList<>();
+        currentbookmarklist.add(bookmarkvo);
+        BookMarkModel.getInstance().notifyBookMarkLoaded(currentbookmarklist);
+
+    }
+
+
 }

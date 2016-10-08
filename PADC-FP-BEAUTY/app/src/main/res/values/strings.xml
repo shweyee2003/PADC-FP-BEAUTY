@@ -18,6 +18,7 @@
     <string name="diamondface">Diamond Face</string>
 
     <string-array name="face_tip_list">
+        <item>All Face Type</item>
         <item>Long Face</item>
         <item>Round Face</item>
         <item>Oval Face</item>
@@ -46,12 +47,15 @@
     <string name="meduimskin">Meduim Skin Tone</string>
 
     <string-array name="Skin_Tone_tip_list">
+        <item>All Skin Tone</item>
         <item>Cool Skin Tone</item>
         <item>Warm Skin Tone</item>
         <item>Meduim Skin Tone</item>
     </string-array>
 
-
+    <string name="allskintone">All Skin Tone</string>
+    <string name="allfacetype">All Face Type</string>
+    <string name="allbodytype">All Body Type</string>
     <!--Warn Skin Tone Tip  Title-->
     <string name="foundation_skintone_title">Foundation For Warm Skin Tone</string>
     <string name="powder_skintone_title">Powder For Warm Skin Tone</string>
@@ -69,6 +73,7 @@
 
     <!-- Body Shape-->
     <string-array name="body_shape">
+        <item>All Body Type</item>
         <item>Pear Body Type</item>
         <item>Apple Body Type</item>
         <item>Straight or Rectangle Body Type</item>
@@ -203,7 +208,9 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="msg_search_dressing">Please,key in price that you want to search</string>
 
     <string name="action_share">Share</string>
-    <string name="no_record">There are no records.</string>
-    <string name="lbl_search">Search</string>
 
+    <string name="no_record">There are no match records.</string>
+    <string name="price_msg">Please,put price.</string>
+    <string name="favorites">Favorites</string>
+    <string name="lbl_search">Search</string>
 </resources>

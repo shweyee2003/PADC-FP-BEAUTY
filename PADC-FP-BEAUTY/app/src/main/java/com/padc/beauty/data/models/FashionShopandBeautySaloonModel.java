@@ -1,8 +1,12 @@
 package com.padc.beauty.data.models;
 
 import com.padc.beauty.data.vos.BeautySaloonVO;
+import com.padc.beauty.data.vos.BookmarkVO;
 import com.padc.beauty.data.vos.FashionShopVO;
+import com.padc.beauty.data.vos.PerDetailVO;
+import com.padc.beauty.data.vos.PersonalityDetailVO;
 import com.padc.beauty.data.vos.ServiceVO;
+import com.padc.beauty.data.vos.TipVO;
 import com.padc.beauty.events.DataEvent;
 
 import java.util.ArrayList;
@@ -102,6 +106,16 @@ public class FashionShopandBeautySaloonModel extends BaseModel {
         mBeautySaloonList = beautysalonList;
     }
     public void setStoredServicesData(List<ServiceVO> mServices){
+
+    }
+
+
+    public void addFavorite(BeautySaloonVO beautysaloon) {
+
+        BookmarkVO bookmarkvo=new BookmarkVO(beautysaloon.getsaloonid(),beautysaloon.getsaloonname(),beautysaloon.getPhoto(),beautysaloon.getfulladdr());
+        List<BookmarkVO> currentbookmarklist=new ArrayList<>();
+        currentbookmarklist.add(bookmarkvo);
+        BookMarkModel.getInstance().notifyBookMarkLoaded(currentbookmarklist);
 
     }
 }

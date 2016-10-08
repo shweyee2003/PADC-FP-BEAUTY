@@ -73,7 +73,7 @@ public class TipsPagerFragment extends Fragment  {
 
     @OnClick(R.id.fab_tips)
     public void onTapSpecificTips(View view) {
-        Toast.makeText(getContext(),"specific tips",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(),"specific tips",Toast.LENGTH_SHORT).show();
         Intent intentDetail = new Intent(getActivity(),SpecialtipActivity.class);
         startActivity(intentDetail);
     }
