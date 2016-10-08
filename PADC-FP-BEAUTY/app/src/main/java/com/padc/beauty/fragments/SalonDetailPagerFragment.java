@@ -27,10 +27,14 @@ public class SalonDetailPagerFragment extends Fragment {
 
     private TipPagerAdapter mTipsPagerAdapter;
     private static Long mSalon_id;
+    private static String mBeauty_Salon_name;
+    private static String mSalon_add;
 
-    public static SalonDetailPagerFragment newInstance(Long mSalonid){
+    public static SalonDetailPagerFragment newInstance(Long mSalonid, String mSalon_name,String address){
         SalonDetailPagerFragment salonDetailPagerFragment = new SalonDetailPagerFragment();
         mSalon_id = mSalonid;
+        mBeauty_Salon_name = mSalon_name;
+        mSalon_add = address;
         return salonDetailPagerFragment;
     }
     @Override
@@ -38,7 +42,7 @@ public class SalonDetailPagerFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mTipsPagerAdapter = new TipPagerAdapter(getActivity().getSupportFragmentManager());
         mTipsPagerAdapter.addTab(ServicesFragment.newInstance(mSalon_id),getString(R.string.saloon_services));
-        mTipsPagerAdapter.addTab(AboutusFragment.newInstance(),getString(R.string.aboutus));
+        mTipsPagerAdapter.addTab(AboutusFragment.newInstance(mBeauty_Salon_name,mSalon_add),getString(R.string.aboutus));
     }
     @Nullable
     @Override

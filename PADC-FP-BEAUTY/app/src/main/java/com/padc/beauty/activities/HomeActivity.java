@@ -152,11 +152,11 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
                 .commit();
     }
     public void navigateToSaloonandFashionshop(){
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(R.id.fl_container, SaloonandFashionshopFragment.newInstance())
-//                .commit();
-        Intent intent = SalonandFashionshopActivity.newIntent();
-        startActivity(intent);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fl_container, SaloonandFashionshopFragment.newInstance())
+                .commit();
+//        Intent intent = SalonandFashionshopActivity.newIntent();
+//        startActivity(intent);
     }
     public void navigateToBeautyTutorial(){
         getSupportFragmentManager().beginTransaction()
@@ -188,7 +188,8 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
 
     @Override
     public void onTapBeautysalon(BeautySaloonVO beautysalon, ImageView ivbeautysaloon) {
-        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto(),beautysalon.getsaloonname());
+        Intent intent = BeautysalonDetailActivity.newIntent(beautysalon.getsaloonid(), beautysalon.getPhoto(),
+                beautysalon.getsaloonname(),beautysalon.getfulladdr());
         startActivity(intent);
     }
 

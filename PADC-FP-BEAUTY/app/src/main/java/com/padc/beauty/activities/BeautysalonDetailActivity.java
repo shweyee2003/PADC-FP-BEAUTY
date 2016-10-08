@@ -60,6 +60,7 @@ public class BeautysalonDetailActivity extends BaseActivity implements LoaderMan
     private static final String IE_ATTRACTION_NAME = "IE_SALON_ID";
     private static final String IE_BEAUTY_SALON_IMAGE = "IE_SALON_IMAGE";
     private static final String IE_BEAUTY_SALON_NAME = "IE_SALON_NAME";
+    private static final String IE_BEAUTY_SALON_ADD = "IE_SALON_ADD";
 
     private int gridColumnSpanCount=1;
     private Long  mBeautysalonId;
@@ -68,11 +69,12 @@ public class BeautysalonDetailActivity extends BaseActivity implements LoaderMan
     private List<ServiceVO> mServices;
     private ServicesAdapter mServicesAdapter;
 
-    public static Intent newIntent(long salonid,  String photo, String beautysalonPhoto) {
+    public static Intent newIntent(long salonid, String photo, String beautysalonPhoto, String address) {
         Intent intent = new Intent(BeautyApp.getContext(), BeautysalonDetailActivity.class);
         intent.putExtra(IE_ATTRACTION_NAME,salonid);
         intent.putExtra(IE_BEAUTY_SALON_IMAGE,photo);
         intent.putExtra(IE_BEAUTY_SALON_NAME,beautysalonPhoto);
+        intent.putExtra(IE_BEAUTY_SALON_ADD,address);
         return intent;
     }
 
@@ -90,6 +92,7 @@ public class BeautysalonDetailActivity extends BaseActivity implements LoaderMan
         }
         final String mServices_image = getIntent().getStringExtra(IE_BEAUTY_SALON_IMAGE);
         final String mSalon_name  = getIntent().getStringExtra(IE_BEAUTY_SALON_NAME);
+        final String mFulladdress  = getIntent().getStringExtra(IE_BEAUTY_SALON_ADD);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,7 +115,7 @@ public class BeautysalonDetailActivity extends BaseActivity implements LoaderMan
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fl_container, SalonDetailPagerFragment.newInstance(mSalonid))
+                    .replace(R.id.fl_container, SalonDetailPagerFragment.newInstance(mSalonid,mSalon_name,mFulladdress))
                     .commit();
         }
     }
