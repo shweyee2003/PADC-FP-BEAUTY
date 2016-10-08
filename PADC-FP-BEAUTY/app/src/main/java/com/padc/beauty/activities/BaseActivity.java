@@ -55,7 +55,7 @@ public class BaseActivity extends AppCompatActivity {
 //        sharingIntent.putExtra(Intent.EXTRA_STREAM, screenshotUri);
 //
 //        startActivity(Intent.createChooser(sharingIntent, "Share image using"));
-        Toast.makeText(BeautyApp.getContext(), "get activiyt", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(BeautyApp.getContext(), "get activiyt", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Intent.ACTION_SEND);
 
         intent.setType("text/plain");

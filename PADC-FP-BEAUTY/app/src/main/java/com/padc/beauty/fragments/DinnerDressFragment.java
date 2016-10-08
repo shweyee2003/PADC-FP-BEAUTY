@@ -121,7 +121,7 @@ public class DinnerDressFragment extends Fragment implements LoaderManager.Loade
 
     public void onEventMainThread(DataEvent.DressingDataLoadedEvent event) {
         String extra = event.getExtraMessage();
-        Toast.makeText(getContext(), "Extra : " + extra, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), "Extra : " + extra, Toast.LENGTH_SHORT).show();
 
         List<DressingVO> newDressingList = event.getDressingList();
         mDressAdapter.setNewData(newDressingList);
@@ -169,7 +169,7 @@ public class DinnerDressFragment extends Fragment implements LoaderManager.Loade
 
     @OnClick(R.id.fab)
     public void tabsearch(){
-        Toast.makeText(BeautyApp.getContext(), "Fab search", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(BeautyApp.getContext(), "Fab search", Toast.LENGTH_SHORT).show();
         llserach.setVisibility(View.VISIBLE);
         ivsearch.setVisibility(View.VISIBLE);
         etsearch.setVisibility(View.VISIBLE);
