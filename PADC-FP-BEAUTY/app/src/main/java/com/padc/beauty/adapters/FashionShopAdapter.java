@@ -12,7 +12,9 @@ import com.padc.beauty.data.vos.FashionShopVO;
 import com.padc.beauty.views.holders.BeautySaloonViewHolder;
 import com.padc.beauty.views.holders.FashionShopViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by windows on 9/24/2016.
@@ -20,10 +22,12 @@ import java.util.List;
 public class FashionShopAdapter extends RecyclerView.Adapter<FashionShopViewHolder>  {
     private List<FashionShopVO> mFashionShopList;
     private LayoutInflater inflater;
+    ArrayList<FashionShopVO> arraylist;
 
     public FashionShopAdapter(List<FashionShopVO> fashionshopList){
         inflater = LayoutInflater.from(BeautyApp.getContext());
         mFashionShopList = fashionshopList;
+
     }
 
     @Override
@@ -45,5 +49,29 @@ public class FashionShopAdapter extends RecyclerView.Adapter<FashionShopViewHold
     public void setNewData(List<FashionShopVO> newFashionShopList) {
         mFashionShopList = newFashionShopList;
         notifyDataSetChanged();//framework method
+        arraylist = new ArrayList<FashionShopVO>();
+        arraylist.addAll(mFashionShopList);
+    }
+
+    public void filter(String charText) {
+
+        charText = charText.toLowerCase(Locale.getDefault());
+
+        mFashionShopList.clear();
+        if (charText.length() == 0) {
+            mFashionShopList.addAll(arraylist);
+
+        } else {
+            for (FashionShopVO postDetail : arraylist) {
+                if (charText.length() != 0 && postDetail.getshopname().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    mFashionShopList.add(postDetail);
+                }
+
+                else if (charText.length() != 0 && postDetail.getshopname().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    mFashionShopList.add(postDetail);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 }
