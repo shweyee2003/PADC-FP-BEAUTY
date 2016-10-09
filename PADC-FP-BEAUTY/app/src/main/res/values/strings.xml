@@ -212,5 +212,5 @@ If you do not like powder foundation, select a mousse foundation or a water-base
     <string name="no_record">There are no match records.</string>
     <string name="price_msg">Please,put price.</string>
     <string name="favorites">Favorites</string>
-    <string name="lbl_search">Search</string>
+    <string name="lbl_search">Search by Shop name</string>
 </resources>
