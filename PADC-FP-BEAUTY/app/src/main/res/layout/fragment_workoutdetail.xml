@@ -18,7 +18,6 @@
             android:paddingBottom="@dimen/margin_medium"
             android:paddingLeft="@dimen/margin_medium"
             android:paddingRight="@dimen/margin_medium"
-            android:paddingTop="@dimen/margin_medium"
             android:scrollbarStyle="outsideOverlay" />
     </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
