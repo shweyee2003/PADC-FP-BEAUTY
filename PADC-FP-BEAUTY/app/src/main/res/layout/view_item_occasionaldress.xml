@@ -12,7 +12,6 @@
         android:id="@+id/fl_bride"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <com.padc.beauty.components.DynamicHeightImageView
             android:id="@+id/iv_dress"
             android:layout_height="match_parent"
@@ -20,7 +19,6 @@
             android:src="@drawable/myanmar_traditional_fashion_13"
             android:scaleType="centerCrop"
             android:alpha=".75" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -53,7 +51,6 @@
                 android:src="@drawable/ic_import_contacts_black_24dp"
                 android:background="@null" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,102 +62,7 @@
                 android:id="@+id/tv_shopname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
-                android:layout_weight="1">
-
-                <com.padc.beauty.components.DynamicHeightImageView
-                    android:id="@+id/iv_hairstyle"
-                    android:layout_width="@dimen/icon_in_detail"
-                    android:layout_height="@dimen/icon_in_detail"
-                    android:tint="@color/primary"
-                    android:src="@drawable/ic_face_black_5dp"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_alignParentTop="true"
-                    android:clickable="true" />
-                <com.padc.beauty.components.MMTextView
-                    android:id="@+id/tv_hairstyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_black_ish"
-                    android:layout_toRightOf="@id/iv_hairstyle"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_alignParentTop="true"
-                    android:fontFamily="sans-serif-light"
-                    android:text="mediumn hair style,long hair style"/>
-                <com.padc.beauty.components.DynamicHeightImageView
-                    android:id="@+id/iv_bodyshape"
-                    android:layout_width="@dimen/icon_in_detail"
-                    android:layout_height="@dimen/icon_in_detail"
-                    android:tint="@color/primary"
-                    android:src="@drawable/ic_wc_black_5dp"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:clickable="true"
-                    android:layout_below="@id/tv_hairstyle" />
-                <com.padc.beauty.components.MMTextView
-                    android:id="@+id/tv_bodyshape"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_black_ish"
-                    android:layout_toRightOf="@id/iv_bodyshape"
-                    android:layout_below="@id/tv_hairstyle"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:fontFamily="sans-serif-light"
-                    android:layout_alignParentRight="true"
-                    android:text="Pear Body Type,Sunglass Body Type"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="right">
-
-                <com.padc.beauty.components.DynamicHeightImageView
-                    android:id="@+id/iv_skincolor"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:tint="@color/primary"
-                    android:src="@drawable/ic_account_circle_black_5dp"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_alignParentTop="true"
-                    android:clickable="true"
-                    android:padding="@dimen/margin_small" />
-                <com.padc.beauty.components.MMTextView
-                    android:id="@+id/tv_skincolor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_black_ish"
-                    android:layout_toRightOf="@id/iv_skincolor"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:layout_alignParentTop="true"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Cool Skin Tone,Medium Skin Tone"/>
-                <com.padc.beauty.components.DynamicHeightImageView
-                    android:id="@+id/iv_tips"
-                    android:layout_width="@dimen/icon_in_detail"
-                    android:layout_height="@dimen/icon_in_detail"
-                    android:tint="@color/primary"
-                    android:src="@drawable/ic_person_black_5dp"
-                    android:clickable="true"
-                    android:layout_below="@id/tv_skincolor"
-                    android:layout_marginTop="@dimen/margin_small" />
-                <com.padc.beauty.components.MMTextView
-                    android:id="@+id/tv_skintype"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_black_ish"
-                    android:layout_toRightOf="@id/iv_tips"
-                    android:layout_below="@id/tv_skincolor"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Any Skin Type"/>
-            </RelativeLayout>
-=======
-                android:text="@string/shopname"
-                android:textColor="@color/accent"
-                android:layout_gravity="right"
-                android:fontFamily="sans-serif-light"
-                android:layout_margin="@dimen/margin_small"
-                />
+                android:layout_weight="1"/>
             <com.padc.beauty.components.MMTextView
                 android:id="@+id/tv_shopdirection"
                 android:layout_width="wrap_content"
@@ -169,10 +71,10 @@
                 android:textColor="@color/accent"
                 android:layout_gravity="right"
                 android:fontFamily="sans-serif-light"
-                android:layout_margin="@dimen/margin_small"
-                />
->>>>>>> 8ac164e6985f5f84b4b42b3dc88b331b2cfed309
+                android:layout_margin="@dimen/margin_small"/>
+
         </LinearLayout>
+
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -302,5 +204,4 @@
         android:textColor="@color/text_black_ish"
         android:layout_marginTop="@dimen/margin_small"
         android:padding="@dimen/margin_small" />
-
 </LinearLayout>
